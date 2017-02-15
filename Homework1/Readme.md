@@ -1,11 +1,7 @@
 #Homework 1 : The Jello Cube 
-Continuous Simulation Assignment
+##Continuous Simulation Assignment
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
-
-# Homework 1: The Jello Cube
-Continuous Simulation Assignment
-IDS6938 - Simulation Techniques (Spring 2017)
 
 What is the effect of the Ks and Kd parameters on the jello? .
 
