@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\main.cpp(78): warning C4244: 'argument': conversion from 'double' to 'std::streamsize', possible loss of data
+C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\main.cpp(79): warning C4244: 'argument': conversion from 'double' to 'std::streamsize', possible loss of data
+C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\main.cpp(80): warning C4244: 'argument': conversion from 'double' to 'std::streamsize', possible loss of data
+C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\main.cpp(81): warning C4244: 'argument': conversion from 'double' to 'std::streamsize', possible loss of data
+C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\main.cpp(102): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  helloworld.vcxproj -> C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Lecture6-Solution\build\Debug\helloworld.exe
