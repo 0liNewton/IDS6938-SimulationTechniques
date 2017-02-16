@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\fps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\vec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\jelloMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\fps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\vec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\world.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\src\jelloMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\oliviabnewton\Documents\GitHub\IDS6938-SimulationTechniques\Homework1\jellocube-basecode\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{827C9B90-3606-30A5-870E-9FFF5BFEB75C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{F29994FF-0D15-3E91-B65D-7E7CE2C83C63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
