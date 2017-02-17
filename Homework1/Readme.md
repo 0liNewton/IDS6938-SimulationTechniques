@@ -1,29 +1,26 @@
-#Homework 1 : The Jello Cube 
-##Continuous Simulation Assignment
-## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
-Olivia Newton
+<div style="text-align: center"> Homework 1 : The Jello Cube <div>
+=============
+<div style="text-align:center">Continuous Simulation Assignment | IDS6938-Simulation Techniques | [UCF](http://www.ist.ucf.edu/grad/) </div>
+-------------
+<div style="text-align:center">Olivia Newton  |	Spring 2017 </div>
+-------------
 
-What is the effect of the Ks and Kd parameters on the jello?
+ Due: Monday, February 27 at 11:59PM
 
-What are the benefits and the drawbacks of the collision system used here? What are some
-different ways in which it could be improved?
+- **What is the effect of the Ks and Kd parameters on the jello?**
+....
 
-What are some example systems you could model with Mass-spring simulations? Explain
-how you would you construct the model.
+- **What are the benefits and the drawbacks of the collision system used here? What are some different ways in which it could be improved?**
+....
 
-Does the jello behave realistically? What integration method did you choose to make the
-Jello stable?
+- **What are some example systems you could model with Mass-spring simulations? Explain how you would you construct the model.**
+...
 
-How would you model and simulate water (in terms of a continuous simulation)?
+- **Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
+...
 
-
-
-
-
-
-------------------------------------------------------------------------------------------
-Please first read the [homework writeup](HomeWork%231.pdf), due: Monday, February 27 at 11:59PM
-
+- **How would you model and simulate water (in terms of a continuous simulation)?**
+...
 
 
 | undeformed jello  | deformed jello |
