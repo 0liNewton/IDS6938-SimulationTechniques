@@ -1,9 +1,6 @@
-<div style="text-align: center"> Homework 1 : The Jello Cube <div>
-=============
-<div style="text-align:center">Continuous Simulation Assignment | IDS6938-Simulation Techniques | [UCF](http://www.ist.ucf.edu/grad/) </div>
--------------
-<div style="text-align:center">Olivia Newton  |	Spring 2017 </div>
--------------
+#Homework 1 : The Jello Cube 
+##Continuous Simulation Assignment |  IDS6938-Simulation Techniques | [UCF](http://www.ist.ucf.edu/grad/)
+###Olivia Newton  |	Spring 2017
 
  Due: Monday, February 27 at 11:59PM
 
