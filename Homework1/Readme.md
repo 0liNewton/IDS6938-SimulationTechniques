@@ -32,5 +32,5 @@ Please first read the [homework writeup](HomeWork%231.pdf), due: Monday, Februar
 
 | Numerical Integration  | Error |
 | ------------- | ------------- |
-| ![](images/Numerical-integration-solutions-graph.png?raw=true)  | ![](images/Error-percentage-graph.png?raw=true) |
+| ![](images/Numerical-integration-solutions-graph.png | ![](images/Error-percentage-graph.png) |
 
