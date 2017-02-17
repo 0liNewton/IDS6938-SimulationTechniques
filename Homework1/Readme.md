@@ -30,7 +30,10 @@ Please first read the [homework writeup](HomeWork%231.pdf), due: Monday, Februar
 | ------------- | ------------- |
 | ![](images/undeformed3.png?raw=true)  | ![](images/deformed3.png?raw=true) |
 
-| Numerical Integration  | Error |
+| Numerical Integration  | 
 | ------------- | ------------- |
-| ![](images/Numerical-integration-solutions-graph.png | ![](images/Error-percentage-graph.png) |
+| ![](images/solutions.PNG?raw=true)
 
+| Error | 
+| ------------- | ------------- |
+| ![](images/error.PNG?raw=true) 
