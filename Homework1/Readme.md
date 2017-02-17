@@ -1,12 +1,12 @@
 #Homework 1 : The Jello Cube 
 ##Continuous Simulation Assignment
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
-## Olivia Newton
+Olivia Newton
 
-What is the effect of the Ks and Kd parameters on the jello? .
+What is the effect of the Ks and Kd parameters on the jello?
 
 What are the benefits and the drawbacks of the collision system used here? What are some
-different ways in which it could be improved? .
+different ways in which it could be improved?
 
 What are some example systems you could model with Mass-spring simulations? Explain
 how you would you construct the model.
@@ -29,4 +29,8 @@ Please first read the [homework writeup](HomeWork%231.pdf), due: Monday, Februar
 | undeformed jello  | deformed jello |
 | ------------- | ------------- |
 | ![](images/undeformed3.png?raw=true)  | ![](images/deformed3.png?raw=true) |
+
+| Numerical Integration  | Error |
+| ------------- | ------------- |
+| ![](images/Numerical-integration-solutions-graph.png?raw=true)  | ![](images/Error-percentage-graph.png?raw=true) |
 
