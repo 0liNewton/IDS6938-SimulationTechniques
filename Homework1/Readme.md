@@ -19,7 +19,7 @@
 - **How would you model and simulate water (in terms of a continuous simulation)?**
 ...
 
-x | y (Euler) | y (midpoint) | y (RK44) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
+x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 --- | --- | --- | --- | --- | --- | --- | --- |
 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 0.1 | 0.5 | 0.509036927 | 0.50401476 | 0.504006212 | 0.01% | 0.01% | 0.00% |
