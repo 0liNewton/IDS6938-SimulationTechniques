@@ -97,7 +97,7 @@ int main()
 	double y_RK4 = 0.0;
     double x = 0.0;
 	double xb = 10.0;
-    double h = 0.1;
+    double h = 5.0;
 
 	int range = (xb - x) / h;  //addition
 
