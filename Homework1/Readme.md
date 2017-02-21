@@ -118,7 +118,8 @@ x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) 
 
-- **Describe how varying the integration method changes the accuracy.**
+
+- - **Describe how varying the integration method changes the accuracy.**
 ...
 - **What happens as you increase the x value to the accuracy?**
 ...
