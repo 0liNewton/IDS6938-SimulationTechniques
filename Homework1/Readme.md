@@ -4,21 +4,7 @@
 
  Due: Monday, February 27 at 11:59PM
 
-- **What is the effect of the Ks and Kd parameters on the jello?**
-....
-
-- **What are the benefits and the drawbacks of the collision system used here? What are some different ways in which it could be improved?**
-....
-
-- **What are some example systems you could model with Mass-spring simulations? Explain how you would you construct the model.**
-...
-
-- **Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
-...
-
-- **How would you model and simulate water (in terms of a continuous simulation)?**
-...
-
+###Part 1
 x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 --- | --- | --- | --- | --- | --- | --- | --- |
 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -131,3 +117,28 @@ x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 | Error | 
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) 
+
+- **Describe how varying the integration method changes the accuracy.**
+...
+- **What happens as you increase the x value to the accuracy?**
+...
+- **How does varying the step size effect the accuracy?**
+....
+- **Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
+
+###Part 3 
+
+- **What is the effect of the Ks and Kd parameters on the jello?**
+....
+
+- **What are the benefits and the drawbacks of the collision system used here? What are some different ways in which it could be improved?**
+....
+
+- **What are some example systems you could model with Mass-spring simulations? Explain how you would you construct the model.**
+...
+
+- **Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
+...
+
+- **How would you model and simulate water (in terms of a continuous simulation)?**
+...
