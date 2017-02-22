@@ -495,14 +495,14 @@ void JelloMesh::EulerIntegrate(double dt) // TODO
 		{
 			for (int k = 0; k < m_stacks + 1; k++)
 			{
-				Particle& s = GetParticle(source, i, j, k);
-
-				Particle& k1 = GetParticle(source, i, j, k);
-				k1.force = dt * s.force * 1 / s.mass;
-				k1.velocity = dt * s.velocity;
+				Particle& p = GetParticle(source, i, j, k);
 				
-				// k1.force = halfdt * s.force * 1 / s.mass; --> change this? s.velocity  or p.velocity (e.g., //s.velocity = dt * s.force * 1/s.mass;)
-				// k1.velocity = halfdt * s.velocity; --> change this? s.position  or p.position
+				p.velocity = p.velocity + dt * p.force * 1 / p.mass;
+				p.position = p.position + dt * p.velocity;
+				
+				//Particle& k1 = GetParticle(source, i, j, k);
+				//k1.force = dt * s.force * 1 / s.mass;
+				//k1.velocity = dt * s.velocity;
 			}
 		}
 	}
