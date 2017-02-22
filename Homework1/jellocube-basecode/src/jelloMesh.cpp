@@ -487,7 +487,6 @@ bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
 
 void JelloMesh::EulerIntegrate(double dt) // TODO
 {
-		double  dt // Euler equation
 		ParticleGrid& source = m_vparticles; // source is a ptr!
 
 	for (int i = 0; i < m_rows + 1; i++)
@@ -498,13 +497,12 @@ void JelloMesh::EulerIntegrate(double dt) // TODO
 			{
 				Particle& s = GetParticle(source, i, j, k);
 
-				Particle& k1 = GetParticle(accum1, i, j, k);
-				k1.force = halfdt * s.force * 1 / s.mass;
-				k1.velocity = halfdt * s.velocity;
-
-				Particle& t = GetParticle(target, i, j, k);
-				t.velocity = s.velocity + k1.force; // change this? s.velocity = ???
-				t.position = s.position + k1.velocity; // change this? s.position = ???
+				Particle& k1 = GetParticle(source, i, j, k);
+				k1.force = dt * s.force * 1 / s.mass;
+				k1.velocity = dt * s.velocity;
+				
+				// k1.force = halfdt * s.force * 1 / s.mass; --> change this? s.velocity  or p.velocity (e.g., //s.velocity = dt * s.force * 1/s.mass;)
+				// k1.velocity = halfdt * s.velocity; --> change this? s.position  or p.position
 			}
 		}
 	}
