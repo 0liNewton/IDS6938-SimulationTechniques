@@ -470,19 +470,41 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid)
 bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 {
     // TODO
-    return false;
-}
+		// hit the floor
+		if (p.position[1] < 0.0) {
 
+			intersection.m_p = p.index;
+			intersection.m_distance = -p.position[1];
+			intersection.m_normal = vec3(0, 1, 0);
+			intersection.m_type = CONTACT;
+			return true;
+		}
+		// other condition 
+		else if (p.position[1] >= 0.5) {
+
+			intersection.m_p = p.index;
+			intersection.m_distance = 0.5-p.position[1];
+			intersection.m_normal = vec3(0, 1, 0);
+			intersection.m_type = COLLISION;
+			return true;
+
+		}
+		// nothing happens
+		else {
+			return false;
+		}
+}
+	
 bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder, 
-                                 JelloMesh::Intersection& result)
+                              JelloMesh::Intersection& result)
 {
     vec3 cylinderStart = cylinder->start;
     vec3 cylinderEnd = cylinder->end;
     vec3 cylinderAxis = cylinderEnd - cylinderStart;
-    double cylinderRadius = cylinder->r; 
+   double cylinderRadius = cylinder->r; 
 
     // TODO
-    return false;
+   return false;
 }
 
 void JelloMesh::EulerIntegrate(double dt) // TODO
