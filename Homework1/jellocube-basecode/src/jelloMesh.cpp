@@ -449,6 +449,7 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid)
        const Intersection& contact = m_vcontacts[i];
        Particle& p = GetParticle(grid, contact.m_p);
        vec3 normal = contact.m_normal; 
+	  
 
         // TODO
     }
@@ -470,24 +471,24 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid)
 bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 {
     // TODO
+
 		// hit the floor
 		if (p.position[1] < 0.0) {
 
-			intersection.m_p = p.index;
-			intersection.m_distance = -p.position[1];
-			intersection.m_normal = vec3(0, 1, 0);
+			intersection.m_p = p.index; //calling a class and changing the variable?
+			intersection.m_distance = p.position[1];
+			intersection.m_normal = vec3(0.0, 1.0, 0.0);
 			intersection.m_type = CONTACT;
 			return true;
 		}
 		// other condition 
-		else if (p.position[1] >= 0.5) {
+		else if (p.position[1] > 0.5) {
 
 			intersection.m_p = p.index;
-			intersection.m_distance = 0.5-p.position[1];
-			intersection.m_normal = vec3(0, 1, 0);
+			intersection.m_distance = fabs(0.5-p.position[1]);
+			intersection.m_normal = vec3(0.0, 1.0, 0.0);
 			intersection.m_type = COLLISION;
 			return true;
-
 		}
 		// nothing happens
 		else {
