@@ -118,13 +118,13 @@ x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) 
 
-| RK4 Solutions at Different Stepsizes | 
+| Solutions at Different Stepsizes | 
 | ------------- | ------------- |
-| ![](images/.PNG?raw=true)
+| ![](images/rk4stepsizesandexact.PNG?raw=true)
 
 | RK4 Stepsizes - Error | 
 | ------------- | ------------- |
-| ![](images/.PNG?raw=true) 
+| ![](images/errorpercentageatdiffsizes.PNG?raw=true) 
 
 
 - **Describe how varying the integration method changes the accuracy.**
