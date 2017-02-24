@@ -110,13 +110,21 @@ x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 10 | 2998.124017 | 158.7831645 | -39.0670402 | -38.93988091| -77.99% | -5.08% | 0.00% |
 
 
-| Numerical Integration  | 
+| RK1, RK2, & RK4 Numerical Integration Methods | 
 | ------------- | ------------- |
 | ![](images/solutions.PNG?raw=true)
 
 | Error | 
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) 
+
+| RK4 Solutions at Different Stepsizes | 
+| ------------- | ------------- |
+| ![](images/.PNG?raw=true)
+
+| RK4 Stepsizes - Error | 
+| ------------- | ------------- |
+| ![](images/.PNG?raw=true) 
 
 
 - **Describe how varying the integration method changes the accuracy.**
