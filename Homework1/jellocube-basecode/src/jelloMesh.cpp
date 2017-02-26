@@ -11,8 +11,8 @@ double JelloMesh::g_shearKs = 0.0;
 double JelloMesh::g_shearKd = 0.0;
 double JelloMesh::g_bendKs = 0.0;
 double JelloMesh::g_bendKd = 0.0;
-double JelloMesh::g_penaltyKs = 0.0;
-double JelloMesh::g_penaltyKd = 0.0;
+double JelloMesh::g_penaltyKs = 80.0;
+double JelloMesh::g_penaltyKd = 23.0;
 
 JelloMesh::JelloMesh() :     
     m_integrationType(JelloMesh::RK4), m_drawflags(MESH | STRUCTURAL),
@@ -458,8 +458,13 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
 	   double restitcoeff = 0.3;
-	   double dot = p.velocity * -normal
-        // TODO
+	   double dot = p.velocity * -normal;
+	   if (dot < 0) {
+		   p.force = -(g_penaltyKs + g_penaltyKd) * (diff/dist);
+	   }
+	   // p.velocity += p.velocity - 2 * (dot)*normal * restitcoeff;
+	   //p.force = ; 
+		   // TODO
 	   // apply penalty force using g_penaltyKs and g_penaltyKd
 	   // pt.force = penalty ks and kd
 
@@ -481,7 +486,11 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
 		double restitcoeff = 0.3;
-        // TODO
+		double dot = pt.velocity * -normal;
+		if (dot < 0) {
+			pt.velocity = pt.velocity - 2 * (dot)*normal * restitcoeff;
+		}
+		// TODO
 		// reflectedvelocity = startvelocity - 2*(-startvelocity * Normal) * Normal * R
 		// startvelocity = ; Normal = vec3 normal
 	}
