@@ -3,8 +3,8 @@
 #include <algorithm>
 
 // TODO
-double JelloMesh::g_structuralKs = 0.0; 
-double JelloMesh::g_structuralKd = 0.0; 
+double JelloMesh::g_structuralKs = 100.0; 
+double JelloMesh::g_structuralKd = 33.0; 
 double JelloMesh::g_attachmentKs = 0.0;
 double JelloMesh::g_attachmentKd = 0.0;
 double JelloMesh::g_shearKs = 0.0;
@@ -437,6 +437,8 @@ void JelloMesh::ComputeForces(ParticleGrid& grid)
         Spring& spring = m_vsprings[i];
         Particle& a = GetParticle(grid, spring.m_p1);
         Particle& b = GetParticle(grid, spring.m_p2);
+		a.force = ; 
+		b.force = ;
 
         // TODO
     }
