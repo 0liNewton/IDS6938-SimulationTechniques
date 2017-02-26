@@ -403,18 +403,25 @@ void JelloMesh::CheckForCollisions(ParticleGrid& grid, const World& world)
 					if (world.m_shapes[i]->GetType() == World::CYLINDER &&
 						CylinderIntersection(p, (World::Cylinder*) world.m_shapes[i], intersection))
 					{
-						m_vcontacts.push_back(intersection);
+						if (intersection.m_type == CONTACT)
+						{
+							m_vcontacts.push_back(intersection); //penetration
+						}
+						else if (intersection.m_type == COLLISION)
+						{
+							m_vcollisions.push_back(intersection); //about to collide
+						}
 					}
 					else if (world.m_shapes[i]->GetType() == World::GROUND &&
 						FloorIntersection(p, intersection))
 					{
 						if (intersection.m_type == CONTACT)
 						{
-							m_vcontacts.push_back(intersection);
+							m_vcontacts.push_back(intersection); //penetration
 						}
 						else if (intersection.m_type == COLLISION)
 						{
-							m_vcollisions.push_back(intersection);
+							m_vcollisions.push_back(intersection); //about to collide
 						}
 					}
 				}
@@ -476,13 +483,6 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 		   // TODO
 	   // apply penalty force using g_penaltyKs and g_penaltyKd
 	   // pt.force = penalty ks and kd
-
-	   //Intersection(IntersectionType type, int p, const vec3& normal, double d = 0);
-
-	  // int m_p;
-	   // vec3 m_normal;
-	   // double m_distance;
-	   // IntersectionType m_type;
     }
 }
 
