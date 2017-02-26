@@ -469,13 +469,15 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
        const Intersection& contact = m_vcontacts[i];
        Particle& p = GetParticle(grid, contact.m_p);
        vec3 normal = contact.m_normal; 
-
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
-	   double restitcoeff = 0.3;
-	   double dot = p.velocity * -normal;
 
-	  // if (dist < 0) {
+	   //double restitcoeff = 0.3;
+	   //double dot = p.velocity * -normal;
+
+	   if (dist < 0) {
+		   p.force = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
+		  // world::ground->p.position[1]
 		//   vec3 contactforce = -((g_penaltyKs*(dist - 0) + g_penaltyKd*() * (diff/dist);
 	   //}
 	   // p.velocity += p.velocity - 2 * (dot)*normal * restitcoeff;
@@ -494,14 +496,11 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         Particle& pt = GetParticle(grid, result.m_p);
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
+		vec3 diff = -dist * normal;
 
-		double restitcoeff = 0.3; // restitution coefficient
-		//double dot = pt.velocity * -normal;
-
-		if (dist < 0) {
-			pt.velocity = pt.velocity - 2 * (Dot(pt.velocity, -normal))*normal * restitcoeff;
-		}
-		// TODO
+		//double restitcoeff = 0.3; // restitution coefficient; double dot = pt.velocity * -normal;
+		//if (dist < 0) {
+			//pt.velocity = pt.velocity - 2 * (Dot(pt.velocity, -normal))*normal * restitcoeff;
 		// reflectedvelocity = startvelocity - 2*(-startvelocity * Normal) * Normal * R
 		// startvelocity = ; Normal = vec3 normal
 	}
