@@ -2,7 +2,7 @@
 ##Continuous Simulation Assignment |  IDS6938-Simulation Techniques | [UCF](http://www.ist.ucf.edu/grad/)
 ###Olivia Newton  |	Spring 2017
 
- Due: Monday, February 27 at 11:59PM
+ Due: Monday, February 27 at 11:59PM | Requesting three extra days
 
 ###Part 1
 x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
