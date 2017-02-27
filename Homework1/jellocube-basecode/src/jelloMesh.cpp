@@ -472,10 +472,12 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
 	   double restco = 0.7; // coefficient of restitution
-	   
 	   vec3 velocity = p.velocity;
-	   double velocityN = velocity * normal;
-	   
+
+	   //double velocityN = velocity * normal;
+	   p.velocity = p.velocity - (2 * (velocity * normal)*normal* restco);
+	   p.position = p.position + (dist * normal);
+
 	   //Step 1 perform velocity update
 	   //vec3 projectedV = velocityN * normal; //projected velocity
 	   //vec3 reflectedV = p.velocity - 2 * projectedV * restco;
@@ -509,7 +511,11 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
 		vec3 diff = -dist * normal;
-	
+		double restco = 0.7; //restitution coefficient
+		vec3 velocity = pt.velocity;
+
+		pt.velocity = pt.velocity + (-2 * (velocity*normal)*normal*restco);
+		pt.position = pt.position + (dist * normal);
 		//vec3 velocity = pt.velocity;
 		//double velocityN = velocity * normal;
 		//double restitution = 0.7;
