@@ -3,16 +3,16 @@
 #include <algorithm>
 
 // TODO
-double JelloMesh::g_structuralKs = 100.0; 
-double JelloMesh::g_structuralKd = 33.0; 
+double JelloMesh::g_structuralKs = 500.0; 
+double JelloMesh::g_structuralKd = 130.0; 
 double JelloMesh::g_attachmentKs = 0.0;
 double JelloMesh::g_attachmentKd = 0.0;
 double JelloMesh::g_shearKs = 0.0;
 double JelloMesh::g_shearKd = 0.0;
 double JelloMesh::g_bendKs = 0.0;
 double JelloMesh::g_bendKd = 0.0;
-double JelloMesh::g_penaltyKs = 80.0;
-double JelloMesh::g_penaltyKd = 23.0;
+double JelloMesh::g_penaltyKs = 1000.0;
+double JelloMesh::g_penaltyKd = 500.0;
 
 JelloMesh::JelloMesh() :     
     m_integrationType(JelloMesh::RK4), m_drawflags(MESH | STRUCTURAL),
@@ -476,7 +476,9 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   //double dot = p.velocity * -normal;
 
 	   if (dist < 0) {
-		   p.force = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
+		  vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
+		  p.force += penaltyforce;
+	   }
 		  // world::ground->p.position[1]
 		//   vec3 contactforce = -((g_penaltyKs*(dist - 0) + g_penaltyKd*() * (diff/dist);
 	   //}
@@ -497,12 +499,15 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
 		vec3 diff = -dist * normal;
+		vec3 velocity = pt.velocity;
+		double velocityN = velocity * normal;
+		double restitution = 0.7;
 
-		//double restitcoeff = 0.3; // restitution coefficient; double dot = pt.velocity * -normal;
-		//if (dist < 0) {
-			//pt.velocity = pt.velocity - 2 * (Dot(pt.velocity, -normal))*normal * restitcoeff;
-		// reflectedvelocity = startvelocity - 2*(-startvelocity * Normal) * Normal * R
-		// startvelocity = ; Normal = vec3 normal
+		if (dist < EPSILON)
+		{
+			vec3 collvelocity = pt.velocity - 2 * velocityN * normal * restitution;
+			pt.velocity += collvelocity;
+		}
 	}
 }
 
