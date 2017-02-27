@@ -3,8 +3,8 @@
 #include <algorithm>
 
 // TODO
-double JelloMesh::g_structuralKs = 500.0; 
-double JelloMesh::g_structuralKd = 130.0; 
+double JelloMesh::g_structuralKs = 300.0; 
+double JelloMesh::g_structuralKd = 10.0; 
 double JelloMesh::g_attachmentKs = 0.0;
 double JelloMesh::g_attachmentKd = 0.0;
 double JelloMesh::g_shearKs = 0.0;
@@ -471,22 +471,32 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
        vec3 normal = contact.m_normal; 
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
+	   double restco = 0.7; // coefficient of restitution
+	   
+	   vec3 velocity = p.velocity;
+	   double velocityN = velocity * normal;
+	   
+	   //Step 1 perform velocity update
+	   //vec3 projectedV = velocityN * normal; //projected velocity
+	   //vec3 reflectedV = p.velocity - 2 * projectedV * restco;
+	  // p.velocity = reflectedV;
 
-	   //double restitcoeff = 0.3;
-	   //double dot = p.velocity * -normal;
+	   //Step 2 compute contact impulse
+	  // vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
+	  // p.force += penaltyforce;
 
-	   if (dist < 0) {
-		  vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
-		  p.force += penaltyforce;
-	   }
+	   //Step 3 perform position update
+
+
+	   //if (dist < 0) {
+		 // vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
+		 // p.force += penaltyforce;
 		  // world::ground->p.position[1]
 		//   vec3 contactforce = -((g_penaltyKs*(dist - 0) + g_penaltyKd*() * (diff/dist);
 	   //}
 	   // p.velocity += p.velocity - 2 * (dot)*normal * restitcoeff;
-	   //p.force = ; 
 		   // TODO
-	   // apply penalty force using g_penaltyKs and g_penaltyKd
-	   // pt.force = penalty ks and kd
+
     }
 }
 
@@ -499,15 +509,16 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
 		vec3 diff = -dist * normal;
-		vec3 velocity = pt.velocity;
-		double velocityN = velocity * normal;
-		double restitution = 0.7;
+	
+		//vec3 velocity = pt.velocity;
+		//double velocityN = velocity * normal;
+		//double restitution = 0.7;
 
-		if (dist < EPSILON)
-		{
-			vec3 collvelocity = pt.velocity - 2 * velocityN * normal * restitution;
-			pt.velocity += collvelocity;
-		}
+		//if (dist < EPSILON)
+		//{
+			//vec3 collvelocity = pt.velocity - 2 * velocityN * normal * restitution;
+			//pt.velocity += collvelocity;
+		//}
 	}
 }
 
