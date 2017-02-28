@@ -197,11 +197,11 @@ void JelloMesh::InitJelloMesh()
 				if (i < m_rows) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k));
 				if (k < m_stacks) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 1));
 	
-				if (i < m_rows && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k));
+				if (i < m_rows && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i+1, j + 1, k));
 				if (i < m_rows && j > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j - 1, k));
-				if (j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 1));
+				if (i < m_rows && k > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i+1, j, k - 1));
 				if (j < m_cols && k > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k - 1));
-				if (i < m_rows && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k));
+				if (i < m_rows && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k+1));
 				if (j > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j - 1, k + 1));
 	
 				if (j < m_cols - 1) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 2, k));
@@ -487,16 +487,8 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   double restco = 0.9; // coefficient of restitution
 	   vec3 velocity = p.velocity;
 
-	   p.force = (g_penaltyKs * dist + (g_penaltyKd * (Dot(p.velocity, contact.m_normal*dist))/dist)) * ((contact.m_normal* dist)/ abs(contact.m_distance)); //penalty 
-	   p.velocity = vec3(0.0, 0.5, 0.0);
-
-	   //Step 1 perform velocity update
-	   //Step 2 compute contact impulse
-	   //Step 3 perform position update
-
-	   //p.velocity = p.velocity - (2 * (velocity * normal)*normal* restco);
-	   //p.position = p.position + (dist * normal);
-	   //p.force = dist * normal;
+	   p.force = (g_penaltyKs * dist + (g_penaltyKd * (Dot(p.velocity, contact.m_normal*dist))/dist)) * ((contact.m_normal* dist)/ abs(contact.m_distance)); //contact impulse using penalty
+	   p.velocity = vec3(0.0, 1.0, 0.0); // perform velocity update
     }
 }
 
