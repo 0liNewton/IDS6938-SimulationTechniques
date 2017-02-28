@@ -3,16 +3,16 @@
 #include <algorithm>
 
 // TODO
-double JelloMesh::g_structuralKs = 300.0; 
-double JelloMesh::g_structuralKd = 10.0; 
-double JelloMesh::g_attachmentKs = 0.0;
-double JelloMesh::g_attachmentKd = 0.0;
-double JelloMesh::g_shearKs = 0.0;
-double JelloMesh::g_shearKd = 0.0;
-double JelloMesh::g_bendKs = 0.0;
-double JelloMesh::g_bendKd = 0.0;
-double JelloMesh::g_penaltyKs = 1000.0;
-double JelloMesh::g_penaltyKd = 500.0;
+double JelloMesh::g_structuralKs = 3000.0; // 1000s 
+double JelloMesh::g_structuralKd = 6.0; // less than 10
+double JelloMesh::g_attachmentKs = 1000.0;
+double JelloMesh::g_attachmentKd = 5.0;
+double JelloMesh::g_shearKs = 2000.0; // 1000s
+double JelloMesh::g_shearKd = 4.0; // less than 10
+double JelloMesh::g_bendKs = 3800.0; // 1000s
+double JelloMesh::g_bendKd = 9.0; // less than 10, bend is largest
+double JelloMesh::g_penaltyKs = 1000.0; // 1000s
+double JelloMesh::g_penaltyKd = 5.0; // less than 10
 
 JelloMesh::JelloMesh() :     
     m_integrationType(JelloMesh::RK4), m_drawflags(MESH | STRUCTURAL),
@@ -187,15 +187,26 @@ void JelloMesh::InitJelloMesh()
 
     // Setup structural springs
     ParticleGrid& g = m_vparticles;
-    for (int i = 0; i < m_rows+1; i++)
-    {
-        for (int j = 0; j < m_cols+1; j++)
-        {
-            for (int k = 0; k < m_stacks+1; k++)
-            {
-                if (j < m_cols) AddStructuralSpring(GetParticle(g,i,j,k), GetParticle(g,i,j+1,k));
-                if (i < m_rows) AddStructuralSpring(GetParticle(g,i,j,k), GetParticle(g,i+1,j,k));
-                if (k < m_stacks) AddStructuralSpring(GetParticle(g,i,j,k), GetParticle(g,i,j,k+1));
+	for (int i = 0; i < m_rows + 1; i++)
+	{
+		for (int j = 0; j < m_cols + 1; j++)
+		{
+			for (int k = 0; k < m_stacks + 1; k++)
+			{
+				if (j < m_cols) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k));
+				if (i < m_rows) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k));
+				if (k < m_stacks) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 1));
+	
+				if (i < m_rows && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k));
+				if (i < m_rows && j > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j - 1, k));
+				if (j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 1));
+				if (j < m_cols && k > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k - 1));
+				if (i < m_rows && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k));
+				if (j > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j - 1, k + 1));
+	
+				if (j < m_cols - 1) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 2, k));
+				if (i < m_rows - 1) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i + 2, j, k));
+				if (k < m_stacks - 1) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 2));
             }
         }
     }
@@ -455,7 +466,7 @@ void JelloMesh::ComputeForces(ParticleGrid& grid)
 		vec3 diff = a.position - b.position; //a is anchor position and b is current position
 		double dist = diff.Length();
 		if (dist != 0) {
-			vec3 force = -(spring.m_Ks*(dist - spring.m_restLen) + spring.m_Kd*(b.velocity - a.velocity)*diff / dist) * (diff / dist); // FORCE EQUATION
+			vec3 force = -(spring.m_Ks*(dist - spring.m_restLen) + spring.m_Kd*((b.velocity - a.velocity)*diff) / dist) * (diff / dist); // FORCE EQUATION
 			a.force += force;
 			b.force += -force;   //  Newtons 3rd law
 		}
@@ -469,36 +480,23 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
        const Intersection& contact = m_vcontacts[i];
        Particle& p = GetParticle(grid, contact.m_p);
        vec3 normal = contact.m_normal; 
+
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
-	   double restco = 0.7; // coefficient of restitution
+
+	   double restco = 0.9; // coefficient of restitution
 	   vec3 velocity = p.velocity;
 
-	   //double velocityN = velocity * normal;
-	   p.velocity = p.velocity - (2 * (velocity * normal)*normal* restco);
-	   p.position = p.position + (dist * normal);
+	   p.force = (g_penaltyKs * dist + (g_penaltyKd * (Dot(p.velocity, contact.m_normal*dist))/dist)) * ((contact.m_normal* dist)/ abs(contact.m_distance)); //penalty 
+	   p.velocity = vec3(0.0, 0.5, 0.0);
 
 	   //Step 1 perform velocity update
-	   //vec3 projectedV = velocityN * normal; //projected velocity
-	   //vec3 reflectedV = p.velocity - 2 * projectedV * restco;
-	  // p.velocity = reflectedV;
-
 	   //Step 2 compute contact impulse
-	  // vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
-	  // p.force += penaltyforce;
-
 	   //Step 3 perform position update
 
-
-	   //if (dist < 0) {
-		 // vec3 penaltyforce = -1 * ((g_penaltyKs * (dist - 0) + g_penaltyKd*(p.velocity * diff))*diff);
-		 // p.force += penaltyforce;
-		  // world::ground->p.position[1]
-		//   vec3 contactforce = -((g_penaltyKs*(dist - 0) + g_penaltyKd*() * (diff/dist);
-	   //}
-	   // p.velocity += p.velocity - 2 * (dot)*normal * restitcoeff;
-		   // TODO
-
+	   //p.velocity = p.velocity - (2 * (velocity * normal)*normal* restco);
+	   //p.position = p.position + (dist * normal);
+	   //p.force = dist * normal;
     }
 }
 
@@ -510,21 +508,12 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         Particle& pt = GetParticle(grid, result.m_p);
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
-		vec3 diff = -dist * normal;
-		double restco = 0.7; //restitution coefficient
+		double restco = 0.9; //restitution coefficient
 		vec3 velocity = pt.velocity;
 
 		pt.velocity = pt.velocity + (-2 * (velocity*normal)*normal*restco);
-		pt.position = pt.position + (dist * normal);
-		//vec3 velocity = pt.velocity;
-		//double velocityN = velocity * normal;
-		//double restitution = 0.7;
-
-		//if (dist < EPSILON)
-		//{
-			//vec3 collvelocity = pt.velocity - 2 * velocityN * normal * restitution;
-			//pt.velocity += collvelocity;
-		//}
+		//pt.position = pt.position + (dist * normal);
+	
 	}
 }
 
