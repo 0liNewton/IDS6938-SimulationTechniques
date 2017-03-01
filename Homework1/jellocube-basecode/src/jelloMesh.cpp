@@ -500,22 +500,21 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
-
-	   vec3 velocity = p.velocity;
-	   
-	   vec3 normalized_pos = contact.m_normal*contact.m_distance / abs(contact.m_distance);
-
-	   double eforce = g_penaltyKs * dist; //elastic force
-	   double dforce = g_penaltyKd * (Dot(velocity, diff)/dist); // damping force
 	   
 	   //Hook's law
 	   // F(sub a) = [Ks * (|l| - r) + Kd*((i - l)/|l|)] / (l(|l|)
 	   // i = velocity(sub a) - velocity(sub b)
 	   // l = a - b (rest length)
+	   vec3 velocity = p.velocity;
+	   vec3 normalized_pos = contact.m_normal*contact.m_distance / abs(contact.m_distance); //(l(|l|)
 
-	   vec3 force = -(eforce + dforce) * (normalized_pos); //contact impulse using penalty  
+	   double eforce = g_penaltyKs * dist; //elastic force
+	   double dforce = g_penaltyKd * (Dot(velocity, diff) / dist); // damping force
+
+
+	   vec3 force = (eforce + dforce) * (normalized_pos); //contact impulse using penalty  
 	   p.velocity = vec3(0.0, 1.0, 0.0); //
-	   p.force += force;
+	   //p.force += force;
     }
 }
 
@@ -531,7 +530,7 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
 		vec3 velocity = pt.velocity;
 
 		// reflected velocity = starting velocity - 2 (starting velocity * normal) * normal * coefficient of restitution
-		pt.velocity = pt.velocity - 2.0 * (velocity * normal)*normal*restco;
+		pt.velocity = pt.velocity - (2.0 * (velocity * normal))*normal*restco;
 		
 	}
 }
@@ -573,17 +572,19 @@ bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
 	vec3 cylinderAxis = cylinderEnd - cylinderStart;
 	double cylinderRadius = cylinder->r;
 
+
 	//if (p.position[1] < ) {
 		//result.m_p = p.index; //calling a class and changing the variable?
    // result.m_distance = p.position[1];
-   // result.m_normal = vec3(0.0, 1.0, 0.0);  radius
+   // result.m_normal = radius;
  //  result.m_type = CONTACT;
 	//}
+
 	// // other condition 
 	//else if (p.position[1] < 0.0 + 0.5) {
 	//	result.m_p = p.index;
 		//	result.m_distance = 0.5 - p.position[1];
-		//	result.m_normal = vec3(0.0, 1.0, 0.0); radius
+		//	result.m_normal = radius;
 		//result.m_type = COLLISION;
 		//	return true;
 		//}
