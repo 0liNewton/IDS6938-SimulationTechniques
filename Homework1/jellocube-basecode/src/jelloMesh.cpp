@@ -507,14 +507,13 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   // l = a - b (rest length)
 	   vec3 velocity = p.velocity;
 	   vec3 normalized_pos = contact.m_normal*contact.m_distance / abs(contact.m_distance); //(l(|l|)
-
 	   double eforce = g_penaltyKs * dist; //elastic force
 	   double dforce = g_penaltyKd * (Dot(velocity, diff) / dist); // damping force
 
 
 	   vec3 force = (eforce + dforce) * (normalized_pos); //contact impulse using penalty  
 	   p.velocity = vec3(0.0, 1.0, 0.0); //
-	   //p.force += force;
+	   p.force = p.force + force;
     }
 }
 
@@ -531,7 +530,7 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
 
 		// reflected velocity = starting velocity - 2 (starting velocity * normal) * normal * coefficient of restitution
 		pt.velocity = pt.velocity - (2.0 * (velocity * normal))*normal*restco;
-		
+		//pt.position = pt.position + normal*dist;
 	}
 }
 
@@ -567,21 +566,24 @@ bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
 	JelloMesh::Intersection& result)
 {
-	vec3 cylinderStart = cylinder->start;
-	vec3 cylinderEnd = cylinder->end;
-	vec3 cylinderAxis = cylinderEnd - cylinderStart;
+	vec3 cylinderStart = cylinder->start; // Julie wolfram link: cylinderStart is x1
+	vec3 cylinderEnd = cylinder->end; // Julie wolfram link: cylinderEnd is x2 and p.position is x0
+	vec3 cylinderAxis = cylinderEnd - cylinderStart; // x2 - x1
 	double cylinderRadius = cylinder->r;
 
+	//time = (x1-x0) * (x2 - x1) / |x2 - x1|
+	//double time = ((cylinderStart - p.position)* cylinderAxis) / (cylinderAxis.Length()*cylinderAxis.Length()); //using .length to get absolute value
 
-	//if (p.position[1] < ) {
-		//result.m_p = p.index; //calling a class and changing the variable?
-   // result.m_distance = p.position[1];
-   // result.m_normal = radius;
- //  result.m_type = CONTACT;
+	//if (p.position[1] < cylinderRadius) {
+	//result.m_p = p.index; //calling a class and changing the variable?
+   //result.m_distance = p.position[1];
+   //result.m_normal = radius;
+   //result.m_type = CONTACT;
+   //return true;
 	//}
 
-	// // other condition 
-	//else if (p.position[1] < 0.0 + 0.5) {
+	// other condition 
+	//else if (p.position[1] < cylinderRadius) {
 	//	result.m_p = p.index;
 		//	result.m_distance = 0.5 - p.position[1];
 		//	result.m_normal = radius;
