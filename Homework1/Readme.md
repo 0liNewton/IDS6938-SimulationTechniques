@@ -3,6 +3,8 @@
 ###Olivia Newton  |	Spring 2017
 
  Due: Monday, February 27 at 11:59PM | Requesting three extra days
+ 
+ Acknowledgments: This assignment was completed in collaboration with other students during study groups. Special thanks to Karla Badillo, Sarah Matthews, and Ashley Reardon for their help. 
 
 ###Part 1
 |x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
@@ -152,3 +154,5 @@ There are three integration meethods with , RK1, RK2, and RK4. RK1 solutions are
 
 - **How would you model and simulate water (in terms of a continuous simulation)?**
 ...
+
+###References
