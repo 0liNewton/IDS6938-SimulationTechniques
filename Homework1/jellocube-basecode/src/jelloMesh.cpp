@@ -3,16 +3,16 @@
 #include <algorithm>
 
 // TODO
-double JelloMesh::g_structuralKs = 3000.0; // 1000s 
-double JelloMesh::g_structuralKd = 6.0; // less than 10
+double JelloMesh::g_structuralKs = 6000.0; // 1000s 
+double JelloMesh::g_structuralKd = 2.0; // less than 10
 double JelloMesh::g_attachmentKs = 1000.0;
 double JelloMesh::g_attachmentKd = 5.0;
 double JelloMesh::g_shearKs = 2000.0; // 1000s
 double JelloMesh::g_shearKd = 4.0; // less than 10
 double JelloMesh::g_bendKs = 3800.0; // 1000s
-double JelloMesh::g_bendKd = 9.0; // less than 10, bend is largest
-double JelloMesh::g_penaltyKs = 100000.0; // 1000s
-double JelloMesh::g_penaltyKd = 5.0; // less than 10
+double JelloMesh::g_bendKd = 7.0; // less than 10, bend is largest
+double JelloMesh::g_penaltyKs = 10000.0; // 1000s
+double JelloMesh::g_penaltyKd = 2.0; // less than 10
 
 JelloMesh::JelloMesh() :     
     m_integrationType(JelloMesh::RK4), m_drawflags(MESH | STRUCTURAL),
@@ -501,18 +501,21 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 	   double dist = contact.m_distance;
 	   vec3 diff = -dist * normal;
 
-	   double restco = 0.8; // coefficient of restitution
-
 	   vec3 velocity = p.velocity;
 	   
 	   vec3 normalized_pos = contact.m_normal*contact.m_distance / abs(contact.m_distance);
+
 	   double eforce = g_penaltyKs * dist; //elastic force
 	   double dforce = g_penaltyKd * (Dot(velocity, diff)/dist); // damping force
 	   
-	   
-	   vec3 force = (eforce + dforce) * (normalized_pos); //contact impulse using penalty
+	   //Hook's law
+	   // F(sub a) = [Ks * (|l| - r) + Kd*((i - l)/|l|)] / (l(|l|)
+	   // i = velocity(sub a) - velocity(sub b)
+	   // l = a - b (rest length)
+
+	   vec3 force = -(eforce + dforce) * (normalized_pos); //contact impulse using penalty  
+	   p.velocity = vec3(0.0, 1.0, 0.0); //
 	   p.force += force;
-	  // p.velocity = vec3(0.0, 1.0, 0.0); // perform velocity update?
     }
 }
 
@@ -524,14 +527,12 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
         Particle& pt = GetParticle(grid, result.m_p);
         vec3 normal = result.m_normal;
         float dist = result.m_distance;
-		double restco = 0.9; //coefficient of restitution
+		double restco = 0.9; //coefficient of restitution (bounciness)
 		vec3 velocity = pt.velocity;
 
-		pt.velocity = pt.velocity - 2.0 * (velocity * normal)*normal*restco; // calculate reflection
-
-		//pt.velocity = pt.velocity + (-2 * (velocity*normal)*normal*restco);
-		//pt.position = pt.position + (dist * normal);
-	
+		// reflected velocity = starting velocity - 2 (starting velocity * normal) * normal * coefficient of restitution
+		pt.velocity = pt.velocity - 2.0 * (velocity * normal)*normal*restco;
+		
 	}
 }
 
@@ -545,15 +546,17 @@ bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 			intersection.m_distance = p.position[1];
 			intersection.m_normal = vec3(0.0, 1.0, 0.0);
 			intersection.m_type = CONTACT;
+			cout << "Houston we have contact" << endl;
 			return true;
 		}
 		// other condition 
-		else if (p.position[1] < 0.0 + 0.5) {
+		else if (p.position[1] <= 0.0 + 0.5) {
 
 			intersection.m_p = p.index;
 			intersection.m_distance = 0.5-p.position[1];
 			intersection.m_normal = vec3(0.0, 1.0, 0.0);
 			intersection.m_type = COLLISION;
+			cout << "Ayyyy" << endl;
 			return true;
 		}
 		// nothing happens
@@ -562,16 +565,32 @@ bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 		}
 }
 	
-bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder, 
-                              JelloMesh::Intersection& result)
+bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
+	JelloMesh::Intersection& result)
 {
-    vec3 cylinderStart = cylinder->start;
-    vec3 cylinderEnd = cylinder->end;
-    vec3 cylinderAxis = cylinderEnd - cylinderStart;
-   double cylinderRadius = cylinder->r; 
+	vec3 cylinderStart = cylinder->start;
+	vec3 cylinderEnd = cylinder->end;
+	vec3 cylinderAxis = cylinderEnd - cylinderStart;
+	double cylinderRadius = cylinder->r;
 
-    // TODO
-   return false;
+	//if (p.position[1] < ) {
+		//result.m_p = p.index; //calling a class and changing the variable?
+   // result.m_distance = p.position[1];
+   // result.m_normal = vec3(0.0, 1.0, 0.0);  radius
+ //  result.m_type = CONTACT;
+	//}
+	// // other condition 
+	//else if (p.position[1] < 0.0 + 0.5) {
+	//	result.m_p = p.index;
+		//	result.m_distance = 0.5 - p.position[1];
+		//	result.m_normal = vec3(0.0, 1.0, 0.0); radius
+		//result.m_type = COLLISION;
+		//	return true;
+		//}
+   //
+    //else {
+  return false;
+   //}
 }
 
 void JelloMesh::EulerIntegrate(double dt)
