@@ -17,7 +17,20 @@ Acknowledgments: This assignment was completed in part through collaboration wit
 y(x) = e^(x/2) * sin(5x)
 
 #####Step B
-y - (1.0 / 2.0) * pow(M_E, (x / 2.0)) * sin(5.0 * x) + 5.0 * pow(M_E, (x / 2.0)) * cos(5.0 * x)
+Compute the dy/dx
+
+double df(double x, double y)            //function for defining dy/dx
+{
+    return y - (1.0 / 2.0)*pow(M_E, (x / 2.0))*sin(5.0 * x) + 5.0 * pow(M_E, (x / 2.0))*cos(5.0 * x);
+}
+
+
+Compute the exact answer
+
+double exact(double x)            //function for defining dy/dx
+{
+    return pow(M_E, (x / 2.0))*sin(5.0 * x);
+}
 
 #####Steps C - E
 |x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
