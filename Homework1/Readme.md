@@ -12,8 +12,14 @@ Acknowledgments: This assignment was completed in part through collaboration wit
 
 
 ###Part 1: Numerical Analysis of Integration Functions
-####Numerical Methods - Solutions and Errors Percentages
 
+#####Step A
+y(x) = e^(x/2) * sin(5x)
+
+#####Step B
+y - (1.0 / 2.0) * pow(M_E, (x / 2.0)) * sin(5.0 * x) + 5.0 * pow(M_E, (x / 2.0)) * cos(5.0 * x)
+
+#####Steps C - E
 |x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 |--- | --- | --- | --- | --- | --- | --- | --- |
 |0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -142,7 +148,7 @@ Acknowledgments: This assignment was completed in part through collaboration wit
 | ![](images/errorpercentageatdiffsizes.PNG?raw=true) |
 
 
-####P1: Questions
+#####Step F
 
 - **Describe how varying the integration method changes the accuracy.**
 
@@ -160,6 +166,7 @@ Generally, the larger step sizes are less accurate relative to smaller step size
 - **Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
 The RK4 method is the most accurate. 
 
+## 
 
 ###Part 3 Questions
 
