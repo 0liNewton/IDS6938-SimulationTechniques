@@ -513,7 +513,7 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 
 	   vec3 force = (eforce + dforce) * (normalized_pos); //contact impulse using penalty  
 	   p.velocity = vec3(0.0, 1.0, 0.0); //
-	   p.force = p.force + force;
+	   //p.force = p.force + force;
     }
 }
 
@@ -564,34 +564,36 @@ bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
 }
 	
 bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
-	JelloMesh::Intersection& result)
+	JelloMesh::Intersection& result) // used wolfram link
 {
 	vec3 cylinderStart = cylinder->start; // Julie wolfram link: cylinderStart is x1
-	vec3 cylinderEnd = cylinder->end; // Julie wolfram link: cylinderEnd is x2 and p.position is x0
+	vec3 cylinderEnd = cylinder->end; // Julie wolfram link: cylinderEnd is x2
 	vec3 cylinderAxis = cylinderEnd - cylinderStart; // x2 - x1
-	double cylinderRadius = cylinder->r;
+	vec3 xzero = p.position; // point x0 = (x0, y0, z0)
+	double cylinderRadius = cylinder->r; //radius is used for m_distance
 
-	//time = (x1-x0) * (x2 - x1) / |x2 - x1|
-	//double time = ((cylinderStart - p.position)* cylinderAxis) / (cylinderAxis.Length()*cylinderAxis.Length()); //using .length to get absolute value
+	//time = (x1-x0) * (x2 - x1) / |x2 - x1| (Julie's wolfram link)
+	double time = -((cylinderStart - p.position)* cylinderAxis) / (cylinderAxis.Length()*cylinderAxis.Length()); //using .length to get absolute value
+	vec3 normal = xzero - (cylinderStart + time * cylinderAxis);
+	
+	// contact
+	if (normal.Length() < cylinderRadius) {
+		result.m_p = p.index;
+		result.m_distance = cylinderRadius - normal.Length();
+		result.m_normal = normal.Normalize();
+		result.m_type = CONTACT;
+		return true;
+	}
 
-	//if (p.position[1] < cylinderRadius) {
-	//result.m_p = p.index; //calling a class and changing the variable?
-   //result.m_distance = p.position[1];
-   //result.m_normal = radius;
-   //result.m_type = CONTACT;
-   //return true;
-	//}
-
-	// other condition 
-	//else if (p.position[1] < cylinderRadius) {
-	//	result.m_p = p.index;
-		//	result.m_distance = 0.5 - p.position[1];
-		//	result.m_normal = radius;
-		//result.m_type = COLLISION;
-		//	return true;
-		//}
-   //
-    //else {
+	// collision
+	else if (normal.Length() < cylinderRadius) {
+		result.m_p = p.index;
+		result.m_distance = normal.Length() - cylinderRadius;
+		result.m_normal = normal.Normalize();
+		result.m_type = COLLISION;
+		return true;
+	}
+    
   return false;
    //}
 }
