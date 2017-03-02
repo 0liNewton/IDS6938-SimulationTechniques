@@ -5,7 +5,7 @@
 ###Olivia Newton  |	Spring 2017
 
 
- Due: Wednesday, March 01 at 11:59PM | Requesting three extra days
+ Due: Wednesday, March 01 at 11:59PM | Requesting two extra days
 
 
 Acknowledgments: This assignment was completed in part through collaboration with other students during multiple study groups. Special thanks to Karla Badillo (floor intersection, resolve contacts & collisions), Sarah Matthews (resolve contacts & collisions), Alex Almodovar (springs, cylinder intersection), and Ashley Reardon (springs) for their help and guidance.
