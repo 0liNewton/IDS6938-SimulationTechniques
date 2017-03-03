@@ -141,8 +141,6 @@ double exact(double x) //function for defining dy/dx
 
 
 
-
-
 | RK1, RK2, & RK4 Numerical Integration Methods | 
 | ------------- | ------------- |
 | ![](images/solutions.PNG?raw=true)|
@@ -167,12 +165,12 @@ double exact(double x) //function for defining dy/dx
 
 - **Describe how varying the integration method changes the accuracy.**
 
-There are three integration meethods with , RK1, RK2, and RK4. RK1 solutions are the least accurate of all three methods. The calculation is ....
+There are three integration meethods of differing computational speeds and costs, Euler (RK1), Midpoint (RK2), and RK4. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions.
 
 
 - **What happens as you increase the x value to the accuracy?**
 
-...
+Although it is variable, the overall accuracy decreases as the x value increases.
 
 - **How does varying the step size effect the accuracy?**
 
@@ -192,7 +190,9 @@ Jello Cube Environment: https://youtu.be/REYR8a7NhQg
 
 >Create a movie of your jello cube that clearly explores the differences between integration types and spring stiffnesses, upload the video to youtube and link it in your assignment writeup.
 
-Differences - Integration Types & Spring Stiffness: 
+Differences
+- Integration Types (RK1 - RK4): https://youtu.be/gHvXueSoSaE
+- Spring Stiffness: 
 
 ## 
 

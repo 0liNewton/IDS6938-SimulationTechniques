@@ -618,7 +618,7 @@ void JelloMesh::EulerIntegrate(double dt)
 
 void JelloMesh::MidPointIntegrate(double dt)
 {
-	double  halfdt = 0.5 * dt;
+	double  halfdt = 0.5 * dt; //getting the midpoint
 	ParticleGrid target = m_vparticles;  // target is a copy!
 	ParticleGrid& source = m_vparticles;  // source is a ptr!
 
@@ -677,7 +677,7 @@ void JelloMesh::MidPointIntegrate(double dt)
 				Particle& k1 = GetParticle(accum1, i, j, k);
 				Particle& k2 = GetParticle(accum2, i, j, k);
 
-				p.velocity = p.velocity + dt * ((0.5 * p.force + 0.5 * k1.force) * 1 / p.mass); // Midpoint
+				p.velocity = p.velocity + dt * ((0.5 * p.force + 0.5 * k1.force) * 1 / p.mass);
 				p.position = p.position + dt * (0.5 * p.velocity + 0.5 * k1.velocity);
 			}
 		}
