@@ -186,13 +186,8 @@ The RK4 method is the most accurate.
 ###Part 2
 
 ####Extra Features
->Create a movie of your jello cube environment, upload the video to youtube and link it in your assignment writeup.
-
-YouTube Link.....
-
->Create a movie of your jello cube that clearly explores the differences between integration types and spring stiffnesses, upload the video to youtube and link it in your assignment writeup.
-
-YouTube Link.....
+- ....
+- .....
 
 
 ## 
