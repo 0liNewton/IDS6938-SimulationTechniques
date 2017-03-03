@@ -9,10 +9,10 @@ double JelloMesh::g_attachmentKs = 2000.0;
 double JelloMesh::g_attachmentKd = 4.0;
 double JelloMesh::g_shearKs = 1000.0; // 1000s
 double JelloMesh::g_shearKd = 4.0; // less than 10
-double JelloMesh::g_bendKs = 1500.0; // 1000s
-double JelloMesh::g_bendKd = 6.5; // less than 10
-double JelloMesh::g_penaltyKs = 8000.0; // 1000s
-double JelloMesh::g_penaltyKd = 5.0; // less than 10
+double JelloMesh::g_bendKs = 2000.0; // 1000s
+double JelloMesh::g_bendKd = 6.0; // less than 10
+double JelloMesh::g_penaltyKs = 100000.0; // 1000s
+double JelloMesh::g_penaltyKd = 6.0; // less than 10
 
 JelloMesh::JelloMesh() :     
     m_integrationType(JelloMesh::RK4), m_drawflags(MESH | STRUCTURAL),
@@ -198,18 +198,18 @@ void JelloMesh::InitJelloMesh()
 				if (k < m_stacks) AddStructuralSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 1));
 	
 				// Shear Springs
-				if (i < m_rows && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i+1, j + 1, k));
+				if (i < m_rows && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j + 1, k));
 				if (i < m_rows && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j, k + 1));
 				if (j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 1, k + 1));
 				
-				if (i > 0 && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i - 1, j + 1, k));
+				//if (i > 0 && j < m_cols) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i - 1, j + 1, k));
 				if (i < m_rows && j > 0) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j - 1, k));
 				if (i > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i - 1, j, k + 1));
 				if (j > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i, j - 1, k + 1));
 
-				//if (i < m_rows && j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j + 1, k + 1));
+				if (i < m_rows && j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j + 1, k + 1));
 				//if (i > 0 && j < m_cols && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i - 1, j + 1, k + 1));
-				//if (i < m_rows && j > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j - 1, k + 1));
+				if (i < m_rows && j > 0 && k < m_stacks) AddShearSpring(GetParticle(g, i, j, k), GetParticle(g, i + 1, j - 1, k + 1));
 	
 
 				// Bend Springs
@@ -221,9 +221,9 @@ void JelloMesh::InitJelloMesh()
 				if (i < m_rows - 2) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i + 3, j, k));
 				if (k < m_stacks - 2) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 3));
 
-				if (j < m_cols - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 4, k));
-				if (i < m_rows - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i + 4, j, k));
-				if (k < m_stacks - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 4));
+				//if (j < m_cols - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j + 4, k));
+				//if (i < m_rows - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i + 4, j, k));
+				//if (k < m_stacks - 3) AddBendSpring(GetParticle(g, i, j, k), GetParticle(g, i, j, k + 4));
             }
         }
     }
@@ -482,8 +482,11 @@ void JelloMesh::ComputeForces(ParticleGrid& grid)
 
 		vec3 diff = a.position - b.position; //a is anchor position and b is current position
 		double dist = diff.Length();
+
+		vec3 force = a.force + b.force;
+
 		if (dist != 0) {
-			vec3 force = -(spring.m_Ks*(dist - spring.m_restLen) + spring.m_Kd*((b.velocity - a.velocity)*diff) / dist) * (diff / dist); // FORCE EQUATION
+			force = -(spring.m_Ks*(dist - spring.m_restLen) + spring.m_Kd*((b.velocity - a.velocity)*diff) / dist) * (diff / dist); // FORCE EQUATION
 			a.force += force;
 			b.force += -force;   //  Newtons 3rd law
 		}
@@ -497,10 +500,13 @@ void JelloMesh::ResolveContacts(ParticleGrid& grid) // penetration
 		const Intersection& contact = m_vcontacts[i];
 		Particle& p = GetParticle(grid, contact.m_p);
 		vec3 normal = contact.m_normal;
+		
 		double dist = contact.m_distance;
 		vec3 diff = -dist * normal;
 		vec3 velocity = p.velocity;
+
 		vec3 normalized_pos = contact.m_normal*contact.m_distance / abs(contact.m_distance);
+
 		p.force = g_penaltyKs * (dist*normal) + g_penaltyKd * (Dot(velocity, diff) / dist) * normalized_pos; // elastic + damping force with penalty Ks/Kd
 		p.velocity = (vec3(0, 1, 0)*g_penaltyKd);
 		p.position = p.position - (dist*normal);
@@ -515,7 +521,7 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
 		Particle& pt = GetParticle(grid, result.m_p);
 		vec3 normal = result.m_normal;
 		float dist = result.m_distance;
-		double restco = 0.7; //coefficient of restitution (bounciness)
+		double restco = 0.9; //coefficient of restitution (bounciness)
 		vec3 velocity = pt.velocity;
 
 		// reflected velocity = starting velocity - 2 (starting velocity * normal) * normal * coefficient of restitution
