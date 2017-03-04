@@ -164,16 +164,16 @@ double exact(double x) //function for defining dy/dx
 
 >**Describe how varying the integration method changes the accuracy.**
 
-The three integration methods used in this assignment (Euler [RK1], Midpoint (RK2), & RK4) vary with regard to computational speed and cost, as well as accuracy. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions. These benefits come at the cost of accuracy. If we look at the Numerical Integration Solutions graph we can see how the Euler method solutions diverge drastically from the other methods and exact solutions. RK2 solutions are more computationally demanding than RK1 solution but they are also more accurate. In looking at the graph, we can see that the Midpoint solutions are far close to the exact soltuions compared to the Euler soltuions. The RK4 solution is the most accurate of all three methods; errors are so insignificant that the RK4 solutions line is hidden under the exact solutions line in the Numerical Integration Solutions graph.
+The three integration methods used in this assignment (Euler [RK1], Midpoint (RK2), & RK4) vary with regard to computational speed and cost, as well as accuracy. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions. These benefits come at the cost of accuracy. If we look at the Numerical Integration Solutions graph we can see how the Euler method solutions diverge drastically from the other methods and exact solutions. RK2 solutions are more computationally demanding than RK1 solution but they are also more accurate. In looking at the graph, we can see that the Midpoint solutions are far close to the exact soltuions compared to the Euler soltuions. The RK4 solutions are the most accurate of all three methods; errors are so insignificant that the RK4 solutions line is hidden under the exact solutions line in the Numerical Integration Solutions graph.
 
 
 >**What happens as you increase the x value to the accuracy?**
 
-As illustrated by the integration methods solutions table above, the accuracy of the solutions decreases as the x calue increases.
+As illustrated by the integration methods solutions table above, the accuracy of the solutions decreases as the x value increases.
 
 >**How does varying the step size effect the accuracy?**
 
-Larger step sizes are associated with decreased accuracy. If we look at the Error Percentage for RK4 graph, we can see that the smaller 0.2 step size has a consistently low error percentage wheras the larger 0.4 and 0.6 errors have greater variability in error percentages in addition to larger error percentages generally.
+Larger step sizes are associated with decreased accuracy. If we look at the Error Percentage for RK4 graph, we can see that the smaller 0.2 step size has a consistently low error percentage whereas the larger 0.4 and 0.6 step size are characterized by greater variability in error percentages in addition to larger error percentages generally.
 
 >**Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
 
@@ -193,11 +193,11 @@ Jello Cube Environment
 
 Integration Types (RK1, RK2, RK4): 
 - https://youtu.be/gHvXueSoSaE
-- Using the Euler method, the jello cube is very unstable and collapses on itself before exploding outwards. The Midpoint method produces a similiar result but slighly more time passees before the collapse and explosion. The RK4 method produces a far more stable jello cube. It does not collapse or explode at any point and hits the floor.
+- Using the Euler method, the jello cube is very unstable and collapses on itself before exploding outwards. The Midpoint method produces a similiar result but more time passees before the collapse and explosion. The RK4 method produces a far more stable jello cube. It does not collapse or explode at any point and stops at the floor.
 
 Spring Stiffness: 
 - https://youtu.be/VAUMj31SoEU
-- In the first first portion of this video the Kd values of structural and shear springs are two points higher than in the jello cube environment youtube video linked above.
+- In the first portion of this video the Kd values of structural and shear springs are two points higher than in the jello cube environment youtube video linked above.
 - In the second portion of this video only the Kd value of bend spring was changed; it was increased by 6 points.
 
 ## 
@@ -220,12 +220,12 @@ Water fountains, fireworks, explosions, and fluids are all systems that could be
 
 >**Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
 
-The jello behaves somewhat realistically. The jello falls and hits the ground, albeit slowly. The jello also jiggles slightly after falling. That being said, the jello fails to bounce and the jiggle is delayed. I wasn't able to perfect the forces or the collision so instead of bouncing the jello jiggles off the ground at different points across time. I chose the RK4 method as it was the most stable and produced the desired results, at least to the best of my ability.
+The jello behaves somewhat realistically. The jello falls and hits the ground, albeit slowly. The jello also jiggles slightly after falling. That being said, the jello fails to bounce and the jiggle is delayed. I wasn't able to perfect the forces or the collision. Instead of bouncing the jello jiggles off of the ground at different points across time. I chose the RK4 method as it was the most stable and produced the desired results, at least to the best of my ability.
 
 
 >**How would you model and simulate water (in terms of a continuous simulation)?**
 
-An object with many particles would need to be created. Newtonian forces would be used to simulate the gravity's effect on the water. Spring forces, such as shear bend forces, could be used to create the waves and other fluid-like movement.
+An object with many particles would need to be created. Newtonian forces could be used to simulate the gravity's effect on the water. Spring forces, such as shear and bend forces, could be used to create the waves and other fluid-like movement.
 
 
 ## 
@@ -233,7 +233,6 @@ An object with many particles would need to be created. Newtonian forces would b
 
 ###References
 
-Cellier, F. E., & Kofman, E. (2006). Continuous system simulation. New York: Springer.
 
 Center for Fluid Mechanics, Division of Mathematics, Brown University. (n.d.). Euler’s Method, Taylor Series Method, Runge Kutta Methods, Multi-Step Methods and Stability. [Lecutre Review]. Retrieved from www.cfm.brown.edu/people/sg/AM35odes.pdf
 
