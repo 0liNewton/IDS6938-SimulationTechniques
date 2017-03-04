@@ -34,7 +34,7 @@ double exact(double x) //function for defining dy/dx
 }
 ```
 
-#####Steps C - E
+#####Step C
 |x | y (Euler) | y (midpoint) | y (RK4) | EXACT | %Err(E) | %Err(M) | %Err(RK4)|
 |--- | --- | --- | --- | --- | --- | --- | --- |
 |0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -145,12 +145,12 @@ double exact(double x) //function for defining dy/dx
 | ------------- | ------------- |
 | ![](images/solutions.PNG?raw=true)|
 
-
+#####Step D
 | Error | 
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) |
 
-
+#####Step E
 | Solutions at Different Stepsizes | 
 | ------------- | ------------- |
 | ![](images/rk4stepsizesandexact.PNG?raw=true)|
@@ -165,19 +165,20 @@ double exact(double x) //function for defining dy/dx
 
 - **Describe how varying the integration method changes the accuracy.**
 
-There are three integration meethods of differing computational speeds and costs, Euler (RK1), Midpoint (RK2), and RK4. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions.
+The three integration methods used in this assignment (Euler [RK1], Midpoint (RK2), & RK4) vary with regards to computational speed and cost, as well as accuracy. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions. These benefits come at the cost of accuracy. If we look at the Numerical Integration Solutions graph we can see how the Euler method solutions diverge drastically from the other methods and exact solutions. RK2 solutions are more computationally demanding than RK1 solution but they are also more accurate. In looking at the graph, we can see that the Midpoint solutions are far close to the exact soltuions compared to the Euler soltuions. The RK4 solution is the most accurate of all three methods; errors are so insignificant that the RK4 solutions line is hidden under the exact solutions line in the Numerical Integration Solutions graph.
 
 
 - **What happens as you increase the x value to the accuracy?**
 
-Although it is variable, the overall accuracy decreases as the x value increases.
+As demonstrated in the table above, the accuracy of the solutions decreases as the x calue increases.
 
 - **How does varying the step size effect the accuracy?**
 
-Generally, the larger step sizes are less accurate relative to smaller step sizes (e.g., h = 0.6 is less accurate than h = 0.2).
+Larger step sizes are associated with decreased accuracy. If we look at the Error Percentage for RK4 graph, we can see that the smaller 0.2 step size has a consistently low error percentage wheras the larger 0.4 and 0.6 errors have greater variability in error percentages in addition to larger error percentages generally.
 
 - **Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
-The RK4 method is the most accurate. 
+
+The RK4 method is the most accurate because it is a foourth order method. This method is more precise because it takes into account smaller step sizes. RK4 method is more accurate because it calculates approximate solutions at more, different points that the RK1 and RK2 methods. Specifically, the RK4 method "requires four evaluations...for every timestep"(p.5; Center for Fluid Mechanics).
 
 ## 
 
@@ -229,5 +230,9 @@ The jello behaves somewhat realistically. [describe why it is somewhat realistic
 
 
 ###References
+ 
+Center for Fluid Mechanics, Division of Mathematics, Brown University. (n.d.). Euler’s Method, Taylor Series Method, Runge Kutta Methods, Multi-Step Methods and Stability. [Lecutre Review]. Retrieved from www.cfm.brown.edu/people/sg/AM35odes.pdf
+
+Rivera, M. (n.d.). Jello Simulation. Retrieved from https://github.com/mriveralee/hair-simulation/tree/master/Jello%20Simulation
 
 Weisstein, Eric W. "Point-Line Distance--3-Dimensional." From [MathWorld](mathworld.wolfram.com)--A Wolfram Web Resource.
