@@ -529,7 +529,7 @@ void JelloMesh::ResolveCollisions(ParticleGrid& grid) // about to collide
 	}
 }
 
-bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection)
+bool JelloMesh::FloorIntersection(Particle& p, Intersection& intersection) // used Rivera (n.d.) as reference for code structure
 {
 
 		// hit the floor
@@ -564,15 +564,15 @@ bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
 	vec3 cylinderStart = cylinder->start; // Julie wolfram link: cylinderStart is x1
 	vec3 cylinderEnd = cylinder->end; // Julie wolfram link: cylinderEnd is x2
 	vec3 cylinderAxis = cylinderEnd - cylinderStart; // x2 - x1
-	//vec3 xzero = p.position; // point x0 = (x0, y0, z0)
+	vec3 xzero = p.position; // point x0 = (x0, y0, z0)
 	double cylinderRadius = cylinder->r; //radius is used for m_distance
-
+/*
 	//time = (x1-x0) * (x2 - x1) / |x2 - x1|
-	//double time = -((cylinderStart - p.position)* cylinderAxis) / (cylinderAxis.Length()*cylinderAxis.Length());
-	//vec3 normal = xzero - (cylinderStart + time * cylinderAxis);
+	double time = -((cylinderStart - p.position)* cylinderAxis) / (cylinderAxis.Length()*cylinderAxis.Length());
+	vec3 normal = xzero - (cylinderStart + time * cylinderAxis);
 	
 	// contact
-	/*if (normal.Length() < cylinderRadius) {
+	if (normal.Length() < cylinderRadius) {
 		result.m_p = p.index;
 		result.m_distance = cylinderRadius - normal.Length();
 		result.m_normal = normal.Normalize();
@@ -587,8 +587,7 @@ bool JelloMesh::CylinderIntersection(Particle& p, World::Cylinder* cylinder,
 		result.m_normal = normal.Normalize();
 		result.m_type = COLLISION;
 		return true;
-	}
-	*/
+	}*/
   return false;
 }
 

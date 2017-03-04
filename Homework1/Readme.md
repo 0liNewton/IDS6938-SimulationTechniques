@@ -7,8 +7,7 @@
 
  Due: Wednesday, March 01 at 11:59PM | Requesting two extra days
 
-
-Acknowledgments: This assignment was completed in part through collaboration with other students during multiple study groups. Special thanks to Karla Badillo (floor intersection, resolve contacts & collisions), Sarah Matthews (resolve contacts & collisions), Alex Almodovar (springs, cylinder intersection), and Ashley Reardon (springs) for their help and guidance.
+>Acknowledgments: This assignment was completed in part through collaboration with other students during multiple study groups. Special thanks to Karla Badillo (floor intersection, resolve contacts & collisions), Sarah Matthews (resolve contacts & collisions), Alex Almodovar (springs, cylinder intersection), and Ashley Reardon (springs) for their help and guidance.
 
 
 ###Part 1: Numerical Analysis of Integration Functions
@@ -39,17 +38,17 @@ double exact(double x) //function for defining dy/dx
 |--- | --- | --- | --- | --- | --- | --- | --- |
 |0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 |0.1| 0.5 | 0.509036927 | 0.50401476 | 0.504006212 | 0.01% | 0.01% | 0.00%|
-|0.2| 0.98608828 | 0.941891755 | 0.929983374 | 0.929969261 | 6.03% | 0.01% | 0.00%|
-|0.3| 1.336761843 | 1.178280127 | 1.158938591 | 1.158923832 | 0.15% | 0.02% | 0.00%|
-|0.4| 1.453584287 | 1.136380907 | 1.110627992 | 1.110618385 | 0.31% | 0.02% | 0.00%|
-|0.5| 1.28927035 | 0.798159298 | 0.768452619 | 0.768453444 | 0.68% | 0.04% | 0.00%|
-|0.6| 0.86543033 | 0.220768035 | 0.190477469 | 0.190492086 | 3.54% | 0.16% | 0.00%|
-|0.7| 0.274273714 | -0.470402004 | -0.49781389 | -0.497785095| -1.55%| -0.06% | 0.00%|
-|0.8| -0.337857308| -1.107144704 | -1.129056656| -1.129016654| -70.08%| -0.02% | 0.00%|
-|0.9| -0.802753055| -1.517667616 | -1.533117725| -1.533072395| -47.64%| -0.01% | 0.00%|
-|1  | -0.971671551| -1.570878628 | -1.581041974| -1.580998849| -38.54% | -0.01% | 0.00%|
-|1.1| -0.755948824| -1.214747006 | -1.222913458| -1.222879899| -38.18%| -0.01% | 0.00%|
-|1.2| -0.156247699| -0.498141061 | -0.509147006| -0.509128232| -69.31%| -0.02% | 0.00%|
+|0.2| 0.98608828 | 0.941891755 | 0.929983374 | 0.929969261 | 6.03% | 0.01% |0.00%|
+|0.3| 1.336761843 | 1.178280127 | 1.158938591 | 1.158923832 | 0.15% | 0.02%|0.00%|
+|0.4| 1.453584287 | 1.136380907 | 1.110627992 | 1.110618385 | 0.31% | 0.02%|0.00%|
+|0.5| 1.28927035 | 0.798159298 | 0.768452619 | 0.768453444 | 0.68% | 0.04%|0.00%|
+|0.6| 0.86543033 | 0.220768035 | 0.190477469 | 0.190492086 | 3.54% | 0.16%|0.00%|
+|0.7| 0.274273714 | -0.470402004 | -0.49781389 | -0.497785095| -1.55%| -0.06%|0.00%|
+|0.8| -0.337857308| -1.107144704 | -1.129056656| -1.129016654| -70.08%| -0.02%|0.00%|
+|0.9| -0.802753055| -1.517667616 | -1.533117725| -1.533072395| -47.64%| -0.01%|0.00%|
+|1  | -0.971671551| -1.570878628 | -1.581041974| -1.580998849| -38.54% | -0.01%|0.00%|
+|1.1| -0.755948824| -1.214747006 | -1.222913458| -1.222879899| -38.18%| -0.01%|0.00%|
+|1.2| -0.156247699| -0.498141061 | -0.509147006| -0.509128232| -69.31%| -0.02%|0.00%|
 |1.3| 0.728356108| 0.431273571| 0.412068581| 0.41207112|	0.77%| 0.05%|0.00%|
 |1.4|	1.715934898	 |	1.355046339 |	1.323019094	 |	1.323008542 |0.30%|0.02%|0.00%|
 |1.5|	2.580464313	 |	2.033306318	 |	1.985762151	 |	1.985745966 |0.30%|0.02%|0.00%|
@@ -77,7 +76,7 @@ double exact(double x) //function for defining dy/dx
 |3.7|	4.244893938	 |	-1.877962749 |	-2.178355567 |	-2.178114923|-2.95%|-0.14% |0.00%|
 |3.8|	7.765893459	 |	1.356347703	 |	1.001862248	 |	1.002063203	|6.75%|	0.35% |0.00%|
 |3.9|	11.797567	 |	4.68431418	 |	4.255978576	 |	4.256150562	|1.77%|	0.10% |0.00%|
-|4  |	15.56128357	 |	7.261608412	 |	6.745634215	 |	6.745803673	 |1.31%|0.08% |	0.00%|
+|4  |	15.56128357	 |	7.261608412	 |	6.745634215	 |	6.745803673	|1.31%|0.08% |0.00%|
 |4.1|	18.28779237	 |	8.351461123	 |	7.743070647	 |	7.743275262|1.36% |	0.08% |0.00%|
 |4.2|	19.42038688	 |	7.527669226	 |	6.8319912	 |	6.832272103|1.84% |	0.10% |0.00%|
 |4.3|	18.78438686	 |	4.818214028	 |	4.048561713	 |	4.048954056|3.64% |	0.19% |0.00%|
@@ -85,14 +84,14 @@ double exact(double x) //function for defining dy/dx
 |4.5|	13.83454839	 |	-3.755363171 |	-4.622839038 |	-4.62218308|-3.99%|	-0.19%|	0.00%|
 |4.6|	11.30627052	 |	-7.53999892	 |	-8.441122943 |	-8.440356708|-2.34%|-0.11%|0.00%|
 |4.7|	10.20162853	 |	-9.526142511 |	-10.46629701 |	-10.4654587|-1.97%|-0.09%|0.00%|
-|4.8|	11.42050818	 |	-8.98343453	 |	-9.983215155 |	-9.982350011|-2.14%|-0.10%|	0.00%|
-|4.9|	15.3995765	 |	-5.75964435	 |	-6.853708459 |	-6.852856091|-3.25%|-0.16%|	0.00%|
+|4.8|	11.42050818	 |	-8.98343453	 |	-9.983215155 |	-9.982350011|-2.14%|-0.10%|0.00%|
+|4.9|	15.3995765	 |	-5.75964435	 |	-6.853708459 |	-6.852856091|-3.25%|-0.16%|0.00%|
 |5  |	21.95465336	 |	-0.38078175	 |	-1.613192731 |	-1.612374396 |-14.62%|-0.76%|0.00%|
-|5.1|	30.26839856	 |	6.014645055	 |	4.597706732	 |	4.598497604 |5.58%|	0.31%|0.00%|
-|5.2|	39.04184528	 |	11.90757696	 |	10.26608596	 |	10.26688721 |2.80%|	0.16%|7.80E-07|
-|5.3|	46.78766159	 |	15.75373022	 |	13.86098924	 |	13.86186593 |2.38%|	0.14%|6.32E-07|
-|5.4|	52.20384861	 |	16.38289019	 |	14.22958423	 |	14.23061724 |2.67%|	0.15%|7.26E-07|
-|5.5|	54.53922906	 |	13.34297777	 |	10.93668465	 |	10.93795441 |3.99%|	0.22%|0.00%|
+|5.1|	30.26839856	 |	6.014645055	 |	4.597706732	 |	4.598497604 |5.58%|0.31%|0.00%|
+|5.2|	39.04184528	 |	11.90757696	 |	10.26608596	 |	10.26688721 |2.80%|0.16%|7.80E-07|
+|5.3|	46.78766159	 |	15.75373022	 |	13.86098924	 |	13.86186593 |2.38%|0.14%|6.32E-07|
+|5.4|	52.20384861	 |	16.38289019	 |	14.22958423	 |	14.23061724 |2.67%|0.15%|7.26E-07|
+|5.5|	54.53922906	 |	13.34297777	 |	10.93668465	 |	10.93795441 |3.99%|0.22%|0.00%|
 |5.6|	53.8548974	 |	7.093621803	 |	4.453381201	 |	4.454949997 |11.09%|0.59%|0.00%|
 |5.7|	51.10278291	 |	-1.016917323 |	-3.870136268 |	-3.868238693|-14.21%|-0.74%|0.00%|
 |5.8|	47.98174569	 |	-9.00825224	 |	-12.06319514 |	-12.06097868|-4.98%|-0.25%|0.00%|
@@ -124,61 +123,61 @@ double exact(double x) //function for defining dy/dx
 |8.4|	617.2422193	 |	-20.94381739 |	-61.14646828 |-61.11945935|-11.10%|-0.66%|0.00%|
 |8.5|	668.6856376	 |	-25.78002003 |	-69.86074193|-69.83105503|-10.58%|-0.63%|0.00%|
 |8.6|	742.143842	 |	-12.83269433 |	-61.33393679|-61.30162694|-13.11%|-0.79%|0.00%|
-|8.7|	839.8791755	 |	17.61878775	 |	-35.97067969 |	-35.93571326|-24.37%|-1.49%|0.00%|
-|8.8|	959.984196	 |	60.84206991	 |	1.404009713	 |	1.441837177	|664.81%|41.20%|0.03%|
-|8.9|	1096.629577	 |	108.4273937	 |	42.33439851	 |	42.37551737	|24.88%	|1.56%|0.00%|
-|9  |	1241.37688	 |	150.1023432	 |	76.55081616	 |	76.59589429	|15.21%|0.96%|0.00%|
-|9.1|	1385.328763	 |	176.2233273	 |	94.44915487	 |	94.49905918	|13.66%|0.86%|0.00%|
-|9.2|	1521.647688	 |	180.3673069	 |	89.65808285	 |	89.71379662	|15.96%|1.01%|0.00%|
-|9.3|	1647.829303	 |	161.3606021	 |	61.03567726	 |	61.09819136	|25.97%|1.64%|0.00% |
-|9.4|	1767.116099	 |	124.1582495	 |	13.51631062	 |	13.58651544	|129.06% |8.14%|0.01%|
-|9.5|	1888.596144	 |	79.22459545	 |	-42.53333378 |	-42.45472598|-45.49%|-2.87%|0.00%|
-|9.6|	2025.825999	 |	40.4187988	 |	-93.43846738 |	-93.35094466|-22.70%|-1.43%|0.00%|
-|9.7|	2194.184043	 |	21.77807556	 |	-125.4239703 |	-125.3271744|-18.51%|-1.17%|0.00%|
-|9.8| 2407.512568 | 33.91946812 | -128.1856199| -128.0792336| -19.80%|-1.26%|0.00%|
-|9.9| 2674.851039 | 80.95594681 | -97.93441991| -97.81800842| -28.35%|-1.83%|0.00%|
-|10 | 2998.124017 | 158.7831645 | -39.0670402 | -38.93988091| -77.99%|-5.08%|0.00%|
+|8.7|	839.8791755	 |	17.61878775	 |	-35.97067969 |-35.93571326|-24.37%|-1.49%|0.00%|
+|8.8|	959.984196	 |	60.84206991	 |	1.404009713	 |1.441837177	|664.81%|41.20%|0.03%|
+|8.9|	1096.629577	 |	108.4273937	 |	42.33439851	 |42.37551737	|24.88%	|1.56%|0.00%|
+|9  |	1241.37688	 |	150.1023432	 |	76.55081616	 |76.59589429	|15.21%|0.96%|0.00%|
+|9.1|	1385.328763	 |	176.2233273	 |	94.44915487	 |94.49905918	|13.66%|0.86%|0.00%|
+|9.2|	1521.647688	 |	180.3673069	 |	89.65808285	 |89.71379662	|15.96%|1.01%|0.00%|
+|9.3|	1647.829303	 |	161.3606021	 |	61.03567726	 |61.09819136	|25.97%|1.64%|0.00%|
+|9.4|	1767.116099	 |	124.1582495	 |	13.51631062	 |13.58651544	|129.06%|8.14%|0.01%|
+|9.5|	1888.596144	 |	79.22459545	 |	-42.53333378 |-42.45472598|-45.49%|-2.87%|0.00%|
+|9.6|	2025.825999	 |	40.4187988	 |	-93.43846738 |-93.35094466|-22.70%|-1.43%|0.00%|
+|9.7|	2194.184043	 |	21.77807556	 |	-125.4239703 |-125.3271744|-18.51%|-1.17%|0.00%|
+|9.8| 2407.512568 | 33.91946812 | -128.1856199| -128.0792336|-19.80%|-1.26%|0.00%|
+|9.9| 2674.851039 | 80.95594681 | -97.93441991| -97.81800842|-28.35%|-1.83%|0.00%|
+|10 | 2998.124017 | 158.7831645 | -39.0670402 | -38.93988091|-77.99%|-5.08%|0.00%|
 
 
 
-| RK1, RK2, & RK4 Numerical Integration Methods | 
+| RK1, RK2, & RK4 Numerical Integration Methods |
 | ------------- | ------------- |
 | ![](images/solutions.PNG?raw=true)|
 
 #####Step D
-| Error | 
+| Error |
 | ------------- | ------------- |
 | ![](images/error.PNG?raw=true) |
 
 #####Step E
-| Solutions at Different Stepsizes | 
+| Solutions at Different Stepsizes |
 | ------------- | ------------- |
 | ![](images/rk4stepsizesandexact.PNG?raw=true)|
 
 
-| RK4 Stepsizes - Error | 
+| RK4 Stepsizes - Error |
 | ------------- | ------------- |
 | ![](images/errorpercentageatdiffsizes.PNG?raw=true) |
 
 
 #####Step F
 
-- **Describe how varying the integration method changes the accuracy.**
+>**Describe how varying the integration method changes the accuracy.**
 
 The three integration methods used in this assignment (Euler [RK1], Midpoint (RK2), & RK4) vary with regards to computational speed and cost, as well as accuracy. RK1 solutions are the least accurate of all three methods but they are cheap and fast. In other words, these solutions are caluclated the fastest and are the least expensive in terms of computational power relative to the other integration methods' solutions. These benefits come at the cost of accuracy. If we look at the Numerical Integration Solutions graph we can see how the Euler method solutions diverge drastically from the other methods and exact solutions. RK2 solutions are more computationally demanding than RK1 solution but they are also more accurate. In looking at the graph, we can see that the Midpoint solutions are far close to the exact soltuions compared to the Euler soltuions. The RK4 solution is the most accurate of all three methods; errors are so insignificant that the RK4 solutions line is hidden under the exact solutions line in the Numerical Integration Solutions graph.
 
 
-- **What happens as you increase the x value to the accuracy?**
+>**What happens as you increase the x value to the accuracy?**
 
-As demonstrated in the table above, the accuracy of the solutions decreases as the x calue increases.
+As illustrated by the integration methods solutions table above, the accuracy of the solutions decreases as the x calue increases.
 
-- **How does varying the step size effect the accuracy?**
+>**How does varying the step size effect the accuracy?**
 
 Larger step sizes are associated with decreased accuracy. If we look at the Error Percentage for RK4 graph, we can see that the smaller 0.2 step size has a consistently low error percentage wheras the larger 0.4 and 0.6 errors have greater variability in error percentages in addition to larger error percentages generally.
 
-- **Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
+>**Which method is the most accurate and why (in particular explain what is taken to account in the solution)?**
 
-The RK4 method is the most accurate because it is a foourth order method. This method is more precise because it takes into account smaller step sizes. RK4 method is more accurate because it calculates approximate solutions at more, different points that the RK1 and RK2 methods. Specifically, the RK4 method "requires four evaluations...for every timestep"(p.5; Center for Fluid Mechanics).
+The RK4 method is the most accurate because it is a fourth order method. This method is more precise because it takes into account more points at all stepsizes. The RK4 method is more accurate because it calculates approximate solutions at more, different points that the RK1 and RK2 methods. Specifically, the RK4 method "requires four evaluations...for every timestep"(p.5; Center for Fluid Mechanics). For the sake of comparison, it is worth mentioning that the RK2 method requires 2 evaluations, or looking at 2 points, the start point and the midpoint.
 
 ## 
 
@@ -187,51 +186,58 @@ The RK4 method is the most accurate because it is a foourth order method. This m
 ####Extra Features
 >Create a movie of your jello cube environment, upload the video to youtube and link it in your assignment writeup.
 
-Jello Cube Environment: https://youtu.be/REYR8a7NhQg
+Jello Cube Environment
+- https://youtu.be/REYR8a7NhQg
 
 >Create a movie of your jello cube that clearly explores the differences between integration types and spring stiffnesses, upload the video to youtube and link it in your assignment writeup.
 
-Differences
-- Integration Types (RK1 - RK4): https://youtu.be/gHvXueSoSaE
-- Spring Stiffness: 
+Integration Types (RK1, RK2, RK4): 
+- https://youtu.be/gHvXueSoSaE
+- Using the Euler method, the jello cube is very unstable and collapses on itself before exploding outwards. The Midpoint method produces a similiar result but slighly more time passees before the collapse and explosion. The RK4 method produces a far more stable jello cube. It does not collapse or explode at any point and hits the floor.
+
+Spring Stiffness: 
+- https://youtu.be/VAUMj31SoEU
+- In the first first portion of this video the Kd values of structural and shear springs are two points higher than in the jello cube environment youtube video linked above.
+- In the second portion of this video only the Kd value of bend spring was changed; it was increased by 6 points.
 
 ## 
 
 ###Part 3 Questions
 
+>**What is the effect of the Ks and Kd parameters on the jello?**
 
-- **What is the effect of the Ks and Kd parameters on the jello?**
-
-The Ks parameter is ....... The Kd parameter is a damping force.
-
+The Ks parameter affects the elasticity of the jello while the Kd parameter affects the stiffness of the jello. In terms of Hooke's law, these parameters can also be described as an elastic force and a damping force, respectively. The Ks and Kd parameters influence the velocity of the jello.
 
 
-- **What are the benefits and the drawbacks of the collision system used here? What are some different ways in which it could be improved?**
+>**What are the benefits and the drawbacks of the collision system used here? What are some different ways in which it could be improved?**
 
-....
-
-
-
-- **What are some example systems you could model with Mass-spring simulations? Explain how you would you construct the model.**
-
-...
+The benefit of this system is that it seems to be relatively simple and quick. However, the collision system in its current state is limited. Its simplicity could also be considered a drawback. 
 
 
-
-- **Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
-
-The jello behaves somewhat realistically. [describe why it is somewhat realistic]. I used the RK4 method to make the jello stable. The Euler and Midpoint methods result in explosions and no movement, respectively.
+>**What are some example systems you could model with Mass-spring simulations? Explain how you would you construct the model.**
+Water fountains, fireworks, explosions, and fluids are all systems that could be modeled with mass-spring simulation (Kider, 2017). For fireworks, one would need to construct lines of particles which extend before diminishing entirely emitting from various points in the simulation space. The lines of particles would be influenced by external forces.
 
 
+>**Does the jello behave realistically? What integration method did you choose to make the Jello stable?**
 
-- **How would you model and simulate water (in terms of a continuous simulation)?**
+The jello behaves somewhat realistically. The jello falls and hits the ground, albeit slowly. The jello also jiggles slightly after falling. That being said, the jello fails to bounce and the jiggle is delayed. I wasn't able to perfect the forces or the collision so instead of bouncing the jello jiggles off the ground at different points across time. I chose the RK4 method as it was the most stable and produced the desired results, at least to the best of my ability.
 
-...
+
+>**How would you model and simulate water (in terms of a continuous simulation)?**
+
+An object with many particles would need to be created. Newtonian forces would be used to simulate the gravity's effect on the water. Spring forces, such as shear bend forces, could be used to create the waves and other fluid-like movement.
+
+
+## 
 
 
 ###References
- 
+
+Cellier, F. E., & Kofman, E. (2006). Continuous system simulation. New York: Springer.
+
 Center for Fluid Mechanics, Division of Mathematics, Brown University. (n.d.). Euler’s Method, Taylor Series Method, Runge Kutta Methods, Multi-Step Methods and Stability. [Lecutre Review]. Retrieved from www.cfm.brown.edu/people/sg/AM35odes.pdf
+
+Kider, J. (2017). Particle Systems in Practice [Online Course]. Retrieved March 3, 2017, from https://webcourses.ucf.edu/courses/1246518/pages/particle-systems-in-practice?module_item_id=10539184
 
 Rivera, M. (n.d.). Jello Simulation. Retrieved from https://github.com/mriveralee/hair-simulation/tree/master/Jello%20Simulation
 
