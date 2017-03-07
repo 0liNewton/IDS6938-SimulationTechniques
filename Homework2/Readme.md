@@ -18,7 +18,7 @@ Major parts for the Assignment
 You can think of the assignment broken up to 4 major parts:
 * Empirical Tests of Randomness
 * Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations)
-* (TODO: Discrete Event Simulation)
+* Discrete Event Simulation - Queue Simulation
 * Composing a final report
 
 The goal of this assignment is to become familiar with the concepts in the second third of the class. You will be expected to compose a *final report* which demonstrates your understanding on the material in each section of the assignment. Be visual! - Pictures say a thousand words so you do not have to. Show off your different configurations and really explore the assignment.
@@ -80,7 +80,23 @@ Run the same simulation and analyze your results similar to part (b) for the pro
 * **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
 
 
-##Part 3 - Discrete-Event Simulation (30 pts)
+##Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
+
+This problem will look at queues and commonly used performance measures. For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
+<BR>![](images/queue.png?raw=true)<BR>
+When a passanger arrives they have to wait in a queue to present their ID and ticket to the gate agent with all the other passengers. Once approved by the agent they will have to pass through a security check. Since this is Orlando, there are only 3 open metal/screening devices open and again passangers have to wait in a queue. After passing through security you again have to wait in a queue to board your plane.
+
+* **(a) - 4pts:** To start create the senario in the figure above in *main.cpp*. Checkin will have a *mu* of 53 and accept new arrivals, the security gates will have a *mu* of 20, and will not accept new arrivials, boarding will have a *mu* of 80. You will have to set up  the appropriate *MM1_Queue* objects to capture the functionality above.
+* **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
+* **(c) - 3pts:** in *mm1_queue.cpp* : add code to caculate the expected results for: 
+  *  expected_server_utilization 
+  *    expected idle prob
+  *   expected queue length 
+  *  expected number customers 
+  * expected waiting time
+  * expected response time 
+*  **(d) - 4pts:** Write code to call the functions to output and generate data from the airport senario. Plot and analyze the useful statistics/results in the program of your choice.  (Hint -  basically call  *.output();* on the MM1_Queue objects you create. Hint2 - two other use functions are *get_current_time()* and  *plot_results_output()* call intially on your intial MM1_Queue object.)  
+* **(e) - 15pts:** Download the personal edition of **[Anylogic](http://www.anylogic.com/)**, read through the [documentation](http://www.anylogic.com/learn-simulation) as needed, and set up the same type of simulation discussed above.
 
 
 ##Part 4 - Implementing Extra Features (10 pts)
@@ -101,4 +117,11 @@ If you feel like going beyond the scope of the assignment, you should consider i
 * **(20 Points)** - Complete Part 2 with a different board game. Construct the game's transition matrix, simulate the game, and analyze the results (Run the game past the instructor).
 * **(20 Points)** - Complete Part 2 with a 3D version of Snakes and Ladders. Construct the game's transition matrix, simulate the game, and analyze the results.
 * **(10 Points)** - Provide code in (Python, R, Matlab...) that demonstrates an animation of the board itself evolving overtime for Snakes in Ladder for part 2. 
+* **(10 Points)** - Add a 2D visualization to AnyLogic for Part 3.
+* **(10 Points)** - Add a 3D visualization to AnyLogic for Part 3.
+* **(5 Points)** - Pick a research problem (from your dissertation, Energy Microgrids, Missle Defence...). Compare and contrast different software packages (AnyLogic, Simio, Simulu8, Arena etc). Convince me as your "manager/advisor" what advantages, weaknesses, and costs each program has. Come to a conclusion. Roughly sketch out how you would formulate the problem in the framework.
+* **(10 Points)** - Create an Anylogic simulation for Part 2 - Snakes and Ladders.
+* **(10 Points)** - Setup another resource allocation / queueing problem related to your research in Anylogic with a basic visualization
+* **(10 Points)** - Setup up SmartGrid or a Microgrid System that creates resources of power from wind, solar, and electric grid. Set up various devices in your house to draw power. [Reference 1](http://www.sciencedirect.com/science/article/pii/S1877050916301740),   [Reference 2](http://www.tandfonline.com/doi/full/10.1080/19401493.2013.866695?src=recsys&).
+* **(25 Points)** - Set up a discrete simulation of your choice that uses an approved real-time data source and visualizes the results. (See instructor for approval).
 * **(N Points)** - You are welcome to make suggestions for a feature of your own choosing, but they must be approved by instructor before implementing.
