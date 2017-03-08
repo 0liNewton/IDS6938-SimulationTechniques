@@ -23,15 +23,15 @@ int main() {
 	CTMC continuousMC(matrix);
 
 
-//	unsigned int N = 50;
-//	std::map<int, int> hist;
-//	for (unsigned int i = 0; i < N; ++i){
+	unsigned int N = 50;
+	std::map<int, int> hist;
+	for (unsigned int i = 0; i < N; ++i){
 		 continuousMC.simulate(T, start);
-//		  ++hist[std::round(continuousMC.getStates().back())];
-//		  std::cout << std::endl << "End State is: " << continuousMC.getStates().back() << std::endl << std::endl;
-//	  }
+		  ++hist[std::round(continuousMC.getStates().back())];
+		  std::cout << std::endl << "End State is: " << continuousMC.getStates().back() << std::endl << std::endl;
+	  }
 
-	std::vector<double> times = continuousMC.transTimes(); //time in each state
+/*	std::vector<double> times = continuousMC.transTimes(); //time in each state
 	std::vector<int> states = continuousMC.getStates(); //number it stayed in that state
 
 
@@ -43,9 +43,9 @@ int main() {
 		std::cout << elem << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl << "End State is: " << states.back() << std::endl << std::endl;
-
-//	  for (auto p : hist)
-//		  std::cout << p.first << "\t" << (double)p.second/N << std::endl;
+*/
+	  for (auto p : hist)
+		  std::cout << p.first << "\t" << (double)p.second/N << std::endl;
 
 	return 0;
 }
