@@ -17,11 +17,11 @@ int main()
 	//use a random device
 	std::random_device rd;
 
-	// 1) Change random number generators
-	std::mt19937_64 engine(rd());
-	//std::knuth_b engine(rd());
-	//std::minstd_rand engine(rd());
-	//std::ranlux48 engine(rd());
+	// 1) Change (pseudo-) random number generators
+	//std::mt19937_64 engine(rd()); // Mersenne Twister 19937 generator
+	//std::knuth_b engine(rd()); // Knuth-B generator
+	//std::minstd_rand engine(rd()); // Minimal Standard
+	std::ranlux48 engine(rd()); // Ranlux 48
 
 
 	// Another seed intialization routine (this is just here for future reference for you.)
@@ -34,12 +34,13 @@ int main()
 
 
 	//  2) - Change distribution types
-	std::uniform_real_distribution<> dist(0, RAND_MAX);  // example of a uniform distribution
+	//std::uniform_real_distribution<> dist(0, RAND_MAX);  // example of a uniform distribution
+	std::uniform_int_distribution<> dist(0, RAND_MAX);  // example of a uniform distribution
 
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 100000;  // number of values generated
+	unsigned int N = 1000;  // number of values generated
 	double randomValue;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
@@ -56,7 +57,7 @@ int main()
 
 		// Uncomment if you want to see the values
 		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-		//	<< p.first << " -  "<< p.second << std::endl;
+		//<< p.first << " -  "<< p.second << std::endl;
 
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;

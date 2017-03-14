@@ -79,14 +79,14 @@ int main()
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("histogram_results.txt");
+	myfile.open("sobol_results.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "\t" << p.second << std::endl;
+			<< p.first << "," << p.second << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("raw_results.txt");
+	myfile.open("sobol_raw_results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
@@ -95,7 +95,7 @@ int main()
 
 
 	//if you choose to write useful stats here
-	myfile.open("useful_stats.txt");
+	myfile.open("sobol_stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;

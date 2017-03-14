@@ -17,11 +17,12 @@ int main()
 	//use a random device
 	std::random_device rd;
 
-	// 1) Change random number generators
-	std::mt19937_64 engine(rd());
+	// 1) Change (pseudo-) random number generators 
+	//std::mt19937_64 engine(rd());
 	//std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
 	//std::ranlux48 engine(rd());
+	std::default_random_engine engine(rd());
 
 
 	// Another seed intialization routine (this is just here for future reference for you.)
@@ -34,7 +35,7 @@ int main()
 	
 
 	//  2) - Change distribution types
-	std::uniform_real_distribution<> dist(0, 100);  // example of a uniform distribution
+	std::uniform_real_distribution<> dist(0, 100);  // example of a uniform distribution with values between 0 and 100
 	//std::normal_distribution<> dist(50,10);    // example of a normal distribution
 
 
@@ -68,14 +69,14 @@ int main()
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("histogram_results.txt");
+	myfile.open("defaultrn_histogram.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "\t" << p.second  << std::endl;
+			<< p.first << "," << p.second  << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("raw_results.txt");
+	myfile.open("defaultrn_raw_results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
@@ -84,7 +85,7 @@ int main()
 
 
 	//if you choose to write useful stats here
-	myfile.open("useful_stats.txt");
+	myfile.open("defaultrn_stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;

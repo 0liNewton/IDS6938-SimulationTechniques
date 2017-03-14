@@ -2,14 +2,8 @@
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
-[University of Central Florida](http://www.ist.ucf.edu/grad/)
-This is the framework for homework #2. 
-
+###Olivia Newton
 The assignment is due: **Tuesday, March 28 at 11:59PM (EST)**
-
-asdfasdf
-sadfsad
-
 
 # Introduction
 A Discrete-event Model simulates a complex system as an ordered sequence of well-defined events. Mathematically Discrete-event models use Markov Processes, Queuing systems, events, probability / statistics, and random variables. The purpose of this assignment is to learn the mathematical foundations, how to program these models, and how to simulate them. The assignment is due Tuesday, March 28, 2017 at 11:59 P.M.
