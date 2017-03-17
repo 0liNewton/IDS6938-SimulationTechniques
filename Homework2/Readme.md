@@ -27,9 +27,30 @@ Read the assignment. Sync your fork with the [main IDS6938 repository](https://g
 We looked at different ways to generate [pseudo-random numbers](https://en.wikipedia.org/wiki/Pseudorandom_number_generator) and [quasi random numbers](https://en.wikipedia.org/wiki/Low-discrepancy_sequence). Generating random numbers are crucial to Discrete-Event simulations which rely on random variables and stochastic processes. This problem explores different random number generators, distributions, and statistics. Different [C++ pseudo-random numbers engines are instantiated](http://www.cplusplus.com/reference/random/) already for you. Also a a wide variety of standard distributions are implemented. Two quasi random number generators are also provided.
 * **(a) - 3pts:** Output the results of five different random number engines, using a uniform distribution for values between [0-100]. Generate useful charts and statistics from the output to analyze how uniform these values truly are. You are expected to look at some advanced statistics and test, for example: tests like the Kolmogorov-Smirnov test, Chi-square test, Autocorrelation test, and Spearman’s Rank Correlation Coefficient are a few examples of ones your could use.)
 
-> ~~Output results of 5 RNGs~~
+
+> - The raw results are stored in an Excel file located in the Homework 2 folder: HW2_Part1_StepA.xlsx (raw results sheet)
+> - Descriptive statistics are provided in the table below.
+
+|  | Mersenne  | Knuth | Min. St. | Ranlux | Default R | Sobol |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+|*Mean*  | 49.98 | 49.81  | 50.06  | 50.08  | 49.90  | 50  |
+|*St. Dev.*  | 28.85 | 28.82 | 28.87 | 28.85 | 28.83 | 28.87 |
+
+
 > Generate stats and charts (i.e., visualizations)
+> - Generated histograms using frequency by 10s data outputted by random number engine code
+
+| Pseudo-Random Number Generators  |
+| ------------- |
+| ![](images/pseudorandom.jpg?raw=true)  |
+
+| Pseudo-Random Number Generators  |
+| ------------- |
+| ![](images/quasisobol.jpg?raw=true)  |
+
+ 
 > Analyze how uniform the data truly is
+> - The data is uniform...
 
 * **(b) - 2pts:**  Vary *N* (amount of samples). How do things change.
 * **(c) - 3pts:** Fix a random engine of your choice from part (a), and now vary five different [distributions](http://www.cplusplus.com/reference/random/) for just the psedo-random numbers. Again, analyze your results with graphs and statistics of choice.
