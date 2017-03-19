@@ -52,7 +52,7 @@ int main()
 
 
 	// 3) Play with N
-	unsigned int N = 100000;  // number of values generated
+	unsigned int N = 1000;  // number of values generated
 	double randomValue;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
@@ -79,14 +79,14 @@ int main()
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("sobol_results.txt");
+	myfile.open("1k-sobol_results.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("sobol_raw_results.txt");
+	myfile.open("1k-sobol_raw_results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
@@ -95,7 +95,7 @@ int main()
 
 
 	//if you choose to write useful stats here
-	myfile.open("sobol_stats.txt");
+	myfile.open("1k-sobol_stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;
