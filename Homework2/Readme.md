@@ -58,11 +58,11 @@ Major parts for the Assignment
 
 | Table 3. Testing for Distribution - Normal Distribution |
 | ------------- |
-| ![](images/onesampleks.png?raw=true)  |
+| ![](images/table3.png?raw=true)  |
 
 | Table 3. Testing for Distribution - Uniform Distribution |
 | ------------- |
-| ![](images/onesampleks.png?raw=true)  |
+| ![](images/table4.png?raw=true)  |
 
 - The data is uniform
 - Can visually assess the uniformity of the data by looking at the histogram graphs above:
@@ -75,18 +75,13 @@ Major parts for the Assignment
 
 - *N* = 1000
 
-|Table #| Mersenne  | Knuth | Min. St. | Ranlux | Sobol |
+| | Mersenne  | Knuth | Min. St. | Ranlux | Sobol |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 |*Mean*  | 48.88 | 50.77 |	50.75 | 48.41 | 49.97  |
 |*St. Dev.*  | 29.16 | 28.62 | 29.71 | 29.22 | 28.87 |
 
 * **(c) - 3pts:** Fix a random engine of your choice from part (a), and now vary five different [distributions](http://www.cplusplus.com/reference/random/) for just the pseudo-random numbers. Again, analyze your results with graphs and statistics of choice.
-
-
-
-> I chose [name of engine].
-
-
+> I chose Mersenne Twister
 
 
 
@@ -97,10 +92,7 @@ Major parts for the Assignment
 * **(f)- 4pts:** Repeat parts (d) and (e) with a unit circle.
 
 
-
 ##Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
-
-
 
 We all love board games. A board game can be viewed mathematically as a Markov chain, where the probability of moving to the next position depends only on the position you are currently at and the chances provided by tossing a dice. For this part of the homework we will simulate the game "*Snakes and Ladders*" (This goes by other names: Chutes and Ladders, Moksha Patam but all essentially the same gameplay.)
 
