@@ -42,7 +42,7 @@ int main()
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 1000;  // number of values generated
+	unsigned int N = 100;  // number of values generated
 	double randomValue;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
@@ -62,21 +62,21 @@ int main()
 		//	<< p.first << " -  "<< p.second << std::endl;
 
 		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "  " << std::string(p.second / (N/500), '*') << std::endl;
+			<< p.first << "  " << std::string(p.second / (N/50), '*') << std::endl;
 
 	}
 
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("1k-mersenne_histogram.txt");
+	myfile.open("100-mersenne_histogram.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second  << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("1k-mersenne_results.txt");
+	myfile.open("100-mersenne_results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
@@ -85,7 +85,7 @@ int main()
 
 
 	//if you choose to write useful stats here
-	myfile.open("1k-mersenne_stats.txt");
+	myfile.open("100-mersenne_stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;
