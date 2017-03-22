@@ -37,7 +37,9 @@ int main()
 	//  2) - Change distribution types
 	//std::uniform_real_distribution<> dist(0, 100);  // example of a uniform distribution with values between 0 and 100
 	//std::normal_distribution<> dist(50,10);    // example of a normal distribution
-	std::binomial_distribution<> dist(100,0.5);
+	//std::binomial_distribution<> dist(100,0.5); // binomial
+	//std::poisson_distribution<> dist(50); // Poisson
+	std::exponential_distribution<> dist(50); // Exponential
 
 	auto generator = std::bind(dist, engine);
 
@@ -69,14 +71,14 @@ int main()
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("mersenne_binomial_histogram.txt");
+	myfile.open("mersenne_exponential_histogram.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second  << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("mersenne_binomial_results.txt");
+	myfile.open("mersenne_exponential_results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
@@ -85,7 +87,7 @@ int main()
 
 
 	//if you choose to write useful stats here
-	myfile.open("mersenne_binomial__stats.txt");
+	myfile.open("mersenne_exponential__stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;
