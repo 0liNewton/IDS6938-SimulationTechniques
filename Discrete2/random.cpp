@@ -13,13 +13,13 @@
 int main()
 {
 	// Get a random seed
-	
+
 	//use a random device
 	std::random_device rd;
 
 	// 1) Change (pseudo-) random number generators 
-	std::mt19937_64 engine(rd());
-	//std::knuth_b engine(rd());
+	//std::mt19937_64 engine(rd());
+	std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
 	//std::ranlux48 engine(rd());
 	//std::default_random_engine engine(rd());
@@ -32,11 +32,11 @@ int main()
 	//std::mt19937_64 e2;
 	//e2.seed(ss);
 
-	
+
 
 	//  2) - Change distribution types
-	//std::uniform_real_distribution<> dist(0, 100);  // example of a uniform distribution
-	std::uniform_int_distribution<> dist(0, 100); //
+	std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
+	//std::uniform_int_distribution<> dist(0, 100); //
 	//std::normal_distribution<> dist(50,10);    // example of a normal distribution
 	//std::binomial_distribution<> dist(100,0.5); // binomial - idk if given parameters are right
 	//std::poisson_distribution<> dist(50); // Poisson - idk if given parameter is right...
@@ -45,50 +45,73 @@ int main()
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 100000;  // number of values generated
-	double randomValue;
+	unsigned int N = 500;  // number of values generated
+	//double randomValue;
+	double rX;
+	double rY;
 	std::map<int, int> hist; //Counts of discrete values
-	std::vector<double> raw; //raw random values 
+	//std::vector<double> raw; //raw random values 
+	std::vector<double> rawX;
+	std::vector<double> rawY;
 
 
 	for (unsigned int i = 0; i < N; ++i) {
-		randomValue = generator();
-		
-		++hist[std::round(randomValue)]; // count the values
-		raw.push_back(randomValue);  //push the raw values
+		//randomValue = generator();
+		rX = generator(); //x coordinate
+		rY = generator(); //y coordinate
+
+		//Unit Circle code
+		//double q = randomValue * (pi * 2) // describe what 'q' respresents http://forum.devmaster.net/t/uniform-random-point-inside-circle/12525
+		//double range = sqrt(randomValue);
+		//double x = (radius * range) * cos(q);
+		//double y = (radius * range) * sin(q);
+
+		//Original Code:
+		//++hist[std::round(randomValue)]; // count the values
+		//raw.push_back(randomValue);  //push the raw values
+
+		rawX.push_back(rX);
+		rawY.push_back(rY);
 	}
 
-	for (auto p : hist) {
+	//for (auto p : hist) {
 		
 		// Uncomment if you want to see the values
 		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-		//	<< p.first << " -  "<< p.second << std::endl;
+			//<< p.first << " -  "<< p.second << std::endl;
 
 		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
 			//<< p.first << "  " << std::string(p.second / (N/500), '*') << std::endl;
 
 	}
 
-
 	// Print Results to File
-	std::ofstream myfile;
-	myfile.open("mersenne_uniform-int_histogram.txt");
+	//std::ofstream myfile;
+	/*myfile.open("mersenne_uniform-int_histogram.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second  << std::endl;
 	}
+	myfile.close();*/
+
+	myfile.open("knuthsquare_500_Xresults.txt");
+	for (auto p : rawX) {
+
+		myfile << std::fixed << std::setprecision(5) << std::setw(2)
+			<< p <<std::endl;
+	}
 	myfile.close();
 
-	myfile.open("mersenne_uniform-int_results.txt");
-	for (auto p : raw) {
+	myfile.open("knuthsquare_500_Yresults.txt");
+	for (auto p : rawY) {
+
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
 	}
 	myfile.close();
 
-
 	//if you choose to write useful stats here
-	myfile.open("mersenne_uniform-int__stats.txt");
+	/*myfile.open("mersenne_uniform-int__stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;
