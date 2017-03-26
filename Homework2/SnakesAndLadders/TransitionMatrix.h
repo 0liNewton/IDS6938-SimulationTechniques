@@ -1,10 +1,11 @@
-int size = 10;  //TODO
+int size = 10;  //TODO - change to 101
 Eigen::MatrixXf TransitionMatrix(size, size);
 Eigen::VectorXf v(size);
 
-unsigned int ROLLS = 10; //TODO
 
-double prob = 3;  //TODO
+unsigned int ROLLS = 1; //TODO
+
+double prob = 3;  //TODO - change to 1.0/6.0
 
 
 
@@ -28,14 +29,17 @@ void SetTransitionMatrix()
 		}
 
 	//TO DO: ADD CODE FOR LAST 6 ROWS 
-
-	/*
-	TransitionMatrix() = prob;
-	TransitionMatrix() = prob;
-	TransitionMatrix() = prob;
-	TransitionMatrix() = prob;
-	TransitionMatrix() = prob;
-	TransitionMatrix() = prob;
+	
+	// A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*.
+	/* for (int j = ; j < TransitionMatrix.rows(); j++)
+	{
+	TransitionMatrix(j, ) = prob;
+	TransitionMatrix(j, ) = prob;
+	TransitionMatrix(j, ) = prob;
+	TransitionMatrix(j, ) = prob;
+	TransitionMatrix(j, ) = prob;
+	TransitionMatrix(j, ) = prob;
+	}
 	*/
 
 	std::cout << TransitionMatrix << std::endl;
