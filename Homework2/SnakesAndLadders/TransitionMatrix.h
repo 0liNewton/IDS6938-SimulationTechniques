@@ -27,10 +27,8 @@ void SetTransitionMatrix()
 		TransitionMatrix(i, i + 5) = prob;
 		TransitionMatrix(i, i + 6) = prob;
 		}
-
 	//TO DO: ADD CODE FOR LAST 6 ROWS 
-	
-	// A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*.
+	//FROM README: A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*.
 	/* for (int j = ; j < TransitionMatrix.rows(); j++)
 	{
 	TransitionMatrix(j, ) = prob;
@@ -41,7 +39,6 @@ void SetTransitionMatrix()
 	TransitionMatrix(j, ) = prob;
 	}
 	*/
-
 	std::cout << TransitionMatrix << std::endl;
 	exit(1);
 }

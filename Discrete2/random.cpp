@@ -19,9 +19,9 @@ int main()
 
 	// 1) Change (pseudo-) random number generators 
 	//std::mt19937_64 engine(rd());
-	std::knuth_b engine(rd());
+	//std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
-	//std::ranlux48 engine(rd());
+	std::ranlux48 engine(rd());
 	//std::default_random_engine engine(rd());
 
 
@@ -45,7 +45,7 @@ int main()
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 500;  // number of values generated
+	unsigned int N = 2500;  // number of values generated
 	//double randomValue;
 	double rX;
 	double rY;
@@ -83,18 +83,19 @@ int main()
 		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
 			//<< p.first << "  " << std::string(p.second / (N/500), '*') << std::endl;
 
-	}
-
 	// Print Results to File
-	//std::ofstream myfile;
-	/*myfile.open("mersenne_uniform-int_histogram.txt");
+	/*
+	std::ofstream myfile;
+	myfile.open("mersenne_uniform-int_histogram.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second  << std::endl;
 	}
-	myfile.close();*/
-
-	myfile.open("knuthsquare_500_Xresults.txt");
+	myfile.close();
+	*/
+	
+	std::ofstream myfile;
+	myfile.open("ranluxsquare_2500_Xresults.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -102,7 +103,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("knuthsquare_500_Yresults.txt");
+	myfile.open("ranluxsquare_2500_Yresults.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -111,7 +112,8 @@ int main()
 	myfile.close();
 
 	//if you choose to write useful stats here
-	/*myfile.open("mersenne_uniform-int__stats.txt");
+	/* 
+	myfile.open("mersenne_uniform-int__stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
 	myfile << "mean: " << mean << std::endl;
@@ -126,5 +128,5 @@ int main()
 	std::cout << "stdev: " << stdev << std::endl;
 	
 	myfile.close();
-
+	*/
 }

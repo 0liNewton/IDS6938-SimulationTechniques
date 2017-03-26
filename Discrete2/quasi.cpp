@@ -20,6 +20,7 @@ int seed;
 int seed_in;
 int seed_out;
 
+
 double getQuasiRandomNumber(int *seed)
 {
 	i4_sobol(dim_num, seed, r);
@@ -45,56 +46,79 @@ int main()
 	// initialize the random number generator with time-dependent seed
 	//uint64_t timeSeed = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 	//std::seed_seq ss{ uint32_t(timeSeed & 0xffffffff), uint32_t(timeSeed >> 32) };
+
 	// 2 different ways to get a random starting seed
-	//seed = rd();
+	seed = rd()/1000.0;
 	//seed = ss;
 
-
-
 	// 3) Play with N
-	unsigned int N = 100;  // number of values generated
+	unsigned int N = 500;  // number of values generated
 	double randomValue;
+	//double rX;
+	//double rY;
 	std::map<int, int> hist; //Counts of discrete values
 	std::vector<double> raw; //raw random values 
-
+	//std::vector<double> rawX; //raw random values
+	//std::vector<double> rawY; //raw random values
 
 	for (unsigned int i = 0; i < N; ++i) {
-		randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
+		//randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
+		randomValue = 0 + getQuasiRandomNumber(&seed);
+		//rX = 0 + getQuasiRandomNumber(&seed);
+		//rY = 0 + getQuasiRandomNumber(&seed);
 
-		++hist[std::round(randomValue)]; // count the values
+		//++hist[std::round(randomValue)]; // count the values
 		raw.push_back(randomValue);  //push the raw values
+
+		//rawX.push_back(rX);  //push the raw values
+		//rawY.push_back(rY);  //push the raw values
 	}
 
-	for (auto p : hist) {
+	//for (auto p : hist) {
 
 		// Uncomment if you want to see the values
 		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
 		//	<< p.first << " -  "<< p.second << std::endl;
 
-		std::cout << std::fixed << std::setprecision(1) << std::setw(2)
-			<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
+		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+			//<< p.first << "  " << std::string(p.second / (N / 500), '*') << std::endl;
 
-	}
+	//}
 
 
 	// Print Results to File
 	std::ofstream myfile;
-	myfile.open("100-sobol_results.txt");
+	/*myfile.open("100-sobol_results.txt");
 	for (auto p : hist) {
 		myfile << std::fixed << std::setprecision(1) << std::setw(2)
 			<< p.first << "," << p.second << std::endl;
 	}
 	myfile.close();
 
-	myfile.open("100-sobol_raw_results.txt");
+	myfile.open("sobolY_500.results.txt");
 	for (auto p : raw) {
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
 			<< p << std::endl;
 	}
 	myfile.close();
-
+	*/
+	
+	myfile.open("sobolY_500.txt");
+	for (auto p : raw) {
+		myfile << std::fixed << std::setprecision(5) << std::setw(2)
+			<< p << std::endl;
+	}
+	myfile.close();
+	/*
+	myfile.open("sobolY_500.txt");
+	for (auto p : rawY) {
+		myfile << std::fixed << std::setprecision(5) << std::setw(2)
+			<< p << std::endl;
+	}
+	myfile.close(); */
 
 	//if you choose to write useful stats here
+	/*
 	myfile.open("100-sobol_stats.txt");
 	double sum = std::accumulate(raw.begin(), raw.end(), 0.0);
 	double mean = sum / raw.size();
@@ -110,5 +134,5 @@ int main()
 	std::cout << "stdev: " << stdev << std::endl;
 
 	myfile.close();
-
+	}*/
 }
