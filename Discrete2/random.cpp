@@ -18,10 +18,10 @@ int main()
 	std::random_device rd;
 
 	// 1) Change (pseudo-) random number generators 
-	//std::mt19937_64 engine(rd());
+	std::mt19937_64 engine(rd());
 	//std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
-	std::ranlux48 engine(rd());
+	//std::ranlux48 engine(rd());
 	//std::default_random_engine engine(rd());
 
 
@@ -35,12 +35,13 @@ int main()
 
 
 	//  2) - Change distribution types
-	std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
-	//std::uniform_int_distribution<> dist(0, 100); //
-	//std::normal_distribution<> dist(50,10);    // example of a normal distribution
+	//std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
+	//std::uniform_int_distribution<> dist(0, 1); //
+	//std::normal_distribution<> dist(0.5,0.1);    // example of a normal distribution
 	//std::binomial_distribution<> dist(100,0.5); // binomial - idk if given parameters are right
-	//std::poisson_distribution<> dist(50); // Poisson - idk if given parameter is right...
-	//std::exponential_distribution<> dist(0.5); // Exponential
+	//std::binomial_distribution<> dist(1,0.05); //
+	//std::poisson_distribution<> dist(0.25); // Poisson - idk if given parameter is right...
+	std::exponential_distribution<> dist(0.1); // Exponential
 
 	auto generator = std::bind(dist, engine);
 
@@ -94,8 +95,14 @@ int main()
 	myfile.close();
 	*/
 	
+	//for (auto p : rawX) {
+
+		// Uncomment if you want to see the values
+		//std::cout << std::fixed << std::setprecision(1) << std::setw(2)
+			//<< p << " -  " << std::endl;
+	//}
 	std::ofstream myfile;
-	myfile.open("ranluxsquare_2500_Xresults.txt");
+	myfile.open("2500expX.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -103,7 +110,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("ranluxsquare_2500_Yresults.txt");
+	myfile.open("2500expY.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)

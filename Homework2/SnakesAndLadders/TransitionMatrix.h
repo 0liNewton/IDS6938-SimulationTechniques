@@ -17,7 +17,7 @@ void SetTransitionMatrix()
 	TransitionMatrix(1, 0) = prob;
 	TransitionMatrix(0, 1) = prob; 
 	TransitionMatrix(2, 0) = prob;*/
-
+	TransitionMatrix(10, 10) = 6;
 	for (int i = 0; i < TransitionMatrix.rows() - 6; i++) //code from 03/21 class
 	{
 		TransitionMatrix(i, i + 1) = prob; 
@@ -29,6 +29,10 @@ void SetTransitionMatrix()
 		}
 	//TO DO: ADD CODE FOR LAST 6 ROWS 
 	//FROM README: A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*.
+	//
+	
+	//TransitionMatrix(i, ) = prob;
+	//TransitionMatrix.rows()
 	/* for (int j = ; j < TransitionMatrix.rows(); j++)
 	{
 	TransitionMatrix(j, ) = prob;

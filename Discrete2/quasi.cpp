@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -63,7 +64,7 @@ int main()
 
 	for (unsigned int i = 0; i < N; ++i) {
 		//randomValue = 0 + getQuasiRandomNumber(&seed) * 100;
-		randomValue = 0 + getQuasiRandomNumber(&seed);
+		randomValue = 0 + getQuasiRandomNumber(&seed); //remove * 100 to get values in between 0 and 1
 		//rX = 0 + getQuasiRandomNumber(&seed);
 		//rY = 0 + getQuasiRandomNumber(&seed);
 

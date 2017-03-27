@@ -3,7 +3,7 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 ### Olivia Newton
-The assignment is due: **Tuesday, March 28 at 11:59PM (EST)**
+The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day
 
 Major parts for the Assignment
 
