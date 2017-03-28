@@ -149,8 +149,8 @@ The classic game has 100 positions on the board. You toss one die, and move squa
 - Complete - see *TransitionMatrix.h*
 
 ###### Step B
-* **(b) Simulate and analyze the results of Null State Game - 10pts:** What is the modal number of moves required by a single player to finish the game? 
-> Question restated: What is the most common number of moves required by a single play to finish a game?
+* **(b) Simulate and analyze the results of Null State Game - 10pts:** What is the modal number of moves required by a single player to finish the game?
+> Question restated: What is the most common number of moves required by a single player to finish a game?
 
 * We will be simulating the game two different ways.
 > Mode will be extracted from two different simulations, Markov Chain and Monto Carlo, to answer the previous question.
@@ -198,114 +198,65 @@ This problem will look at queues and commonly used performance measures. For thi
 When a passanger arrives they have to wait in a queue to present their ID and ticket to the gate agent with all the other passengers. Once approved by the agent they will have to pass through a security check. Since this is Orlando, there are only 3 open metal/screening devices open and again passangers have to wait in a queue. After passing through security you again have to wait in a queue to board your plane.
 
 ###### Step A
-
-
->* Complete - see *main.cpp*
+* Complete - see *main.cpp*
 
 ###### Step B
-* **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
-
->* Complete - see *main.cpp*
+* Complete - see *main.cpp*
 
 ###### Step C
-* **(c) - 3pts:** in *mm1_queue.cpp* : add code to caculate the expected results for: expected_server_utilization, expected idle prob, expected queue length, expected number customers, expected waiting time, expected response time 
-
->* Complete - see *mm1_queue.cpp*
+* Complete - see *mm1_queue.cpp*
 
 ###### Step D
-*  **(d) - 4pts:** Write code to call the functions to output and generate data from the airport senario. Plot and analyze the useful statistics/results in the program of your choice.  (Hint -  basically call  *.output();* on the MM1_Queue objects you create. Hint2 - two other use functions are *get_current_time()* and  *plot_results_output()* call intially on your intial MM1_Queue object.)  
+*  **(d) - 4pts:** Write code to call the functions to output and generate data from the airport senario. Plot and analyze the useful statistics/results in the program of your choice.  (Hint -  basically call  *.output();* on the MM1_Queue objects you create. Hint2 - two other use functions are *get_current_time()* and  *plot_results_output()* call intially on your intial MM1_Queue object.)
+
+
 
 ###### Step E
 * **(e) - 15pts:** Download the personal edition of **[Anylogic](http://www.anylogic.com/)**, read through the [documentation](http://www.anylogic.com/learn-simulation) as needed, and set up the same type of simulation discussed above.
 
->*
->
+>* Extra Features: Add a 2D visualization to AnyLogic **(10 pts)**
 
 ##Part 4 - Implementing Extra Features (10 pts)
 
 Implementing 2 features on the extra features list. Pick any feature on the "*extra features*" list below to customize your assignment to fit your interests. Please document this in your writeup. (*Note: These should total 10pts. You could successfully implement a feature worth 10pts or greater. This also fulfills this requirement. The features are assigned points based on difficulty. The 5pt features are more straightforward.*)
 
-
-
-##Part 5 - Final Report (10 pts)
-
-Write up the results to the previous sections in the main *readme.md* in your forked repository. Turn in the URL for your fork in webcourses. Be visual. The report should contain the graphs and analysis requested. I have high expectations for the documentation here and you should allot the proper time to compose the writeup.
-
-
 ##Extra Features (Extra Credit - 25pts)
 
+>* *Add a 3D visualization to AnyLogic
+>
 You have to implement two features from this list for Part 4. You may choose any two features you wish from this list. (Please explicitly note them in your *Readme.md*)
-
 
 If you feel like going beyond the scope of the assignment, you should consider implementing more of the following extra features. *Get the assignment working without them first.* You can get a maximum of 25 points in extra credit. Simply implementing these things doesn't guarantee you a 25; you really need to go above and beyond to get the full amount. (*The instructor reserves the right to hand out extra credit as his he sees fit.*)
 
-
-
 * **(5 Points)** - Implement and compare Halton, Hammersley, (Or another quasi method) Quasi sequences and add them to your analysis for appropriate subparts of Part 1.
-
-
 
 * **(5 Points)** - Implement different distributions inside the Quasi random sequences and add them to your analysis for appropriate subparts of Part 1.
 
-
-
 * **(5 Points)** - Implement and compare another (advanced) psedo random sequences and add them to your analysis for all subparts of Part 1 (Examples include: [PCG](http://www.pcg-random.org/), or [Random123](https://github.com/DEShawResearch/Random123-Boost)).
-
 
 * **(20 Points)** - Complete Part 2 with a different board game. Construct the game's transition matrix, simulate the game, and analyze the results (Run the game past the instructor).
 
-
-
 * **(20 Points)** - Complete Part 2 with a 3D version of Snakes and Ladders. Construct the game's transition matrix, simulate the game, and analyze the results.
-
-
 
 * **(10 Points)** - Provide code in (Python, R, Matlab...) that demonstrates an animation of the board itself evolving overtime for Snakes in Ladder for part 2. 
 
-
-
 * **(10 Points)** - Add a 2D visualization to AnyLogic for Part 3.
-
-
 
 * **(10 Points)** - Add a 3D visualization to AnyLogic for Part 3.
 
-
-
 * **(5 Points)** - Pick a research problem (from your dissertation, Energy Microgrids, Missle Defence...). Compare and contrast different software packages (AnyLogic, Simio, Simulu8, Arena etc). Convince me as your "manager/advisor" what advantages, weaknesses, and costs each program has. Come to a conclusion. Roughly sketch out how you would formulate the problem in the framework.
-
-
 
 * **(10 Points)** - Create an Anylogic simulation for Part 2 - Snakes and Ladders.
 
-
-
 * **(10 Points)** - Setup another resource allocation / queueing problem related to your research in Anylogic with a basic visualization
-
-
 
 * **(10 Points)** - Setup up SmartGrid or a Microgrid System that creates resources of power from wind, solar, and electric grid. Set up various devices in your house to draw power. [Reference 1](http://www.sciencedirect.com/science/article/pii/S1877050916301740),   [Reference 2](http://www.tandfonline.com/doi/full/10.1080/19401493.2013.866695?src=recsys&).
 
-
-
 * **(25 Points)** - Set up a discrete simulation of your choice that uses an approved real-time data source and visualizes the results. (See instructor for approval).
-
-
 
 * **(N Points)** - You are welcome to make suggestions for a feature of your own choosing, but they must be approved by instructor before implementing.
 
-
-
-
-
-
-
 ##References
-
-
-
-
-
 
 
 Lee, C., Famoye, F., Shelden, B., & Brown, A. (n.d.). Nonparametric Methods. Retrieved March 17, 2017, from http://calcnet.mth.cmich.edu/org/spss/StaProcNonp.htm

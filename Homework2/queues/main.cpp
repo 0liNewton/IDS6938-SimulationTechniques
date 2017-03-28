@@ -50,23 +50,23 @@ int main(int argc, char* argv[])
 	   security.set_seed(rd(), rd());
 
 	   MM1_Queue  security1;
-	   security.set_file_names("security1log.txt", "security1wait.txt", "security1serv.txt");
-	   security.set_lambda(6);
-	   security.set_mu(20);
-	   security.autogenerate_new_arrivals(false);
-	   security.initialize();
-	   security.set_seed(rd(), rd());
+	   security1.set_file_names("security1log.txt", "security1wait.txt", "security1serv.txt");
+	   security1.set_lambda(6);
+	   security1.set_mu(20);
+	   security1.autogenerate_new_arrivals(false);
+	   security1.initialize();
+	   security1.set_seed(rd(), rd());
 
 	   MM1_Queue  security2;
-	   security.set_file_names("security2log.txt", "security2wait.txt", "security2serv.txt");
-	   security.set_lambda(6);
-	   security.set_mu(20);
-	   security.autogenerate_new_arrivals(false);
-	   security.initialize();
-	   security.set_seed(rd(), rd());
+	   security2.set_file_names("security2log.txt", "security2wait.txt", "security2serv.txt");
+	   security2.set_lambda(6);
+	   security2.set_mu(20);
+	   security2.autogenerate_new_arrivals(false);
+	   security2.initialize();
+	   security2.set_seed(rd(), rd());
 
 	   MM1_Queue  boarding;
-	   boarding.set_file_names("checkinlog.txt", "checkinwait.txt", "checkinserv.txt");
+	   boarding.set_file_names("boardinglog.txt", "boardingwait.txt", "boardingserv.txt");
 	   boarding.set_lambda(6);
 	   boarding.set_mu(80);
 	   boarding.initialize();
@@ -117,11 +117,25 @@ int main(int argc, char* argv[])
 
    //TODO Output statistics airport senario.
 
+   checkin.get_current_time();// cout << "checkin current time" << endl;
+   security.get_current_time();
+   security1.get_current_time();
+   security2.get_current_time();
 
+	//response time comparison, waiting time, expected queue length, mean # of cust, utilization, idle
+   checkin.plot_results_output();// cout << "checkin comparisons" << endl;
+   security.plot_results_output(); //cout << "Security comparisons" << endl;
+   security1.plot_results_output(); //cout << "Security  comparisons" << endl;
+   security2.plot_results_output(); //cout << "Security comparisons" << endl;
+
+   checkin.output(); cout << "Checkin Output" << endl;
+   security.output(); cout << "Security Output" << endl;
+   security1.output(); cout << "Security 1 Output" << endl;
+   security2.output(); cout << "Security 2 Output" << endl;
+   //boarding.output(); cout << "Boarding output" << endl;
+   exit(1);
 
    //**************************************************************************
-
-
 
    }
 

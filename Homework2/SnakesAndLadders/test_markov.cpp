@@ -22,30 +22,21 @@ int main(){
 	std::ofstream myfile;
 	myfile.open("markov_results.txt");
 
-	
    // TODO add Markov vector - Matrix multiplication
-	//for (int i = 0; i<v.size(); i++) {
-		
-	//return v;
-//}
-	v = v.transpose() * TransitionMatrix;
+	//std::Eigen::VectorXf
+	for (int i = 0; i < v.size(); i++) {
+		v = v.transpose() * TransitionMatrix;
+	}
+	//v = v.transpose() * TransitionMatrix;
 	std::vector<double> v;
+	//std::cout << 'v '<< std::endl;
+	
+	//myfile << v << std::endl;
 	//Eigen::VectorXf v(size);
 	//vec myvector = 
-	//myvector.transpose() * Matrix
-
-
 	//std::cout <<  v << std::endl;
 	//myfile << v << std::endl;  //this is just a sample, becareful how you print to file so you can mine useful stats
-	
-	myfile.close();
-	
-	myfile.open("markov-output.txt");
-	for (auto p : v) {
-		myfile << std::fixed << std::setprecision(5) << std::setw(2)
-			<< p << std::endl;
-	myfile.close();
-	 }
 
+	myfile.close();
   return 1;
 }
