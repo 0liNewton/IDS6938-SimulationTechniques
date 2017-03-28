@@ -3,7 +3,7 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 ### Olivia Newton
-The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day
+The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due data is March 29th)
 
 Major parts for the Assignment
 
@@ -70,8 +70,8 @@ Major parts for the Assignment
 -- Can statistically assess the uniformity of the data by examining the results of Kolmogorov test presented in tables 3 and 4
 
 ###### Step B
->Vary *N* (amount of samples). How do things change.
-- *N* = 1000
+- Decreased N from 100,000
+	-- *N* = 1000
 
 | Table 5. Descriptive Statistics |
 | ------------- |
@@ -120,7 +120,6 @@ Major parts for the Assignment
 | ![](images/5-dist.png?raw=true)  |
 
 ###### Step D
-* **(d)- 4pts:** Generate random numbers in two-dimensions for a unit square. Plot the results for the different random number engines. The vertical axis should vary N in increasing order. The horizontal axis should show of the random number engines.
 
 | Figure 8. Unit Square with 5 Random Number Engines' Output |
 | ------------- |
@@ -132,6 +131,7 @@ Major parts for the Assignment
 
 NOT DONE YET
 
+###### Step F
 * **(f)- 4pts:** Repeat parts (d) and (e) with a unit circle.
 
 NOT DONE YET

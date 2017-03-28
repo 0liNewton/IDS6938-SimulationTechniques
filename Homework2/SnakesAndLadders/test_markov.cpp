@@ -24,13 +24,28 @@ int main(){
 
 	
    // TODO add Markov vector - Matrix multiplication
+	//for (int i = 0; i<v.size(); i++) {
+		
+	//return v;
+//}
+	v = v.transpose() * TransitionMatrix;
+	std::vector<double> v;
+	//Eigen::VectorXf v(size);
+	//vec myvector = 
+	//myvector.transpose() * Matrix
 
 
-	std::cout <<  v << std::endl;
+	//std::cout <<  v << std::endl;
 	//myfile << v << std::endl;  //this is just a sample, becareful how you print to file so you can mine useful stats
 	
 	myfile.close();
-
+	
+	myfile.open("markov-output.txt");
+	for (auto p : v) {
+		myfile << std::fixed << std::setprecision(5) << std::setw(2)
+			<< p << std::endl;
+	myfile.close();
+	 }
 
   return 1;
 }
