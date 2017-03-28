@@ -76,12 +76,16 @@ int main(int argc, char* argv[])
 
    for (; 
 		//TODO: add is_within_error_range check
-       ;)
+	   !checkin.is_within_error_range(0.002) ||
+	   !security.is_within_error_range(0.002) ||
+	   !security1.is_within_error_range(0.002) ||
+	   !security2.is_within_error_range(0.002)
+	   ;)
    {
-	   Customer cust  ;    // =  TODO: process next event;
-	   Customer cust2  ;   // =  TODO: process next event;
-	   Customer cust3  ;   // =  TODO: process next event;
-	   Customer cust4  ;   // =  TODO: process next event;
+	   Customer cust = checkin.process_next_event();    // =  TODO: process next event;
+	   Customer cust2 = security.process_next_event();   // =  TODO: process next event;
+	   Customer cust3 = security1.process_next_event();   // =  TODO: process next event;
+	   Customer cust4 = security2.process_next_event();   // =  TODO: process next event;
 	   //TODO: one more process_next_event for the last object.
 
        if (cust.get_type() == Customer::COMPLETED())
@@ -90,12 +94,15 @@ int main(int argc, char* argv[])
           {
             case 0:
 				//TODO add_external_arrival() for your security gates;
+				security.add_external_arrival();
                  break;
             case 1:
 				//TODO add_external_arrival() for your security gates;
+				security1.add_external_arrival();
                  break;
             case 2:
                 //TODO add_external_arrival() for your security gates;
+				security2.add_external_arrival();
                  break;
           }
           next++;
@@ -104,10 +111,9 @@ int main(int argc, char* argv[])
        if (cust2.get_type() == Customer::COMPLETED() || cust3.get_type() == Customer::COMPLETED() || cust4.get_type() == Customer::COMPLETED())
        {
 		   //TODO add_external_arrival(); on your final boarding MM1_Queue object
+		   boarding.add_external_arrival();
        }
    }
-
-
 
    //TODO Output statistics airport senario.
 

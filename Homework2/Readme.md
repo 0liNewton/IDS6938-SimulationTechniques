@@ -136,7 +136,7 @@ NOT DONE YET
 
 NOT DONE YET
 
-##Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
+## Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
 
 | Moksha Patam  | Snakes and Ladders |
 | ------------- | ------------- |
@@ -186,13 +186,11 @@ Ladders From  | Ladders To | |  Snakes From  | Snakes To
 76|91| |92|75
 84|98| |99|70
 
-
 Run the same simulation and analyze your results similar to part (b) for the proper game of *Snakes and Ladders* for both methods. How often are the snakes and ladders used, how do the probability of finishing change, etc? What is the maximum and expected amount of moves for the game? Use charts and graphs to illustrate these points.
-
 
 * **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
 
-##Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
+## Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
 
 This problem will look at queues and commonly used performance measures. For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
 
@@ -200,16 +198,14 @@ This problem will look at queues and commonly used performance measures. For thi
 When a passanger arrives they have to wait in a queue to present their ID and ticket to the gate agent with all the other passengers. Once approved by the agent they will have to pass through a security check. Since this is Orlando, there are only 3 open metal/screening devices open and again passangers have to wait in a queue. After passing through security you again have to wait in a queue to board your plane.
 
 ###### Step A
-* **(a) - 4pts:** To start create the senario in the figure above in *main.cpp*. Checkin will have a *mu* of 53 and accept new arrivals, the security gates will have a *mu* of 20, and will not accept new arrivials, boarding will have a *mu* of 80. You will have to set up  the appropriate *MM1_Queue* objects to capture the functionality above.
 
->*
->
+
+>* Complete - see *main.cpp*
 
 ###### Step B
-* * **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
+* **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
 
->*
->
+>* Complete - see *main.cpp*
 
 ###### Step C
 * **(c) - 3pts:** in *mm1_queue.cpp* : add code to caculate the expected results for: expected_server_utilization, expected idle prob, expected queue length, expected number customers, expected waiting time, expected response time 
