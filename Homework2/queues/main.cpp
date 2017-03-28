@@ -34,7 +34,43 @@ int main(int argc, char* argv[])
    {
       
 	   //TODO Create MM1_Queue objects to capture the airport senario.
+	   MM1_Queue  checkin;
+	   checkin.set_file_names("checkinlog.txt", "checkinwait.txt", "checkinserv.txt");
+	   checkin.set_lambda(6);
+	   checkin.set_mu(53);
+	   checkin.initialize();
+	   checkin.set_seed(1, rd());
 
+	   MM1_Queue  security;
+	   security.set_file_names("securitylog.txt", "securitywait.txt", "securityserv.txt");
+	   security.set_lambda(6);
+	   security.set_mu(20);
+	   security.autogenerate_new_arrivals(false);
+	   security.initialize();
+	   security.set_seed(rd(), rd());
+
+	   MM1_Queue  security1;
+	   security.set_file_names("security1log.txt", "security1wait.txt", "security1serv.txt");
+	   security.set_lambda(6);
+	   security.set_mu(20);
+	   security.autogenerate_new_arrivals(false);
+	   security.initialize();
+	   security.set_seed(rd(), rd());
+
+	   MM1_Queue  security2;
+	   security.set_file_names("security2log.txt", "security2wait.txt", "security2serv.txt");
+	   security.set_lambda(6);
+	   security.set_mu(20);
+	   security.autogenerate_new_arrivals(false);
+	   security.initialize();
+	   security.set_seed(rd(), rd());
+
+	   MM1_Queue  boarding;
+	   boarding.set_file_names("checkinlog.txt", "checkinwait.txt", "checkinserv.txt");
+	   boarding.set_lambda(6);
+	   boarding.set_mu(80);
+	   boarding.initialize();
+	   boarding.set_seed(1, rd());
 	   //************************************************************
 
 

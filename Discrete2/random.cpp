@@ -35,14 +35,14 @@ int main()
 
 
 	//  2) - Change distribution types
-	std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
+	//std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
 	//std::uniform_int_distribution<> dist(0, 1); //
 	//std::normal_distribution<> dist(0.5,0.1); //example of a normal distribution
 	//std::binomial_distribution<> dist(1,0.5); //binomial - idk if given parameters are right
 	//std::poisson_distribution<> dist(0.25); //Poisson - idk if given parameter is right...
-	//std::exponential_distribution<> dist(0.5); /Exponential
+	//std::exponential_distribution<> exp_dist(Lambda); //Exponential
 
-	auto generator = std::bind(dist, engine);
+	auto generator = std::bind(exp_dist, engine);
 
 	// 3) Play with N
 	unsigned int N = 2500;  // number of values generated
@@ -101,7 +101,7 @@ int main()
 			//<< p << " -  " << std::endl;
 	//}
 	std::ofstream myfile;
-	myfile.open("2500binomialX.txt");
+	myfile.open("2500expX.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -109,7 +109,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("2500binomialY.txt");
+	myfile.open("2500expY.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)

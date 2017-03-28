@@ -138,43 +138,38 @@ NOT DONE YET
 
 ##Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
 
-We all love board games. A board game can be viewed mathematically as a Markov chain, where the probability of moving to the next position depends only on the position you are currently at and the chances provided by tossing a dice. For this part of the homework we will simulate the game "*Snakes and Ladders*" (This goes by other names: Chutes and Ladders, Moksha Patam but all essentially the same gameplay.)
-
-
 | Moksha Patam  | Snakes and Ladders |
 | ------------- | ------------- |
 | ![](images/snake1.jpg?raw=true)  | ![](images/snake2.jpg?raw=true) |
 
 ##### Background
+The classic game has 100 positions on the board. You toss one die, and move squares based on the result of the die. If you land on a ladder you move up the ladder to a higher numbered square. If you land on a snake's mouth, you descend to a lower numbered square. For purposes of simulation, we will add one extra square 0 (starting position). So there are 101 positions on the board. The game is **memoryless** - your progression to the next position is independent of how you arrived there (opposed to Blackjack or Candyland where your progression is based on what cards have been drawn). A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*. So in the case of *Snakes and Ladders* the dimensions of a transition matrix is 101x101.
 
+###### Step A
+- Complete - see *TransitionMatrix.h*
 
+###### Step B
+* **(b) Simulate and analyze the results of Null State Game - 10pts:** What is the modal number of moves required by a single player to finish the game? 
+> Question restated: What is the most common number of moves required by a single play to finish a game?
 
-The classic game has 100 positions on the board. You toss one die, and move squares based on the result of the die. If you land on a ladder you move up the ladder to a higher numbered square. If you land on a snake's mouth, you descend to a lower numbered square. For purposes of simulation, we will add one extra square 0 (starting position). So there are 101 positions on the board.
+* We will be simulating the game two different ways.
+> Mode will be extracted from two different simulations, Markov Chain and Monto Carlo, to answer the previous question.
 
+###### B1 Markov Chain
+* **(1) Markov Chain** (For this part (1) use the *Markov project* in the Snake and Ladders starter code): The game can be analyzed with a row vector, *v* with 101 components, representing the probabilities that the player is on each of the positions. V(0) is (1,0,0,...,0) since we know we start at square 0. v evolves by: <BR>![](images/prob.png?raw=true)<BR>
+> Produce graphs, show how game evolves over time
+> Plot useful stats such as:
+> * percentage chance of finishing the game in n-moves
+> * cumulative probability of finishing game in n-moves (cdf?)
+> * other ways to convey useful info about results
 
-The game is **memoryless** - your progression to the next position is independent of how you arrived there (opposed to Blackjack or Candyland where your progression is based on what cards have been drawn). A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*. So in the case of *Snakes and Ladders* the dimensions of a transition matrix is 101x101.
-
-
-
-* **(a) Null State Game transition matrix - 10pts:** The *null state game* is defined by a game with no snakes and no ladders. This simplifies the game to just the moves of the two dice rolls. Create the transition matrix for the null state game. The Transition Matrix would be decided by the roll of a fair, six-sided die, so it would start to look like:
-
-
-<BR>![](images/null.png?raw=true)<BR>
-
-From state 0 it is equally probable of landing on squares 1-6. From state 1 t is equally probable of landing on squares 2-7, and so on. Create this transition matrix. The end is trickier, we will consider any roll past 100 a win case. (Opposed to rolling exactly onto square 100.) Confirm you have a well formed stochastic matrix (Write checks for confirming each row of T sums to one and all elements are non-negative). The Transition Matrix methods can be found in the TransitionMatrix.h file.
-
-
-* **(b) Simulate and analyze the results of Null State Game - 10pts:** What is the modal number of moves required by a single player to finish the game? We will be simulating the game two different ways. 
-
-* **(1) Markov Chain**: The game can be analyzed with a row vector, *v* with 101 components, representing the probabilities that the player is on each of the positions. V(0) is (1,0,0,...,0) since we know we start at square 0. v evolves by: <BR>![](images/prob.png?raw=true)<BR>
-
-
-
-For this part (1) use the *Markov project* in the Snake and Ladders starter code.<BR>
-
-
-
-**(2) Monte Carlo**: he will will use a monte carlo process to solve our Discrete Time Markov Chains. Here (2) use the DTMC project, and utilize the DTMC method similar to what we did in class. <BR><BR>Produce graphs to analyze the results and show how the game evolves over time for both methods. Plot useful statistics of the results such as percentage chance of finishing the game in n-moves, cumulative probability of finishing the game in n-moves, and other ways to convey useful information of the results.
+###### B2 Monte Carlo
+* **(2) Monte Carlo**: he will will use a monte carlo process to solve our Discrete Time Markov Chains. Here (2) use the DTMC project, and utilize the DTMC method similar to what we did in class.
+> Produce graphs, show how game evolves over time
+> Plot useful stats such as:
+> * percentage chance of finishing the game in n-moves
+> * cumulative probability of finishing game in n-moves (cdf?)
+> * other ways to convey useful info about results
 
 
 * **(c) Simulate and analyze the results of Snakes and Ladders -10pts:**  Construct a new transition matrix based on the table:
@@ -192,45 +187,43 @@ Ladders From  | Ladders To | |  Snakes From  | Snakes To
 84|98| |99|70
 
 
-
 Run the same simulation and analyze your results similar to part (b) for the proper game of *Snakes and Ladders* for both methods. How often are the snakes and ladders used, how do the probability of finishing change, etc? What is the maximum and expected amount of moves for the game? Use charts and graphs to illustrate these points.
-
 
 
 * **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
 
-
 ##Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
-
-
 
 This problem will look at queues and commonly used performance measures. For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
 
-
 <BR>![](images/queue.png?raw=true)<BR>
-
-
 When a passanger arrives they have to wait in a queue to present their ID and ticket to the gate agent with all the other passengers. Once approved by the agent they will have to pass through a security check. Since this is Orlando, there are only 3 open metal/screening devices open and again passangers have to wait in a queue. After passing through security you again have to wait in a queue to board your plane.
 
-
-
+###### Step A
 * **(a) - 4pts:** To start create the senario in the figure above in *main.cpp*. Checkin will have a *mu* of 53 and accept new arrivals, the security gates will have a *mu* of 20, and will not accept new arrivials, boarding will have a *mu* of 80. You will have to set up  the appropriate *MM1_Queue* objects to capture the functionality above.
 
-* **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
+>*
+>
 
-* **(c) - 3pts:** in *mm1_queue.cpp* : add code to caculate the expected results for: 
+###### Step B
+* * **(b) - 4pts:** You want to add a check that your process is within an error range *is_within_error_range(float)* where the error range will be 0.002. You also want to process the next event, and add an external arrival where marked.
 
-  *  expected_server_utilization 
+>*
+>
 
-  *    expected idle prob
-  *   expected queue length 
-  *  expected number customers 
-  * expected waiting time
-  * expected response time 
+###### Step C
+* **(c) - 3pts:** in *mm1_queue.cpp* : add code to caculate the expected results for: expected_server_utilization, expected idle prob, expected queue length, expected number customers, expected waiting time, expected response time 
 
+>* Complete - see *mm1_queue.cpp*
+
+###### Step D
 *  **(d) - 4pts:** Write code to call the functions to output and generate data from the airport senario. Plot and analyze the useful statistics/results in the program of your choice.  (Hint -  basically call  *.output();* on the MM1_Queue objects you create. Hint2 - two other use functions are *get_current_time()* and  *plot_results_output()* call intially on your intial MM1_Queue object.)  
 
+###### Step E
 * **(e) - 15pts:** Download the personal edition of **[Anylogic](http://www.anylogic.com/)**, read through the [documentation](http://www.anylogic.com/learn-simulation) as needed, and set up the same type of simulation discussed above.
+
+>*
+>
 
 ##Part 4 - Implementing Extra Features (10 pts)
 
