@@ -3,7 +3,7 @@
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
 ### Olivia Newton
-The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due data is March 29th)
+###### Due Date: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due date is March 29th at 11:59PM (EST))
 
 ## Part 1: Empirical Tests of Randomness (20 pts).
 ###### Step A
@@ -120,41 +120,27 @@ The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 ext
 
 ###### Step E
 
-* **(e)- 4pts:** Generate random numbers in two-dimensions for a unit square. Plot the results for the different distributions. The vertical axis should vary N in increasing order. The horizontal axis should show of the random number engines. (See [Random Numbers Webcourse page](https://webcourses.ucf.edu/courses/1246518/pages/random-numbers?module_item_id=10541423) for a rough idea what you should produce.)
+| Figure 9. Unit Square with Mersenne Twister Ouput using Different Distributions |
+| ------------- |
+| ![](images/figure9.png?raw=true)  |
 
-NOT DONE YET
+###### Step F: Repeat parts (d) and (e) with a unit circle.
 
-###### Step F
-* **(f)- 4pts:** Repeat parts (d) and (e) with a unit circle.
-
-NOT DONE YET
+> NOT DONE YET
 
 ## Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
-
-| Moksha Patam  | Snakes and Ladders |
-| ------------- | ------------- |
-| ![](images/snake1.jpg?raw=true)  | ![](images/snake2.jpg?raw=true) |
-
-##### Background
-The classic game has 100 positions on the board. You toss one die, and move squares based on the result of the die. If you land on a ladder you move up the ladder to a higher numbered square. If you land on a snake's mouth, you descend to a lower numbered square. For purposes of simulation, we will add one extra square 0 (starting position). So there are 101 positions on the board. The game is **memoryless** - your progression to the next position is independent of how you arrived there (opposed to Blackjack or Candyland where your progression is based on what cards have been drawn). A Markov Chain defines the probability of a move from state *i* to state *j* by a **Transition Matrix**, *T*. So in the case of *Snakes and Ladders* the dimensions of a transition matrix is 101x101.
 
 ###### Step A
 - Complete - see *TransitionMatrix.h*
 
 ###### Step B
-* **(b) Simulate and analyze the results of Null State Game - 10pts:** What is the modal number of moves required by a single player to finish the game?
-> Question restated: What is the most common number of moves required by a single player to finish a game?
-
-* We will be simulating the game two different ways.
-> Mode will be extracted from two different simulations, Markov Chain and Monto Carlo, to answer the previous question.
-
 ###### B1 Markov Chain
 * **(1) Markov Chain** (For this part (1) use the *Markov project* in the Snake and Ladders starter code): The game can be analyzed with a row vector, *v* with 101 components, representing the probabilities that the player is on each of the positions. V(0) is (1,0,0,...,0) since we know we start at square 0. v evolves by: <BR>![](images/prob.png?raw=true)<BR>
 > Produce graphs, show how game evolves over time
 > Plot useful stats such as:
 > * percentage chance of finishing the game in n-moves
 > * cumulative probability of finishing game in n-moves (cdf?)
-> * other ways to convey useful info about results
+> * other ways to convey useful info about results (modal number of moves required by single player to finish)
 
 ###### B2 Monte Carlo
 * **(2) Monte Carlo**: he will will use a monte carlo process to solve our Discrete Time Markov Chains. Here (2) use the DTMC project, and utilize the DTMC method similar to what we did in class.
@@ -163,7 +149,6 @@ The classic game has 100 positions on the board. You toss one die, and move squa
 > * percentage chance of finishing the game in n-moves
 > * cumulative probability of finishing game in n-moves (cdf?)
 > * other ways to convey useful info about results
-
 
 * **(c) Simulate and analyze the results of Snakes and Ladders -10pts:**  Construct a new transition matrix based on the table:
 
@@ -179,14 +164,11 @@ Ladders From  | Ladders To | |  Snakes From  | Snakes To
 76|91| |92|75
 84|98| |99|70
 
-Run the same simulation and analyze your results similar to part (b) for the proper game of *Snakes and Ladders* for both methods. How often are the snakes and ladders used, how do the probability of finishing change, etc? What is the maximum and expected amount of moves for the game? Use charts and graphs to illustrate these points.
+>Run the same simulation and analyze your results similar to part (b) for the proper game of *Snakes and Ladders* for >both methods. How often are the snakes and ladders used, how do the probability of finishing change, etc? What is the >maximum and expected amount of moves for the game? Use charts and graphs to illustrate these points.
 
 * **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
 
 ## Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
- For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
-
-
 ###### Step A
 * Complete - see *main.cpp*
 
