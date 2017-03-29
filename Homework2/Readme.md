@@ -105,12 +105,12 @@ The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 ext
 
 | Table 7. Descriptive Statistics |
 | ------------- |
-| ![](images/table7.png?raw=true)  |
+| ![](images/table7.PNG?raw=true)  |
 
 
 | Figure 7. Mersenne Twister Random Number Engine - 5 Distributions |
 | ------------- |
-| ![](images/5-dist.png?raw=true)  |
+| ![](images/5-dist.PNG?raw=true)  |
 
 ###### Step D
 
