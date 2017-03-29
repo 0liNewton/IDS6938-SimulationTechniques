@@ -206,16 +206,16 @@ When a passanger arrives they have to wait in a queue to present their ID and ti
 
 ###### Step E
 * Complete - see *queue1.alp* in the *AnyLogic* folder
-*  <BR>![](images/anylogic.png?raw=true)<BR>
+*  <BR>![](images/anylogic.PNG?raw=true)<BR>
 
 ##Part 4 - Implementing Extra Features (10 pts)
 * Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
- <BR>![](images/2Danylogic.png?raw=true)<BR>
+ <BR>![](images/2Danylogic.PNG?raw=true)<BR>
  
 ## Extra Features (Extra Credit - 25pts)
 
 * Extra Features: Add a 3D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
-<BR>![](images/3Danylogic.png?raw=true)<BR>
+<BR>![](images/3Danylogic.PNG?raw=true)<BR>
 
 If you feel like going beyond the scope of the assignment, you should consider implementing more of the following extra features. *Get the assignment working without them first.* You can get a maximum of 25 points in extra credit. Simply implementing these things doesn't guarantee you a 25; you really need to go above and beyond to get the full amount. (*The instructor reserves the right to hand out extra credit as his he sees fit.*)
 
