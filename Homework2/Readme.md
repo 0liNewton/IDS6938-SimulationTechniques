@@ -202,22 +202,20 @@ Run the same simulation and analyze your results similar to part (b) for the pro
 <BR>![](images/security.PNG?raw=true)<BR>
 
 ###### Step E
-* Complete - see *queue1.alp* in the *AnyLogic* folder
+* Complete - see *part2queues.alp* in the *AnyLogic* folder
 <BR>![](images/anylogic.PNG?raw=true)<BR>
 
-##Part 4 - Implementing Extra Features (10 pts)
-* Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
+## Part 4 - Implementing Extra Features (10 pts)
+* Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *part2queues.alp* in the *AnyLogic* folder
  <BR>![](images/2Danylogic.PNG?raw=true)<BR>
  
 ## Extra Features (Extra Credit - 25pts)
 
-* Extra Features: Add a 3D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
+* Add a 3D visualization to AnyLogic **(10 pts)** - see *part2queues.alp* in the *AnyLogic* folder
 <BR>![](images/3Danylogic.PNG?raw=true)<BR>
 
 
 ##References
-
-
 Lee, C., Famoye, F., Shelden, B., & Brown, A. (n.d.). Nonparametric Methods. Retrieved March 17, 2017, from http://calcnet.mth.cmich.edu/org/spss/StaProcNonp.htm
 
 
