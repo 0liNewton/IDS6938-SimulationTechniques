@@ -184,11 +184,8 @@ Run the same simulation and analyze your results similar to part (b) for the pro
 * **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
 
 ## Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
+ For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
 
-This problem will look at queues and commonly used performance measures. For this problem we will look to design a simple airport security check. We will make the following assumptions: (1) there is only one airline - Southwest; (2) passengers' interarrival times are independent and identically distributed (IID) with an exponential distribution with mean 1 / lambda. The service times are also assumed to be IID and exponentially distributed random variables with mean 1 / mu.
-
-<BR>![](images/queue.png?raw=true)<BR>
-When a passanger arrives they have to wait in a queue to present their ID and ticket to the gate agent with all the other passengers. Once approved by the agent they will have to pass through a security check. Since this is Orlando, there are only 3 open metal/screening devices open and again passangers have to wait in a queue. After passing through security you again have to wait in a queue to board your plane.
 
 ###### Step A
 * Complete - see *main.cpp*
@@ -200,42 +197,22 @@ When a passanger arrives they have to wait in a queue to present their ID and ti
 * Complete - see *mm1_queue.cpp*
 
 ###### Step D
-*  **(d) - 4pts:** Write code to call the functions to output and generate data from the airport senario. Plot and analyze the useful statistics/results in the program of your choice.  (Hint -  basically call  *.output();* on the MM1_Queue objects you create. Hint2 - two other use functions are *get_current_time()* and  *plot_results_output()* call intially on your intial MM1_Queue object.)
 
-
+<BR>![](images/checkins.PNG?raw=true)<BR>
+<BR>![](images/security.PNG?raw=true)<BR>
 
 ###### Step E
 * Complete - see *queue1.alp* in the *AnyLogic* folder
-*  <BR>![](images/anylogic.PNG?raw=true)<BR>
+<BR>![](images/anylogic.PNG?raw=true)<BR>
 
 ##Part 4 - Implementing Extra Features (10 pts)
 * Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
- <BR>![](images/2Danylogic.PNG?raw=true)<BR>
+ <BR>![](images/         .PNG?raw=true)<BR>
  
 ## Extra Features (Extra Credit - 25pts)
 
 * Extra Features: Add a 3D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
-<BR>![](images/3Danylogic.PNG?raw=true)<BR>
-
-If you feel like going beyond the scope of the assignment, you should consider implementing more of the following extra features. *Get the assignment working without them first.* You can get a maximum of 25 points in extra credit. Simply implementing these things doesn't guarantee you a 25; you really need to go above and beyond to get the full amount. (*The instructor reserves the right to hand out extra credit as his he sees fit.*)
-
-* **(5 Points)** - Implement and compare Halton, Hammersley, (Or another quasi method) Quasi sequences and add them to your analysis for appropriate subparts of Part 1.
-
-* **(5 Points)** - Implement different distributions inside the Quasi random sequences and add them to your analysis for appropriate subparts of Part 1.
-
-* **(5 Points)** - Implement and compare another (advanced) psedo random sequences and add them to your analysis for all subparts of Part 1 (Examples include: [PCG](http://www.pcg-random.org/), or [Random123](https://github.com/DEShawResearch/Random123-Boost)).
-
-* **(10 Points)** - Add a 2D visualization to AnyLogic for Part 3.
-
-* **(10 Points)** - Add a 3D visualization to AnyLogic for Part 3.
-
-* **(5 Points)** - Pick a research problem (from your dissertation, Energy Microgrids, Missle Defence...). Compare and contrast different software packages (AnyLogic, Simio, Simulu8, Arena etc). Convince me as your "manager/advisor" what advantages, weaknesses, and costs each program has. Come to a conclusion. Roughly sketch out how you would formulate the problem in the framework.
-
-* **(10 Points)** - Create an Anylogic simulation for Part 2 - Snakes and Ladders.
-
-* **(10 Points)** - Setup another resource allocation / queueing problem related to your research in Anylogic with a basic visualization
-
-* **(10 Points)** - Setup up SmartGrid or a Microgrid System that creates resources of power from wind, solar, and electric grid. Set up various devices in your house to draw power. [Reference 1](http://www.sciencedirect.com/science/article/pii/S1877050916301740),   [Reference 2](http://www.tandfonline.com/doi/full/10.1080/19401493.2013.866695?src=recsys&).
+<BR>![](images/                   .PNG?raw=true)<BR>
 
 
 ##References
