@@ -132,7 +132,7 @@ int main(int argc, char* argv[])
    security.output(); cout << "Security Output" << endl;
    security1.output(); cout << "Security 1 Output" << endl;
    security2.output(); cout << "Security 2 Output" << endl;
-   boarding.output(); cout << "Boarding output" << endl;
+   //boarding.output(); cout << "Boarding output" << endl;
    exit(1);
    //**************************************************************************
 

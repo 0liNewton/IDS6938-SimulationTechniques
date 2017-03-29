@@ -207,12 +207,12 @@ Run the same simulation and analyze your results similar to part (b) for the pro
 
 ##Part 4 - Implementing Extra Features (10 pts)
 * Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
- <BR>![](images/         .PNG?raw=true)<BR>
+ <BR>![](images/2Danylogic.PNG?raw=true)<BR>
  
 ## Extra Features (Extra Credit - 25pts)
 
 * Extra Features: Add a 3D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
-<BR>![](images/                   .PNG?raw=true)<BR>
+<BR>![](images/3Danylogic.PNG?raw=true)<BR>
 
 
 ##References
