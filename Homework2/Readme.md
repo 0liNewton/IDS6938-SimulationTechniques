@@ -5,13 +5,6 @@
 ### Olivia Newton
 The assignment is due: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due data is March 29th)
 
-Major parts for the Assignment
-
-* Empirical Tests of Randomness
-* Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations)
-* Discrete Event Simulation - Queue Simulation
-* Composing a final report
-
 ## Part 1: Empirical Tests of Randomness (20 pts).
 ###### Step A
 - Random number engines: Mersenne Twister, Knuth-B, Minimal Standard, Ranlux, and Sobol
@@ -213,6 +206,7 @@ When a passanger arrives they have to wait in a queue to present their ID and ti
 
 ###### Step E
 * Complete - see *queue1.alp* in the *AnyLogic* folder
+*  <BR>![](images/anylogic.png?raw=true)<BR>
 
 ##Part 4 - Implementing Extra Features (10 pts)
 * Extra Features: Add a 2D visualization to AnyLogic **(10 pts)** - see *queue1.alp* in the *AnyLogic* folder
