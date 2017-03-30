@@ -38,16 +38,16 @@ int main()
 
 	//  2) - Change distribution types
 	//std::uniform_real_distribution<> dist(0, 1);  // uniform distribution
-	//std::uniform_int_distribution<> dist(0, 1); // uniform integer
+	std::uniform_int_distribution<> dist(0, 100); // uniform integer
 	//std::normal_distribution<> dist(0.5,0.1); //normal distribution
 	//std::binomial_distribution<> dist(1,0.5); //binomial 
 	//std::poisson_distribution<> dist(12); //Poisson
-	std::exponential_distribution<> dist(10); //Exponential
+	//std::exponential_distribution<> dist(10); //Exponential
 
 	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 1000;  // number of values generated
+	unsigned int N = 500;  // number of values generated
 	double randomValue;
 	double rX;
 	double rY;
@@ -106,7 +106,7 @@ int main()
 			//<< p << " -  " << std::endl;
 	//}
 	std::ofstream myfile;
-	myfile.open("1000Xexpsquare.txt");
+	myfile.open("500Xunintsquare.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -114,7 +114,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("1000Yexpsquare.txt");
+	myfile.open("500Yunintsquare.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
