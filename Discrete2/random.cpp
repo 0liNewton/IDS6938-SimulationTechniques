@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES // for C++ 
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -8,7 +9,8 @@
 #include <fstream>
 #include <algorithm>
 #include <functional> 
-#include <numeric>     
+#include <numeric> 
+#include <cmath> // reference: https://msdn.microsoft.com/en-us/library/4hwaceh6.aspx
 
 int main()
 {
@@ -18,11 +20,11 @@ int main()
 	std::random_device rd;
 
 	// 1) Change (pseudo-) random number generators 
-	std::mt19937_64 engine(rd());
+	//std::mt19937_64 engine(rd());
 	//std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
 	//std::ranlux48 engine(rd());
-	//std::default_random_engine engine(rd());
+	std::default_random_engine engine(rd());
 
 
 	// Another seed intialization routine (this is just here for future reference for you.)
@@ -35,20 +37,22 @@ int main()
 
 
 	//  2) - Change distribution types
-	//std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
+	std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
 	//std::uniform_int_distribution<> dist(0, 1); //
 	//std::normal_distribution<> dist(0.5,0.1); //example of a normal distribution
 	//std::binomial_distribution<> dist(1,0.5); //binomial - idk if given parameters are right
-	//std::poisson_distribution<> dist(0.25); //Poisson - idk if given parameter is right...
+	//std::poisson_distribution<> dist(5); //Poisson - idk if given parameter is right...
 	//std::exponential_distribution<> exp_dist(Lambda); //Exponential
 
-	auto generator = std::bind(exp_dist, engine);
+	auto generator = std::bind(dist, engine);
 
 	// 3) Play with N
-	unsigned int N = 2500;  // number of values generated
-	//double randomValue;
+	unsigned int N = 1000;  // number of values generated
+	double randomValue;
 	double rX;
 	double rY;
+	double q;
+	double range;
 	std::map<int, int> hist; //Counts of discrete values
 	//std::vector<double> raw; //raw random values 
 	std::vector<double> rawX;
@@ -56,17 +60,17 @@ int main()
 
 
 	for (unsigned int i = 0; i < N; ++i) {
-		//randomValue = generator();
-		rX = generator(); //x coordinate
-		rY = generator(); //y coordinate
+		randomValue = generator();
+		//rX = generator(); //x coordinate
+		//rY = generator(); //y coordinate
 
 		//Unit Circle code
-		//double q = randomValue * (pi * 2) // describe what 'q' respresents http://forum.devmaster.net/t/uniform-random-point-inside-circle/12525
-		//double range = sqrt(randomValue);
-		//double x = (radius * range) * cos(q);
-		//double y = (radius * range) * sin(q);
+		q = generator() * (M_PI * 2); // reference: http://forum.devmaster.net/t/uniform-random-point-inside-circle/12525
+		range = sqrt(randomValue);
+		rX = (1.0 * range) * cos(q);
+		rY = (1.0 * range) * sin(q);
 
-		//Original Code:
+		//Original code
 		//++hist[std::round(randomValue)]; // count the values
 		//raw.push_back(randomValue);  //push the raw values
 
@@ -101,7 +105,7 @@ int main()
 			//<< p << " -  " << std::endl;
 	//}
 	std::ofstream myfile;
-	myfile.open("2500expX.txt");
+	myfile.open("1000Xdefaultcircle.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -109,7 +113,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("2500expY.txt");
+	myfile.open("1000Ydefaultcircle.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)

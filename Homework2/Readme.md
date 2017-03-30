@@ -114,7 +114,7 @@
 
 ###### Step D
 
-| Figure 8. Unit Square with 5 Random Number Engines' Output |
+| Figure 8. Unit Square with 4 Random Number Engines |
 | ------------- |
 | ![](images/figure8.png?raw=true)  |
 
@@ -126,7 +126,9 @@
 
 ###### Step F: Repeat parts (d) and (e) with a unit circle.
 
-> NOT DONE YET
+| Figure 10. Unit Circle with 4 Random Number Engines |
+| ------------- |
+| ![](images/figure10.png?raw=true)  |
 
 ## Part 2 - Snakes and Ladders (Discrete Event Markov Chains and Monte Carlo Simulations) (30 pts)
 
