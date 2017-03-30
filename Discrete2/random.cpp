@@ -20,11 +20,11 @@ int main()
 	std::random_device rd;
 
 	// 1) Change (pseudo-) random number generators 
-	//std::mt19937_64 engine(rd());
+	std::mt19937_64 engine(rd());
 	//std::knuth_b engine(rd());
 	//std::minstd_rand engine(rd());
 	//std::ranlux48 engine(rd());
-	std::default_random_engine engine(rd());
+	//std::default_random_engine engine(rd());
 
 
 	// Another seed intialization routine (this is just here for future reference for you.)
@@ -37,11 +37,11 @@ int main()
 
 
 	//  2) - Change distribution types
-	std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
+	//std::uniform_real_distribution<> dist(0, 1);  // example of a uniform distribution
 	//std::uniform_int_distribution<> dist(0, 1); //
 	//std::normal_distribution<> dist(0.5,0.1); //example of a normal distribution
 	//std::binomial_distribution<> dist(1,0.5); //binomial - idk if given parameters are right
-	//std::poisson_distribution<> dist(5); //Poisson - idk if given parameter is right...
+	std::poisson_distribution<> dist(5); //Poisson - idk if given parameter is right...
 	//std::exponential_distribution<> exp_dist(Lambda); //Exponential
 
 	auto generator = std::bind(dist, engine);
@@ -51,8 +51,8 @@ int main()
 	double randomValue;
 	double rX;
 	double rY;
-	double q;
-	double range;
+	//double q;
+	//double range;
 	std::map<int, int> hist; //Counts of discrete values
 	//std::vector<double> raw; //raw random values 
 	std::vector<double> rawX;
@@ -60,15 +60,16 @@ int main()
 
 
 	for (unsigned int i = 0; i < N; ++i) {
-		randomValue = generator();
-		//rX = generator(); //x coordinate
-		//rY = generator(); //y coordinate
+		//randomValue = generator();
+		rX = generator(); //x coordinate
+		rY = generator(); //y coordinate
 
 		//Unit Circle code
-		q = generator() * (M_PI * 2); // reference: http://forum.devmaster.net/t/uniform-random-point-inside-circle/12525
+		/*q = generator() * (M_PI * 2); // reference: http://forum.devmaster.net/t/uniform-random-point-inside-circle/12525
 		range = sqrt(randomValue);
 		rX = (1.0 * range) * cos(q);
 		rY = (1.0 * range) * sin(q);
+		*/
 
 		//Original code
 		//++hist[std::round(randomValue)]; // count the values
@@ -105,7 +106,7 @@ int main()
 			//<< p << " -  " << std::endl;
 	//}
 	std::ofstream myfile;
-	myfile.open("1000Xdefaultcircle.txt");
+	myfile.open("1000Xpoissonsquare.txt");
 	for (auto p : rawX) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
@@ -113,7 +114,7 @@ int main()
 	}
 	myfile.close();
 
-	myfile.open("1000Ydefaultcircle.txt");
+	myfile.open("1000Ypoissonsquare.txt");
 	for (auto p : rawY) {
 
 		myfile << std::fixed << std::setprecision(5) << std::setw(2)
