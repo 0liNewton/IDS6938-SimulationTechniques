@@ -2,8 +2,7 @@
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
-### Olivia Newton
-###### Due Date: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due date is March 29th at 11:59PM (EST))
+###### Olivia Newton | Due Date: **Tuesday, March 28 at 11:59PM (EST)** | Requesting 1 extra day (new due date is March 29th at 11:59PM (EST))
 
 ## Part 1: Empirical Tests of Randomness (20 pts).
 ###### Step A
@@ -136,39 +135,9 @@
 - Complete - see *TransitionMatrix.h*
 
 ###### Step B
-###### B1 Markov Chain
-* **(1) Markov Chain** (For this part (1) use the *Markov project* in the Snake and Ladders starter code): The game can be analyzed with a row vector, *v* with 101 components, representing the probabilities that the player is on each of the positions. V(0) is (1,0,0,...,0) since we know we start at square 0. v evolves by: <BR>![](images/prob.png?raw=true)<BR>
-> Produce graphs, show how game evolves over time
-> Plot useful stats such as:
-> * percentage chance of finishing the game in n-moves
-> * cumulative probability of finishing game in n-moves (cdf?)
-> * other ways to convey useful info about results (modal number of moves required by single player to finish)
+- See *test_markov.cpp* and *test_dtmc.cpp*
 
-###### B2 Monte Carlo
-* **(2) Monte Carlo**: he will will use a monte carlo process to solve our Discrete Time Markov Chains. Here (2) use the DTMC project, and utilize the DTMC method similar to what we did in class.
-> Produce graphs, show how game evolves over time
-> Plot useful stats such as:
-> * percentage chance of finishing the game in n-moves
-> * cumulative probability of finishing game in n-moves (cdf?)
-> * other ways to convey useful info about results
-
-* **(c) Simulate and analyze the results of Snakes and Ladders -10pts:**  Construct a new transition matrix based on the table:
-
-Ladders From  | Ladders To | |  Snakes From  | Snakes To 
--------- | -------- | ------------- | -------- | -------- 
-3|19| |11|7
-15|37| |18|13
-22|42| |28|12
-25|64| |36|34
-41|73| |77|16
-53|74| |47|26
-63|86| |83|39
-76|91| |92|75
-84|98| |99|70
-
->Run the same simulation and analyze your results similar to part (b) for the proper game of *Snakes and Ladders* for >both methods. How often are the snakes and ladders used, how do the probability of finishing change, etc? What is the >maximum and expected amount of moves for the game? Use charts and graphs to illustrate these points.
-
-* **(d) Think - 0pts:** If these games are built entirely on chance, do they require any strategy? Is it really a *game*, would you rather play games of chance or games of strategy?
+###### Step C
 
 ## Part 3 - Discrete Event Simulation - Queue Simulation (30 pts)
 ###### Step A
