@@ -16,17 +16,17 @@ static char THIS_FILE[]=__FILE__;
 //Their real values are set in static function SIMAgent::InitValues()
 vector<SIMAgent*> SIMAgent::agents;
 bool SIMAgent::debug = false;
-float SIMAgent::radius = 20.0;
-float SIMAgent::Mass = 1.0;
-float SIMAgent::Inertia = 1.0;
-float SIMAgent::MaxVelocity = 20.0;
-float SIMAgent::MaxForce = 10.0;
-float SIMAgent::MaxTorque = 40.0;
-float SIMAgent::MaxAngVel = 10.0;
-float SIMAgent::Kv0 = 1.0;
-float SIMAgent::Kp1 = 1.0;
-float SIMAgent::Kv1 = 1.0;
-float SIMAgent::KArrival = 1.0;
+float SIMAgent::radius = 20.0; //Radius of the bounding sphere of every agent
+float SIMAgent::Mass = 1.0; //Mass of every agent
+float SIMAgent::Inertia = 1.0; //Maximum inertia
+float SIMAgent::MaxVelocity = 20.0; //Maximum velocity
+float SIMAgent::MaxForce = 10.0; //Maximum force
+float SIMAgent::MaxTorque = 40.0; //Maximum torque
+float SIMAgent::MaxAngVel = 10.0; //Maximum angular velocity
+float SIMAgent::Kv0 = 1.0; //Velocity control: f = m * Kv0 * (vd - v)
+float SIMAgent::Kp1 = 1.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+float SIMAgent::Kv1 = 1.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+float SIMAgent::KArrival = 1.0; // Behavior settings. See comments in cpp file for details
 float SIMAgent::KDeparture = 1.0;
 float SIMAgent::KNoise = 1.0;
 float SIMAgent::KWander = 1.0;
@@ -221,16 +221,19 @@ void SIMAgent::InitValues()
 {
 	/*********************************************
 	// TODO: Add code here
+	
 	Set initial value for control and behavior settings
+
 	You need to find out appropriate values for:
 	SIMAgent::Kv0, SIMAgent::Kp1, SIMAgent::Kv1, SIMAgent::KArrival, SIMAgent::KDeparture,
 	SIMAgent::KNoise, SIMAgent::KWander, SIMAgent::KAvoid, SIMAgent::TAvoid, SIMAgent::RNeighborhood,
 	SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.
+
 	*********************************************/
-	Kv0 = 0.0;
-	Kp1 = 0.0;
-	Kv1 = 0.0;
-	KArrival = 0.0;
+	Kv0 = 0.0; //Velocity control: f = m * Kv0 * (vd - v)
+	Kp1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	KArrival = 0.0; //Behavior settings
 	KDeparture = 0.0;
 	KNoise = 0.0;
 	KWander = 0.0;
@@ -247,9 +250,33 @@ void SIMAgent::InitValues()
 */
 void SIMAgent::Control()
 {
-	/*********************************************
-	// TODO: Add code here
-	*********************************************/
+	//*********************************************
+	// TODO: Add code here - from Piazza
+	// This function sets input[0] and input[1] after being called
+
+
+	//State vector dimension: 4
+	/*
+	*	State Vector: 4 dimensions
+	*  0 : position in local coordinates. Useless.
+	*  1 : orientation angle in global coordinates.
+	*  2 : velocity in local coordinates.
+	*  3 : angular velocity in global coordinates.
+	*/
+
+
+	Truncate(vd, -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
+	//set input[0] -> f = m * Kv0 * (vd - v) -> input[0] = mass of agent * velocity force * (desired velocity - velocity of agent)
+	input[0] = SIMAgent::Mass * SIMAgent::Kv0 * (vd - state[2]); // force in local body coordinates
+	Truncate(input[0], -SIMAgent::MaxForce, SIMAgent::MaxForce); 
+ 
+	double dangle = AngleDiff(state[1], thetad);
+	//set input[1] -> tau = I * ( -Kv1 * thetaDot - (Kp1 * theta + Kp1 * thetad)) -> 
+	//input[1] = inertia of agent * dot product of orientation angle vector and desired orientation vector - 
+	input[1] = SIMAgent::Inertia * (Kp1 * dangle - Kv1 * state[3]); // torque in local body coordinates -- should 
+	Truncate(input[1], -SIMAgent::MaxTorque, SIMAgent::MaxTorque);
+	
+	//*********************************************
 
 }
 
@@ -261,6 +288,18 @@ void SIMAgent::FindDeriv()
 {
 	/*********************************************
 	// TODO: Add code here
+
+	"Compute derivative vector given input and state vectors" - readme
+	- call function
+	- then function sets derive vector to appropriate values
+	
+	for (int i = ; i < ; i++) {
+	
+	deriv[0] = ;//force in local body coordinates divided by the mass
+	deriv[1] = ;
+	deriv[2] = ;
+	deriv[3] = ;
+
 	*********************************************/
 
 }
@@ -272,9 +311,29 @@ void SIMAgent::FindDeriv()
 */
 void SIMAgent::UpdateState()
 {
-	/*********************************************
-	// TODO: Add code here
-	*********************************************/
+	//*********************************************
+	// TODO: Add code here - taken from Piazza post
+	// This
+	for (int i = 0; i < dimState; i++){
+	state[i] += deriv[i] * deltaT;
+	}
+	state[0] =0.0;
+
+	Clamp(state[1], -M_PI, M_PI);
+	//ClampAngle(state[1], -M_PI, M_PI);
+	Truncate(state[2], -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
+
+	vec2 GVelocity;
+	GVelocity[0] = state[2] * cos(state[1]);
+	GVelocity[1] = state[2] * sin(state[1]);
+	GPos += GVelocity;
+
+	Truncate(GPos[0], -1.0 * env->groundSize, env->groundSize);
+	Truncate(GPos[1], -1.0 * env->groundSize, env->groundSize);
+
+	Truncate(state[3], -SIMAgent::MaxAngVel, SIMAgent::MaxAngVel);
+
+		//*********************************************
 
 }
 
