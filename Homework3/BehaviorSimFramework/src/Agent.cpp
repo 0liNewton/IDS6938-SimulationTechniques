@@ -230,10 +230,10 @@ void SIMAgent::InitValues()
 	SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.
 
 	*********************************************/
-	Kv0 = 0.0; //Velocity control: f = m * Kv0 * (vd - v)
+	Kv0 = 5.0; //Velocity control: f = m * Kv0 * (vd - v)
 	Kp1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	Kv1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 0.0; //Behavior settings
+	KArrival = 2.0; //Behavior settings
 	KDeparture = 0.0;
 	KNoise = 0.0;
 	KWander = 0.0;
@@ -266,18 +266,21 @@ void SIMAgent::Control()
 
 
 	Truncate(vd, -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
+	
 	//set input[0] -> f = m * Kv0 * (vd - v) -> input[0] = mass of agent * velocity force * (desired velocity - velocity of agent)
+
 	input[0] = SIMAgent::Mass * SIMAgent::Kv0 * (vd - state[2]); // force in local body coordinates
 	Truncate(input[0], -SIMAgent::MaxForce, SIMAgent::MaxForce); 
  
 	double dangle = AngleDiff(state[1], thetad);
+	
 	//set input[1] -> tau = I * ( -Kv1 * thetaDot - (Kp1 * theta + Kp1 * thetad)) -> 
-	//input[1] = inertia of agent * dot product of orientation angle vector and desired orientation vector - 
+	//input[1] = inertia of agent * dot product of orientation angle vector and desired orientation vector - heading control * angular velocity in global coordinates
+	
 	input[1] = SIMAgent::Inertia * (Kp1 * dangle - Kv1 * state[3]); // torque in local body coordinates -- should 
 	Truncate(input[1], -SIMAgent::MaxTorque, SIMAgent::MaxTorque);
 	
 	//*********************************************
-
 }
 
 /*
@@ -287,21 +290,15 @@ void SIMAgent::Control()
 void SIMAgent::FindDeriv()
 {
 	/*********************************************
-	// TODO: Add code here
-
 	"Compute derivative vector given input and state vectors" - readme
 	- call function
 	- then function sets derive vector to appropriate values
-	
-	for (int i = ; i < ; i++) {
-	
-	deriv[0] = ;//force in local body coordinates divided by the mass
-	deriv[1] = ;
-	deriv[2] = ;
-	deriv[3] = ;
-
 	*********************************************/
-
+	
+	deriv[0] = input[0]/Mass;
+	deriv[1] = input[1]/Inertia;
+	deriv[2] = state[2];
+	deriv[3] = state[3];
 }
 
 /*
@@ -319,8 +316,8 @@ void SIMAgent::UpdateState()
 	}
 	state[0] =0.0;
 
-	Clamp(state[1], -M_PI, M_PI);
-	//ClampAngle(state[1], -M_PI, M_PI);
+	//Clamp(state[1], -M_PI, M_PI);
+	ClampAngle(state[1]);
 	Truncate(state[2], -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
 
 	vec2 GVelocity;
@@ -350,9 +347,22 @@ vec2 SIMAgent::Seek()
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
+	vec2 tmp; //call the variable
+	double desiredv;
+	tmp = goal - GPos; //to get desired vector
+	thetad = tmp[1]/tmp[0];
+	desiredv = atan2(tmp[1], tmp[0]);
 
-	return tmp;
+	float Vn;
+	Vn = SIMAgent::MaxVelocity;
+	return vec2(cos(desiredv)* Vn, sin(desiredv)* Vn);
+
+	//return tmp;
+
+	//double Vsubn;
+	//Vsubn = SIMAgent::MaxVelocity; // cos thetad * maxvelocity, sine thetad * maxvelocity
+	//vec2 Vn = SIMAgent::
+
 }
 
 /*
@@ -368,9 +378,19 @@ vec2 SIMAgent::Flee()
 	/*********************************************
 	// TODO: Add code here
 	*********************************************/
-	vec2 tmp;
 
-	return tmp;
+	vec2 tmp; //call the variable
+	double desiredv;
+	tmp = goal - GPos; //to get desired vector
+	thetad = tmp[1] / tmp[0];
+	desiredv = atan2(tmp[1], tmp[0]);
+	desiredv = desiredv + M_PI;
+
+	float Vn;
+	Vn = SIMAgent::MaxVelocity;
+	return vec2(cos(desiredv)* Vn, sin(desiredv)* Vn);
+
+	//return tmp;
 }
 
 /*
