@@ -5,7 +5,7 @@
 [University of Central Florida](http://www.ist.ucf.edu/grad/)
 This is the framework for homework #3. 
 
-The assignment is due: **Monday, April  24 at 11:59PM (EST)**
+The assignment is due: **Monday, April  24 at 11:59PM (EST)** Taking extra day - new due date: **Tuesday, April 25th at 11:59 PM**
 
 # Introduction
 The goal of this assignment is to enable the behavioral animation of vehicle-like walking agents. 
@@ -62,11 +62,15 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 ![](images/flow.png?raw=true)
 
-**(a) - 0 points**: Follow the Anylogic example for the [Subway Entrance example](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/_PL/tutorial/Subway_Entrance.html). Create the appropriate [boundaries and walls](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/markup/Wall.html), and the display ther pedestrian density map, [statistics](https://help.anylogic.com/index.jsp?nav=/4_1_5), [2D and 3D animations](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/_PL/reference/Animation.html).
+**(a) Subway Entrance Model
 
-![](images/density.png?raw=true)
+![](images/Anylogic_subwayhall.png?raw=true)
 
-**(b) - 20 points**: Create a maze. Generate the pdm, stats, and animations like before. Vary [parameters in your agents](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/_PL/reference/Attributes.html) to give them different behaviors and show the pedistrians change how they navigate the maze.
+* Done - add description of what was done and what was observed
+
+**(b) Maze Model - 20 points**: Create a maze. Generate the pdm, stats, and animations like before. Vary [parameters in your agents](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/_PL/reference/Attributes.html) to give them different behaviors and show the pedistrians change how they navigate the maze.
+
+* Done - add screen shot image and video link
 
 **(c) - 30 points**: Model and analyze a building (or floor/outdoor space/stadium) on campus. (There is help on piazza how to find rough building plans - we expect something plausible). Create a senario: evacuation, daily office routine, special event, normal egress.... etc., and model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
 

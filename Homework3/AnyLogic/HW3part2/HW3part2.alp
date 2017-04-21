@@ -102,7 +102,7 @@
 				<Connector>
 					<Id>1492003931165</Id>
 					<Name><![CDATA[connector1]]></Name>
-					<X>340</X><Y>0</Y>
+					<X>300</X><Y>-110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -135,7 +135,7 @@
 				<Connector>
 					<Id>1492004587686</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>160</X><Y>0</Y>
+					<X>120</X><Y>-110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -168,7 +168,7 @@
 				<Connector>
 					<Id>1492092243461</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>380</X><Y>470</Y>
+					<X>340</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -201,7 +201,7 @@
 				<Connector>
 					<Id>1492092243462</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>190</X><Y>470</Y>
+					<X>150</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -234,7 +234,7 @@
 				<Connector>
 					<Id>1492092348711</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>270</X><Y>500</Y>
+					<X>230</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -267,7 +267,7 @@
 				<Connector>
 					<Id>1492092362750</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>310</X><Y>500</Y>
+					<X>270</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -324,7 +324,7 @@
 				<EmbeddedObject>
 					<Id>1492003851380</Id>
 					<Name><![CDATA[inflowSource]]></Name>
-					<X>60</X><Y>470</Y>
+					<X>20</X><Y>360</Y>
 					<Label><X>-20</X><Y>-35</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -550,7 +550,7 @@
 				<EmbeddedObject>
 					<Id>1492003895823</Id>
 					<Name><![CDATA[goToTrains]]></Name>
-					<X>540</X><Y>460</Y>
+					<X>500</X><Y>350</Y>
 					<Label><X>-15</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -656,7 +656,7 @@
 				<EmbeddedObject>
 					<Id>1492003926191</Id>
 					<Name><![CDATA[inflowSink]]></Name>
-					<X>650</X><Y>470</Y>
+					<X>610</X><Y>360</Y>
 					<Label><X>-25</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -723,7 +723,7 @@
 				<EmbeddedObject>
 					<Id>1492004584505</Id>
 					<Name><![CDATA[checkTickets]]></Name>
-					<X>380</X><Y>460</Y>
+					<X>340</X><Y>350</Y>
 					<Label><X>-25</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -832,7 +832,7 @@
 				<EmbeddedObject>
 					<Id>1492092236414</Id>
 					<Name><![CDATA[routePassengers]]></Name>
-					<X>180</X><Y>470</Y>
+					<X>140</X><Y>360</Y>
 					<Label><X>-45</X><Y>-35</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -963,7 +963,7 @@
 				<EmbeddedObject>
 					<Id>1492092339434</Id>
 					<Name><![CDATA[atTVM]]></Name>
-					<X>270</X><Y>490</Y>
+					<X>230</X><Y>380</Y>
 					<Label><X>-25</X><Y>-25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1079,7 +1079,7 @@
 				<Image>
 					<Id>1491951040659</Id>
 					<Name><![CDATA[image]]></Name>
-					<X>50</X><Y>50</Y>
+					<X>20</X><Y>10</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1100,7 +1100,7 @@
 				<Ground>
 					<Id>1491951545877</Id>
 					<Name><![CDATA[ground]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-30</X><Y>-40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1111,7 +1111,7 @@
 				<Wall>
 					<Id>1492002958988</Id>
 					<Name><![CDATA[wall]]></Name>
-					<X>50</X><Y>80</Y>
+					<X>20</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1157,7 +1157,7 @@
 				<TargetLine>
 					<Id>1492003702459</Id>
 					<Name><![CDATA[entryLine]]></Name>
-					<X>70</X><Y>170</Y>
+					<X>40</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1173,7 +1173,7 @@
 				<TargetLine>
 					<Id>1492003778541</Id>
 					<Name><![CDATA[boardingLine]]></Name>
-					<X>930</X><Y>70</Y>
+					<X>900</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1190,7 +1190,7 @@
 					<ServiceColor>-16744448</ServiceColor>
 					<Id>1492004433856</Id>
 					<Name><![CDATA[fareGates]]></Name>
-					<X>770</X><Y>100</Y>
+					<X>740</X><Y>60</Y>
 					<Label><X>14.46</X><Y>5.495</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1243,7 +1243,7 @@
 				<QueueLine>
 					<Id>1492004433868</Id>
 					<Name><![CDATA[queueLine]]></Name>
-					<X>770</X><Y>100</Y>
+					<X>740</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1267,7 +1267,7 @@
 				<QueueLine>
 					<Id>1492004433870</Id>
 					<Name><![CDATA[queueLine1]]></Name>
-					<X>770</X><Y>123.31</Y>
+					<X>740</X><Y>83.31</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1291,7 +1291,7 @@
 				<QueueLine>
 					<Id>1492004470128</Id>
 					<Name><![CDATA[queueLine2]]></Name>
-					<X>770</X><Y>146.621</Y>
+					<X>740</X><Y>106.621</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1315,7 +1315,7 @@
 				<QueueLine>
 					<Id>1492004470723</Id>
 					<Name><![CDATA[queueLine3]]></Name>
-					<X>770</X><Y>169.932</Y>
+					<X>740</X><Y>129.932</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1339,7 +1339,7 @@
 				<QueueLine>
 					<Id>1492004471385</Id>
 					<Name><![CDATA[queueLine4]]></Name>
-					<X>770</X><Y>193.243</Y>
+					<X>740</X><Y>153.243</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1363,7 +1363,7 @@
 				<QueueLine>
 					<Id>1492004471961</Id>
 					<Name><![CDATA[queueLine5]]></Name>
-					<X>770</X><Y>216.554</Y>
+					<X>740</X><Y>176.554</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1387,7 +1387,7 @@
 				<ServiceLine>
 					<Id>1492004477383</Id>
 					<Name><![CDATA[serviceLine]]></Name>
-					<X>864.865</X><Y>100</Y>
+					<X>834.865</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1404,7 +1404,7 @@
 				<ServiceLine>
 					<Id>1492004477390</Id>
 					<Name><![CDATA[serviceLine1]]></Name>
-					<X>864.865</X><Y>123.31</Y>
+					<X>834.865</X><Y>83.31</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1421,7 +1421,7 @@
 				<ServiceLine>
 					<Id>1492004477397</Id>
 					<Name><![CDATA[serviceLine2]]></Name>
-					<X>864.865</X><Y>146.621</Y>
+					<X>834.865</X><Y>106.621</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1438,7 +1438,7 @@
 				<ServiceLine>
 					<Id>1492004477403</Id>
 					<Name><![CDATA[serviceLine3]]></Name>
-					<X>864.865</X><Y>169.932</Y>
+					<X>834.865</X><Y>129.932</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1455,7 +1455,7 @@
 				<ServiceLine>
 					<Id>1492004477409</Id>
 					<Name><![CDATA[serviceLine4]]></Name>
-					<X>864.865</X><Y>193.243</Y>
+					<X>834.865</X><Y>153.243</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1472,7 +1472,7 @@
 				<ServiceLine>
 					<Id>1492004477415</Id>
 					<Name><![CDATA[serviceLine5]]></Name>
-					<X>864.865</X><Y>216.554</Y>
+					<X>834.865</X><Y>176.554</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1489,7 +1489,7 @@
 				<ServiceLine>
 					<Id>1492004747822</Id>
 					<Name><![CDATA[serviceLine6]]></Name>
-					<X>864.865</X><Y>239.865</Y>
+					<X>834.865</X><Y>199.865</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1506,7 +1506,7 @@
 				<QueueLine>
 					<Id>1492004749514</Id>
 					<Name><![CDATA[queueLine6]]></Name>
-					<X>773</X><Y>239</Y>
+					<X>743</X><Y>199</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1530,7 +1530,7 @@
 				<ServiceLine>
 					<Id>1492004835786</Id>
 					<Name><![CDATA[serviceLine7]]></Name>
-					<X>864.865</X><Y>263.17600000000004</Y>
+					<X>834.865</X><Y>223.176</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1547,7 +1547,7 @@
 				<QueueLine>
 					<Id>1492004836576</Id>
 					<Name><![CDATA[queueLine7]]></Name>
-					<X>773</X><Y>263</Y>
+					<X>743</X><Y>223</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1586,7 +1586,7 @@
 				<DensityMap>
 					<Id>1492004983710</Id>
 					<Name><![CDATA[densityMap]]></Name>
-					<X>960</X><Y>90</Y>
+					<X>930</X><Y>50</Y>
 					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1605,7 +1605,7 @@
 					<ServiceColor>-16744448</ServiceColor>
 					<Id>1492092127127</Id>
 					<Name><![CDATA[ticketMachines]]></Name>
-					<X>347.5</X><Y>169.5</Y>
+					<X>317.5</X><Y>129.5</Y>
 					<Label><X>59.5</X><Y>-47.5</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1658,7 +1658,7 @@
 				<QueueLine>
 					<Id>1492092127129</Id>
 					<Name><![CDATA[queueLine8]]></Name>
-					<X>347.5</X><Y>169.5</Y>
+					<X>317.5</X><Y>129.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1682,7 +1682,7 @@
 				<QueueLine>
 					<Id>1492092127131</Id>
 					<Name><![CDATA[queueLine9]]></Name>
-					<X>367.5</X><Y>169.5</Y>
+					<X>337.5</X><Y>129.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1706,7 +1706,7 @@
 				<ServicePoint>
 					<Id>1492092127133</Id>
 					<Name><![CDATA[servicePoint]]></Name>
-					<X>347.5</X><Y>89.5</Y>
+					<X>317.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1721,7 +1721,7 @@
 				<ServicePoint>
 					<Id>1492092127135</Id>
 					<Name><![CDATA[servicePoint1]]></Name>
-					<X>367.5</X><Y>89.5</Y>
+					<X>337.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1736,7 +1736,7 @@
 				<ServicePoint>
 					<Id>1492092188171</Id>
 					<Name><![CDATA[servicePoint2]]></Name>
-					<X>387.5</X><Y>89.5</Y>
+					<X>357.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1751,7 +1751,7 @@
 				<ServicePoint>
 					<Id>1492092188529</Id>
 					<Name><![CDATA[servicePoint3]]></Name>
-					<X>407.5</X><Y>89.5</Y>
+					<X>377.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1766,7 +1766,7 @@
 				<ServicePoint>
 					<Id>1492092189019</Id>
 					<Name><![CDATA[servicePoint4]]></Name>
-					<X>427.5</X><Y>89.5</Y>
+					<X>397.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1781,7 +1781,7 @@
 				<ServicePoint>
 					<Id>1492092189474</Id>
 					<Name><![CDATA[servicePoint5]]></Name>
-					<X>447.5</X><Y>89.5</Y>
+					<X>417.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1796,7 +1796,7 @@
 				<ServicePoint>
 					<Id>1492092189980</Id>
 					<Name><![CDATA[servicePoint6]]></Name>
-					<X>467.5</X><Y>89.5</Y>
+					<X>437.5</X><Y>49.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1811,7 +1811,7 @@
 				<QueueLine>
 					<Id>1492092190855</Id>
 					<Name><![CDATA[queueLine10]]></Name>
-					<X>387</X><Y>169</Y>
+					<X>357</X><Y>129</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1835,7 +1835,7 @@
 				<QueueLine>
 					<Id>1492092191093</Id>
 					<Name><![CDATA[queueLine11]]></Name>
-					<X>407</X><Y>169</Y>
+					<X>377</X><Y>129</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1859,7 +1859,7 @@
 				<QueueLine>
 					<Id>1492092191346</Id>
 					<Name><![CDATA[queueLine12]]></Name>
-					<X>427</X><Y>169</Y>
+					<X>397</X><Y>129</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1883,7 +1883,7 @@
 				<QueueLine>
 					<Id>1492092191852</Id>
 					<Name><![CDATA[queueLine13]]></Name>
-					<X>447</X><Y>169</Y>
+					<X>417</X><Y>129</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1907,7 +1907,7 @@
 				<QueueLine>
 					<Id>1492092192261</Id>
 					<Name><![CDATA[queueLine14]]></Name>
-					<X>467</X><Y>169</Y>
+					<X>437</X><Y>129</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1945,8 +1945,8 @@
 
 				<FlowStatistics>
 					<Id>1492092588039</Id>
-					<Name><![CDATA[pedFlowStatistics]]></Name>
-					<X>630</X><Y>80</Y>
+					<Name><![CDATA[toTrains]]></Name>
+					<X>600</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1960,8 +1960,8 @@
 				</FlowStatistics>
 				<FlowStatistics>
 					<Id>1492092658651</Id>
-					<Name><![CDATA[pedFlowStatistics1]]></Name>
-					<X>330</X><Y>110</Y>
+					<Name><![CDATA[ticketBooth]]></Name>
+					<X>300</X><Y>70</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1973,22 +1973,6 @@
 					<Dy>0</Dy>
 					<Direction>left</Direction>
 				</FlowStatistics>
-				<TargetLine>
-					<Id>1492438886370</Id>
-					<Name><![CDATA[targetLine]]></Name>
-					<X>50</X><Y>790</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LineColor>-16777216</LineColor>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>0</Y></Point>
-					</Points>
-				</TargetLine>
 			</Shapes>
 
 					<Z>0</Z>
@@ -2017,13 +2001,13 @@
 				<Figure3D>
 					<Id>1492439431135</Id>
 					<Name><![CDATA[bench]]></Name>
-					<X>560</X><Y>100</Y>
+					<X>530</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>560</X><Y>100</Y><Z>0</Z>
+					<X>530</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/bench.x3d]]></FileName>
 					<ColorTable>
@@ -2041,13 +2025,13 @@
 				<Figure3D>
 					<Id>1492439440101</Id>
 					<Name><![CDATA[bench1]]></Name>
-					<X>590</X><Y>100</Y>
+					<X>560</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>590</X><Y>100</Y><Z>0</Z>
+					<X>560</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/bench.x3d]]></FileName>
 					<ColorTable>
@@ -2065,13 +2049,13 @@
 				<Figure3D>
 					<Id>1492439447141</Id>
 					<Name><![CDATA[bench2]]></Name>
-					<X>260</X><Y>100</Y>
+					<X>230</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>260</X><Y>100</Y><Z>0</Z>
+					<X>230</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/bench.x3d]]></FileName>
 					<ColorTable>
@@ -2089,13 +2073,13 @@
 				<Figure3D>
 					<Id>1492439453931</Id>
 					<Name><![CDATA[bench3]]></Name>
-					<X>230</X><Y>100</Y>
+					<X>200</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>230</X><Y>100</Y><Z>0</Z>
+					<X>200</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/bench.x3d]]></FileName>
 					<ColorTable>
@@ -2113,13 +2097,13 @@
 				<Figure3D>
 					<Id>1492439458856</Id>
 					<Name><![CDATA[lamp]]></Name>
-					<X>300</X><Y>100</Y>
+					<X>270</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>300</X><Y>100</Y><Z>0</Z>
+					<X>270</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/lamp.x3d]]></FileName>
 					<ColorTable>
@@ -2137,13 +2121,13 @@
 				<Figure3D>
 					<Id>1492439462327</Id>
 					<Name><![CDATA[lamp1]]></Name>
-					<X>510</X><Y>100</Y>
+					<X>480</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>510</X><Y>100</Y><Z>0</Z>
+					<X>480</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/lamp.x3d]]></FileName>
 					<ColorTable>
@@ -2161,13 +2145,13 @@
 				<Figure3D>
 					<Id>1492439469172</Id>
 					<Name><![CDATA[turnstile_open]]></Name>
-					<X>340</X><Y>160</Y>
+					<X>310</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>340</X><Y>160</Y><Z>0</Z>
+					<X>310</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2193,13 +2177,13 @@
 				<Figure3D>
 					<Id>1492439484267</Id>
 					<Name><![CDATA[turnstile_open1]]></Name>
-					<X>370</X><Y>160</Y>
+					<X>340</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>370</X><Y>160</Y><Z>0</Z>
+					<X>340</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2225,13 +2209,13 @@
 				<Figure3D>
 					<Id>1492439645863</Id>
 					<Name><![CDATA[turnstile_open2]]></Name>
-					<X>390</X><Y>160</Y>
+					<X>360</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>390</X><Y>160</Y><Z>0</Z>
+					<X>360</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2257,13 +2241,13 @@
 				<Figure3D>
 					<Id>1492439655531</Id>
 					<Name><![CDATA[turnstile_open3]]></Name>
-					<X>410</X><Y>160</Y>
+					<X>380</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>410</X><Y>160</Y><Z>0</Z>
+					<X>380</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2289,13 +2273,13 @@
 				<Figure3D>
 					<Id>1492439659853</Id>
 					<Name><![CDATA[turnstile_open4]]></Name>
-					<X>430</X><Y>160</Y>
+					<X>400</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>430</X><Y>160</Y><Z>0</Z>
+					<X>400</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2321,13 +2305,13 @@
 				<Figure3D>
 					<Id>1492439666850</Id>
 					<Name><![CDATA[turnstile_open5]]></Name>
-					<X>450</X><Y>160</Y>
+					<X>420</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>450</X><Y>160</Y><Z>0</Z>
+					<X>420</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2353,13 +2337,13 @@
 				<Figure3D>
 					<Id>1492439670287</Id>
 					<Name><![CDATA[turnstile_open6]]></Name>
-					<X>470</X><Y>160</Y>
+					<X>440</X><Y>120</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>470</X><Y>160</Y><Z>0</Z>
+					<X>440</X><Y>120</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2385,13 +2369,13 @@
 				<Figure3D>
 					<Id>1492439676396</Id>
 					<Name><![CDATA[turnstile_open7]]></Name>
-					<X>820</X><Y>100</Y>
+					<X>790</X><Y>60</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>100</Y><Z>0</Z>
+					<X>790</X><Y>60</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2417,13 +2401,13 @@
 				<Figure3D>
 					<Id>1492439689063</Id>
 					<Name><![CDATA[turnstile_open8]]></Name>
-					<X>820</X><Y>130</Y>
+					<X>790</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>130</Y><Z>0</Z>
+					<X>790</X><Y>90</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2449,13 +2433,13 @@
 				<Figure3D>
 					<Id>1492439708748</Id>
 					<Name><![CDATA[turnstile_open9]]></Name>
-					<X>820</X><Y>150</Y>
+					<X>790</X><Y>110</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>150</Y><Z>0</Z>
+					<X>790</X><Y>110</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2481,13 +2465,13 @@
 				<Figure3D>
 					<Id>1492439715885</Id>
 					<Name><![CDATA[turnstile_open10]]></Name>
-					<X>820</X><Y>170</Y>
+					<X>790</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>170</Y><Z>0</Z>
+					<X>790</X><Y>130</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2513,13 +2497,13 @@
 				<Figure3D>
 					<Id>1492439721274</Id>
 					<Name><![CDATA[turnstile_open11]]></Name>
-					<X>820</X><Y>200</Y>
+					<X>790</X><Y>160</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>200</Y><Z>0</Z>
+					<X>790</X><Y>160</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2545,13 +2529,13 @@
 				<Figure3D>
 					<Id>1492439726193</Id>
 					<Name><![CDATA[turnstile_open12]]></Name>
-					<X>820</X><Y>220</Y>
+					<X>790</X><Y>180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>220</Y><Z>0</Z>
+					<X>790</X><Y>180</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2577,13 +2561,13 @@
 				<Figure3D>
 					<Id>1492439730327</Id>
 					<Name><![CDATA[turnstile_open13]]></Name>
-					<X>820</X><Y>240</Y>
+					<X>790</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>240</Y><Z>0</Z>
+					<X>790</X><Y>200</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2609,13 +2593,13 @@
 				<Figure3D>
 					<Id>1492439736549</Id>
 					<Name><![CDATA[turnstile_open14]]></Name>
-					<X>820</X><Y>260</Y>
+					<X>790</X><Y>220</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>820</X><Y>260</Y><Z>0</Z>
+					<X>790</X><Y>220</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/turnstile_open.x3d]]></FileName>
 					<ColorTable>
@@ -2654,11 +2638,163 @@
 					<FarClippingDistance>2000</FarClippingDistance>
 				</Control>
 			</Controls>
+			<Charts>
+    			<TimePlot>
+					<Id>1492791477861</Id>
+					<Name><![CDATA[plot]]></Name>
+					<X>340</X><Y>370</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1492848000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>290</Width>
+					<Height>230</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>210</Width>
+						<Height>140</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<Persistent>true</Persistent>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Ticket Turnstiles]]></Title>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-10496</Color>
+					<Expression2><![CDATA[ticketBooth.traffic()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>2.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[To Trains]]></Title>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-7722014</Color>
+					<Expression2><![CDATA[toTrains.traffic()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>2.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
+					<CustomLabelFormat><![CDATA[dd.MM.yyyy HH:mm:ss]]></CustomLabelFormat>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+    			<TimePlot>
+					<Id>1492792163047</Id>
+					<Name><![CDATA[plot1]]></Name>
+					<X>600</X><Y>370</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1492848000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>300</Width>
+					<Height>230</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>220</Width>
+						<Height>140</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<Persistent>true</Persistent>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Ticket Turnstiles]]></Title>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[ticketBooth.intensity()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>2.0</LineWidth>
+					</DatasetExpression>
+					<DatasetExpression>  
+						<Title><![CDATA[To Trains]]></Title>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-14774017</Color>
+					<Expression2><![CDATA[toTrains.intensity()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>2.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
+					<CustomLabelFormat><![CDATA[dd.MM.yyyy HH:mm:ss]]></CustomLabelFormat>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
+			</Charts>
 			<Areas>
 				<Area>
 					<Id>1492439813349</Id>
 					<Name><![CDATA[viewArea]]></Name>
-					<X>50</X><Y>80</Y>
+					<X>20</X><Y>40</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
