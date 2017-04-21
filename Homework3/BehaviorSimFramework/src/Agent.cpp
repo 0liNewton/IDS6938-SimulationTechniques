@@ -231,9 +231,9 @@ void SIMAgent::InitValues()
 
 	*********************************************/
 	Kv0 = 5.0; //Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	Kv1 = 0.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 2.0; //Behavior settings
+	Kp1 = 2.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv1 = 3.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	KArrival = 0.0; //Behavior settings
 	KDeparture = 0.0;
 	KNoise = 0.0;
 	KWander = 0.0;
