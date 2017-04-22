@@ -72,7 +72,7 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 * Done - add screen shot image and description
 
-![](images/anylogic_maze.pngNG?raw=true)
+![](images/anylogic_maze.PNG?raw=true)
 
 
 * https://youtu.be/mYlZyxZ6FYE
