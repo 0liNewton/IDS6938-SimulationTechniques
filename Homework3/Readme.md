@@ -64,7 +64,7 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 **(a) Subway Entrance Model
 
-![](images/Anylogic_subwayhall.png?raw=true)
+![](images/anylogic_subwayhall.PNG?raw=true)
 
 * Done - add description of what was done and what was observed
 
@@ -72,7 +72,7 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 * Done - add screen shot image and description
 
-![](images/Anylogic_maze.png?raw=true)
+![](images/anylogic_maze.pngNG?raw=true)
 
 
 * https://youtu.be/mYlZyxZ6FYE
