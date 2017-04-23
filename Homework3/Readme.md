@@ -2,7 +2,7 @@
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
-######The assignment is due: **Monday, April  24 at 11:59PM (EST)** Taking extra day - new due date: **Tuesday, April 25th at 11:59 PM**
+###### The assignment is due: **Monday, April  24 at 11:59PM (EST)** Taking extra day - new due date: **Tuesday, April 25th at 11:59 PM**
 ---
 ### Part 1: Behaviors
 
@@ -61,10 +61,10 @@ vec2 SIMAgent::Seek()
 	tmp = goal - GPos; //shortest path from current position to the target
 	tmp.Normalize();
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
-	vd = SIMAgent::MaxVelocity;
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+	vd = SIMAgent::MaxVelocity; //agent's max velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
-	return tmp;
+	return tmp; //return coordinates
 
 }
 ```
@@ -85,10 +85,10 @@ vec2 SIMAgent::Flee()
 	tmp.Normalize();
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
-	vd = SIMAgent::MaxVelocity;
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+	vd = SIMAgent::MaxVelocity; //agent velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //Cartesian
 
-	return tmp;
+	return tmp; //return coordinates
 }
 
 ```
