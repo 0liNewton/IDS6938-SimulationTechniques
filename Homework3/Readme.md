@@ -19,35 +19,77 @@ The goal of this assignment is to enable the steering behavioral animation of ag
 
 We represent an agent as a two-dimensional disk with mass (**m**) and moment-of-inertia (**I**) that is capable of generating a force **F** along body x-axis with a torque about the z-axis. For this assignment assume that the agent only translates in the world x-y plane and rotates about the body z-axis.
 
-![](images/behavior.png?raw=true)
+####(a) Compute derivative vector and implment initial values - 10 points** 
 
-**(a) - 10 points** : Compute derivative vector given input and state vectors. Implement the function *SIMAgent::FindDeriv()*. This function sets derive vector to appropriate values after being called.
+######Compute derivative vector given input and state vectors
+* Calling the function and setting derivative vector to the appropriate values
+```C++
+void SIMAgent::FindDeriv()
+{	
+    deriv[0] = input[0]/Mass; //force in local body coordinates divided by mass
+	deriv[1] = input[1]/Inertia; //torque in local body coordinates divided by inertia
+	deriv[2] = state[2]; //velocity of the agent in local body coordinates
+	deriv[3] = state[3]; //angular velocity of agent in world coordinates
+    }
+```
 
-Description of agent state vector and input vector:  
-* state[0] is the position of the agent in local body coordinates (almost useless in this project);  
-* state[1] is the orientation angle of the agent with respect to world (i.e. global) coordinates;  
-* state[2] is the velocity of the agent  in local body coordinates.  
-* state[3] is the angular velocity of the agent in world coordinates. 
-* input[0] is the force in local body coordinates;  
-* input[1] is the torque in local body coordinates
+######Implement *SIMAGENT::InitValues()*
+```C++
+	Kv0 = #; //Velocity control
+	Kp1 = #; //Heading control
+	Kv1 = #; //Heading control
+	KArrival = #; //Behavior settings
+	KDeparture = #;
+	KNoise = #;
+	KWander = #;
+	KAvoid = #;
+	TAvoid = #;
+	RNeighborhood = #;
+	KSeparate = #;
+	KAlign = #;
+	KCohesion = #;
+```
 
-You will need to set deriv[0], deriv[1], deriv[2], deriv[3]. Compute derivative vector given input and state vectors. This function sets derive vector to appropriate values after being called. 
-* deriv[2] is the velocity of the agent  in local body coordinates
-* deriv[3] is the angular velocity of the agent in world coordinates
-* deriv[0] is the force in local body coordinates divided by the mass.
-* deriv[1] is the torque in local body coordinates divided by the inertia.
 
-You also must implement *SIMAgent::InitValues()*: Try to figure out appropriate values for control and behavior settings. You need to find out appropriate values for: *SIMAgent::Kv0, SIMAgent::Kp1, SIMAgent::Kv1, SIMAgent::KArrival, SIMAgent::KDeparture,
-SIMAgent::KNoise,	SIMAgent::KWander, SIMAgent::KAvoid, SIMAgent::TAvoid, SIMAgent::RNeighborhood, SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.*
+####(b) Implement Individual and Group Agent Behaviors - 20 points**: In this part of the assignment you will need to implement 6 types of individual behaviors and 5 types of group behaviors. 
+
+####Create the following behaviors through appropriate computation of V<sub> d</sub>  and θ<sub>d</sub>  commands:
 
 
-**(b) - 20 points**: In this part of the assignment you will need to implement 6 types of individual behaviors and 5 types of group behaviors. Create the following behaviors through appropriate computation of V<sub> d</sub>  and θ<sub>d</sub>  commands:
-* Seek
-* Flee
-* Arrival
-* Departure
-* Wander
-* Obstacle Avoidance
+######Seek
+```C++
+...
+```
+*add images, youtube links, and descriptions
+
+######Flee
+```C++
+...
+```
+*add images, youtube links, and descriptions
+
+######Arrival
+```C++
+...
+```
+*add images, youtube links, and descriptions
+
+######Departure
+```C++
+...
+```
+*add images, youtube links, and descriptions
+
+######Wander
+```C++
+...
+```
+*add images, youtube links, and descriptions
+######Obstacle Avoidance
+```C++
+...
+```
+*add images, youtube links, and descriptions
 
 **(c) - 20 points**: Implement the functions for the following group behaviors: 
 * Seperation
@@ -55,6 +97,7 @@ SIMAgent::KNoise,	SIMAgent::KWander, SIMAgent::KAvoid, SIMAgent::TAvoid, SIMAgen
 * Alignment 
 * Flocking
 * Leader Following
+ ##add images, youtube links, and descriptions
 
 # Part 2 - Simulating a simple pedestrian flow
 
@@ -77,7 +120,11 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 * https://youtu.be/mYlZyxZ6FYE
 
-**(c) - 30 points**: Model and analyze a building (or floor/outdoor space/stadium) on campus. (There is help on piazza how to find rough building plans - we expect something plausible). Create a senario: evacuation, daily office routine, special event, normal egress.... etc., and model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
+**(c) UCF Building - Bookstore within the John T Washington Center - 30 points**: Model and analyze a building (or floor/outdoor space/stadium) on campus. (There is help on piazza how to find rough building plans - we expect something plausible). Create a senario: evacuation, daily office routine, special event, normal egress.... etc., and model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
+
+* John T Washington Center (aka the breezeway) - UCF Bookstore
+* Setting: either beginning or end of the semester), when students are buying/renting/selling/returning textbooks
+* Number of students coming to the bookstore as rental deadlines approach
 
 
 

@@ -231,9 +231,9 @@ void SIMAgent::InitValues()
 
 	*********************************************/
 	Kv0 = 5.0; //Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 2.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	Kv1 = 3.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 0.0; //Behavior settings
+	Kp1 = 60.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	KArrival = 0.1; //Behavior settings
 	KDeparture = 0.0;
 	KNoise = 0.0;
 	KWander = 0.0;
@@ -292,7 +292,7 @@ void SIMAgent::FindDeriv()
 	/*********************************************
 	"Compute derivative vector given input and state vectors" - readme
 	- call function
-	- then function sets derive vector to appropriate values
+	- then function sets deriv vector to appropriate value
 	*********************************************/
 	
 	deriv[0] = input[0]/Mass;
@@ -302,15 +302,16 @@ void SIMAgent::FindDeriv()
 }
 
 /*
-*	Update the state vector given derivative vector
+*  Update the state vector given derivative vector
 *  Compute global position and store it in GPos
 *  Perform validation check to make sure all values are within MAX values
 */
+
 void SIMAgent::UpdateState()
 {
 	//*********************************************
 	// TODO: Add code here - taken from Piazza post
-	// This
+	
 	for (int i = 0; i < dimState; i++){
 	state[i] += deriv[i] * deltaT;
 	}
@@ -380,17 +381,18 @@ vec2 SIMAgent::Flee()
 	*********************************************/
 
 	vec2 tmp; //call the variable
-	double desiredv;
+	//double desiredv;
 	tmp = goal - GPos; //to get desired vector
-	thetad = tmp[1] / tmp[0];
-	desiredv = atan2(tmp[1], tmp[0]);
-	desiredv = desiredv + M_PI;
+	tmp.Normalize();
+	//thetad = tmp[1] / tmp[0];
+	thetad = atan2(tmp[1], tmp[0]);
+	thetad = thetad + M_PI;
 
 	float Vn;
 	Vn = SIMAgent::MaxVelocity;
-	return vec2(cos(desiredv)* Vn, sin(desiredv)* Vn);
+	tmp = vec2(cos(thetad)* Vn, sin(thetad)* Vn);
 
-	//return tmp;
+	return tmp;
 }
 
 /*
