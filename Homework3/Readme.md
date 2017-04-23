@@ -51,6 +51,7 @@ In this part of the assignment you will need to implement 6 types of individual 
 * **θ<sub>d</sub>** - theta d
 
 ###### Seek
+* 
 ```C++
 ...
 ```

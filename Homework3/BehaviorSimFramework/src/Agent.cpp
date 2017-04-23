@@ -336,28 +336,29 @@ void SIMAgent::UpdateState()
 }
 
 /*
-*	Seek behavior
+*  Seek behavior
 *  Global goal position is in goal
 *  Agent's global position is in GPos
 *  You need to compute the desired velocity and desired orientation
 *  Store them into vd and thetad respectively
 *  return a vec2 that represents the goal velocity with its direction being thetad and its norm being vd
 */
+
 vec2 SIMAgent::Seek()
 {
 	/*********************************************
 	Based on April 4th class and 'Seek and Flee' webcourses page
 	*********************************************/
 	
-	vec2 tmp; //call the variable
-	tmp = goal - GPos; //shortest path from current position to the target
+	vec2 tmp; // call the variable
+	
+	tmp = goal - GPos; // shortest path from current position to the target
 	tmp.Normalize();
-	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
+	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
+	vd = SIMAgent::MaxVelocity; // define agent's velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
 
-	vd = SIMAgent::MaxVelocity;
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
-
-	return tmp;
+	return tmp; // return coordinates
 
 }
 
@@ -369,6 +370,7 @@ vec2 SIMAgent::Seek()
 *  Store them into vd and thetad respectively
 *  return a vec2 that represents the goal velocity with its direction being thetad and its norm being vd
 */
+
 vec2 SIMAgent::Flee()
 {
 	/*********************************************
@@ -376,11 +378,11 @@ vec2 SIMAgent::Flee()
 	*********************************************/
 
 	vec2 tmp; //call the variable
+	
 	tmp = goal - GPos; //shortest path from current position to the target
 	tmp.Normalize();
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
-
 	vd = SIMAgent::MaxVelocity;
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
 
@@ -396,6 +398,7 @@ vec2 SIMAgent::Flee()
 *  Store them into vd and thetad respectively
 *  return a vec2 that represents the goal velocity with its direction being thetad and its norm being vd
 */
+
 vec2 SIMAgent::Arrival()
 {
 	/*********************************************
@@ -403,14 +406,13 @@ vec2 SIMAgent::Arrival()
 	*********************************************/
 	vec2 tmp;
 	double dist;
+	
 	tmp = goal - GPos; //shortest path from the current position to the target
 	dist = tmp.Length(); //distance to target
 	thetad = atan2(tmp[1], tmp[0]);
-	
 	//compute desired velocity  - store in vd
 	//compute desired orientation - store in theta d
 	//return vec2 representing goal velocity with direction of thetad and and norm is vd
-
 	//vd = SIMAgent::MaxVelocity * SIMAgent::KArrival;
 	vd = dist * SIMAgent::KArrival;
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
@@ -427,12 +429,22 @@ vec2 SIMAgent::Arrival()
 *  Store them into vd and thetad respectively
 *  return a vec2 that represents the goal velocity with its direction being thetad and its norm being vd
 */
+
 vec2 SIMAgent::Departure()
 {
 	/*********************************************
-	// TODO: Add code here
+	'Arrival and Departure' webcourses page
 	*********************************************/
 	vec2 tmp;
+	double dist;
+	
+	tmp = goal - GPos; // shortest path from the current position to the target
+	dist = tmp.Length(); // distance to target
+	thetad = atan2(tmp[1], tmp[0]); // derive target angle
+	thetad = thetad + M_PI; //opposite direction
+	//thetad = thetad * ?????  // damp down departure so agent's don't depart infinitely (per webcourses)
+	vd = dist * SIMAgent::KArrival; // agent's max velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
 	return tmp;
 }
