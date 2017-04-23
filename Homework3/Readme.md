@@ -12,6 +12,7 @@ The goal of this assignment is to enable the steering behavioral animation of ag
 
 ###### Compute derivative vector given input and state vectors
 * Calling the function and setting derivative vector to the appropriate values
+
 ```C++
 void SIMAgent::FindDeriv()
 {	
@@ -24,6 +25,7 @@ void SIMAgent::FindDeriv()
 
 ###### Implement *SIMAGENT::InitValues()*
 * ...played around with some values...
+
 ```C++
 void SIMAgent::InitValues()
 {	
@@ -43,74 +45,145 @@ void SIMAgent::InitValues()
     }
 ```
 
-#### (b) Implement Individual and Group Behaviors for Agents - 20 points**:
-In this part of the assignment you will need to implement 6 types of individual behaviors and 5 types of group behaviors. 
-
+#### (b) Implement Individual Behaviors for Agents - 20 points**
 ###### Create the following behaviors through appropriate computation of V<sub> d</sub> and θ<sub>d</sub> commands
-* **v<sub>d</sub>** - desired velocity
-* **θ<sub>d</sub>** - theta d
+* **v<sub>d</sub>** - agent's max velocity
+* **θ<sub>d</sub>** - target angle theta d
 
 ###### Seek
-* 
+* Based on April 4th class and 'Seek and Flee' webcourses page
+
 ```C++
-...
+vec2 SIMAgent::Seek()
+{	
+	vec2 tmp; //call the variable
+
+	tmp = goal - GPos; //shortest path from current position to the target
+	tmp.Normalize();
+	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+
+	return tmp;
+
+}
 ```
 
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
 ###### Flee
+* Based on April 4th class and 'Seek and Flee' webcourses page
+
 ```C++
-...
+vec2 SIMAgent::Flee()
+{
+	vec2 tmp; //call the variable
+	
+	tmp = goal - GPos; //shortest path from current position to the target
+	tmp.Normalize();
+	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
+	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+
+	return tmp;
+}
+
 ```
 
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
 ###### Arrival
 ```C++
 ...
 ```
 
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
 ######Departure
 ```C++
 ...
 ```
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
 ###### Wander
 ```C++
 ...
 ```
 
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
 ###### Obstacle Avoidance
 ```C++
 ...
 ```
 
-* add images, 
-* youtube links, and 
-* descriptions
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
 
-**(c) - 20 points**: Implement the functions for the following group behaviors: 
-* Seperation
-* Cohesion 
-* Alignment 
-* Flocking
-* Leader Following
- ##add images, youtube links, and descriptions
+
+#### (c) Implement Group Behaviors for Agents - 20 points**
+
+###### Seperation
+
+```C++
+...
+```
+
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
+
+###### Cohesion
+
+```C++
+...
+```
+
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
+
+###### Alignment
+```C++
+...
+```
+
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
+
+###### Flocking
+
+```C++
+...
+```
+
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
+
+###### Leader Following
+
+```C++
+...
+```
+
+* Add images of GUI
+* Add youtube videos of GUI, and 
+* Add description
+
 
 # Part 2 - Simulating a simple pedestrian flow
 
