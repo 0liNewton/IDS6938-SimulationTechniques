@@ -230,13 +230,13 @@ void SIMAgent::InitValues()
 	SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.
 
 	*********************************************/
-	Kv0 = 5.0; //Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 600.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 0.1; //Behavior settings
-	KDeparture = 0.0;
+	Kv0 = 100.0; //Velocity control: f = m * Kv0 * (vd - v)
+	Kp1 = 1000.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv1 = 100.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	KArrival = 1; //Behavior settings
+	KDeparture = 1.0;
 	KNoise = 0.0;
-	KWander = 0.0;
+	KWander = 1.0;
 	KAvoid = 0.0;
 	TAvoid = 0.0;
 	RNeighborhood = 0.0;
@@ -442,7 +442,7 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	//thetad = thetad * ?????  // damp down departure so agent's don't depart infinitely (per webcourses)
+	//thetad = thetad * ?????  // damp down departure so agents don't depart infinitely (per webcourses)
 	vd = dist * SIMAgent::KArrival; // agent's max velocity
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
@@ -461,11 +461,22 @@ vec2 SIMAgent::Departure()
 vec2 SIMAgent::Wander()
 {
 	/*********************************************
-	// TODO: Add code here
+	'Wander and Avoid' webcourses
+		- "seek algorithm can be used to steer agent" 
 	*********************************************/
-	vec2 tmp;
+	
+	//Seek algorithm
+	vec2 tmp; // call the variable
 
-	return tmp;
+	tmp = goal - GPos; // shortest path from current position to the target
+	tmp.Normalize();
+	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
+	vd = SIMAgent::MaxVelocity; // define agent's velocity
+	//SIMAgent::KNoise; // random noise
+	//vd = SIMAgent::KWander; // damping term
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
+
+	return tmp; // return coordinates
 }
 
 /*

@@ -122,7 +122,10 @@ vec2 SIMAgent::Departure()
 
 ###### Wander
 ```C++
-...
+vec2 SIMAgent::Wander()
+{
+
+}
 ```
 
 * Add images of GUI
