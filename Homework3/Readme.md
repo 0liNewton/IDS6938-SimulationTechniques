@@ -2,7 +2,7 @@
 
 ## IDS6938-Simulation Techniques - [University of Central Florida](http://www.ist.ucf.edu/grad/)
 
-###### ~~The assignment is due: **Monday, April  24 at 11:59PM (EST)**~~ Taking extra day - new due date: **Tuesday, April 25th at 11:59 PM**
+###### ~~The assignment is due: **Monday, April  24 at 11:59PM (EST)**~~ Taking extra day - due date: **Tuesday, April 25th at 11:59 PM (EST)**
 ---
 ### Part 1: Behaviors
 
@@ -99,7 +99,10 @@ vec2 SIMAgent::Flee()
 
 ###### Arrival
 ```C++
-...
+vec2 SIMAgent::Arrival()
+{
+
+}
 ```
 
 * Add images of GUI
@@ -108,7 +111,10 @@ vec2 SIMAgent::Flee()
 
 ######Departure
 ```C++
-...
+vec2 SIMAgent::Departure()
+{
+
+}
 ```
 * Add images of GUI
 * Add youtube videos of GUI, and 
