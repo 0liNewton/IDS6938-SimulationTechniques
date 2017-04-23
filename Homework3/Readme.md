@@ -19,9 +19,9 @@ The goal of this assignment is to enable the steering behavioral animation of ag
 
 We represent an agent as a two-dimensional disk with mass (**m**) and moment-of-inertia (**I**) that is capable of generating a force **F** along body x-axis with a torque about the z-axis. For this assignment assume that the agent only translates in the world x-y plane and rotates about the body z-axis.
 
-####(a) Compute derivative vector and implment initial values - 10 points** 
+#### (a) Compute derivative vector and implment initial values - 10 points** 
 
-######Compute derivative vector given input and state vectors
+###### Compute derivative vector given input and state vectors
 * Calling the function and setting derivative vector to the appropriate values
 ```C++
 void SIMAgent::FindDeriv()
@@ -33,7 +33,7 @@ void SIMAgent::FindDeriv()
     }
 ```
 
-######Implement *SIMAGENT::InitValues()*
+###### Implement *SIMAGENT::InitValues()*
 ```C++
 	Kv0 = #; //Velocity control
 	Kp1 = #; //Heading control
@@ -51,24 +51,24 @@ void SIMAgent::FindDeriv()
 ```
 
 
-####(b) Implement Individual and Group Agent Behaviors - 20 points**: In this part of the assignment you will need to implement 6 types of individual behaviors and 5 types of group behaviors. 
+#### (b) Implement Individual and Group Agent Behaviors - 20 points**: In this part of the assignment you will need to implement 6 types of individual behaviors and 5 types of group behaviors. 
 
-####Create the following behaviors through appropriate computation of V<sub> d</sub>  and θ<sub>d</sub>  commands:
+#### Create the following behaviors through appropriate computation of V<sub> d</sub>  and θ<sub>d</sub>  commands:
 
 
-######Seek
+###### Seek
 ```C++
 ...
 ```
 *add images, youtube links, and descriptions
 
-######Flee
+###### Flee
 ```C++
 ...
 ```
 *add images, youtube links, and descriptions
 
-######Arrival
+###### Arrival
 ```C++
 ...
 ```
@@ -80,12 +80,12 @@ void SIMAgent::FindDeriv()
 ```
 *add images, youtube links, and descriptions
 
-######Wander
+###### Wander
 ```C++
 ...
 ```
 *add images, youtube links, and descriptions
-######Obstacle Avoidance
+###### Obstacle Avoidance
 ```C++
 ...
 ```
