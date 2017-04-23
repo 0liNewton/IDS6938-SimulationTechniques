@@ -399,21 +399,22 @@ vec2 SIMAgent::Flee()
 vec2 SIMAgent::Arrival()
 {
 	/*********************************************
-	// TODO: Add code here
+	Based on April 4th class and 'Arrival and Departure' webcourses page
 	*********************************************/
 	vec2 tmp;
 	double dist;
-	double m;
 	tmp = goal - GPos; //shortest path from the current position to the target
-	dist = tmp.Length();
+	dist = tmp.Length(); //distance to target
 	thetad = atan2(tmp[1], tmp[0]);
 	
-	vd = SIMAgent::KArrival;
-	vd = ;
-	//SIMAgent::KArrival
 	//compute desired velocity  - store in vd
 	//compute desired orientation - store in theta d
 	//return vec2 representing goal velocity with direction of thetad and and norm is vd
+
+	//vd = SIMAgent::MaxVelocity * SIMAgent::KArrival;
+	vd = dist * SIMAgent::KArrival;
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+
 	return tmp;
 }
 
