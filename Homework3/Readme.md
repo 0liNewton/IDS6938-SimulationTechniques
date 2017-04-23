@@ -26,7 +26,7 @@ We represent an agent as a two-dimensional disk with mass (**m**) and moment-of-
 ```C++
 void SIMAgent::FindDeriv()
 {	
-    deriv[0] = input[0]/Mass; //force in local body coordinates divided by mass
+	deriv[0] = input[0]/Mass; //force in local body coordinates divided by mass
 	deriv[1] = input[1]/Inertia; //torque in local body coordinates divided by inertia
 	deriv[2] = state[2]; //velocity of the agent in local body coordinates
 	deriv[3] = state[3]; //angular velocity of agent in world coordinates
@@ -35,7 +35,9 @@ void SIMAgent::FindDeriv()
 
 ###### Implement *SIMAGENT::InitValues()*
 ```C++
-	Kv0 = #; //Velocity control
+void SIMAgent::InitValues()
+{	
+    Kv0 = #; //Velocity control
 	Kp1 = #; //Heading control
 	Kv1 = #; //Heading control
 	KArrival = #; //Behavior settings
@@ -48,6 +50,7 @@ void SIMAgent::FindDeriv()
 	KSeparate = #;
 	KAlign = #;
 	KCohesion = #;
+    }
 ```
 
 
