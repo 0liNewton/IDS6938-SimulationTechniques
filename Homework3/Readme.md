@@ -37,7 +37,7 @@ void SIMAgent::FindDeriv()
 ```C++
 void SIMAgent::InitValues()
 {	
-    Kv0 = #; //Velocity control
+	Kv0 = #; //Velocity control
 	Kp1 = #; //Heading control
 	Kv1 = #; //Heading control
 	KArrival = #; //Behavior settings
@@ -63,36 +63,54 @@ void SIMAgent::InitValues()
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+
+* add images, 
+* youtube links, and 
+* descriptions
 
 ###### Flee
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+
+* add images, 
+* youtube links, and 
+* descriptions
 
 ###### Arrival
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+
+* add images, 
+* youtube links, and 
+* descriptions
 
 ######Departure
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+* add images, 
+* youtube links, and 
+* descriptions
 
 ###### Wander
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+
+* add images, 
+* youtube links, and 
+* descriptions
+
 ###### Obstacle Avoidance
 ```C++
 ...
 ```
-*add images, youtube links, and descriptions
+
+* add images, 
+* youtube links, and 
+* descriptions
 
 **(c) - 20 points**: Implement the functions for the following group behaviors: 
 * Seperation

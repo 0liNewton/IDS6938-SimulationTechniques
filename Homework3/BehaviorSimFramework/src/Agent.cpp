@@ -231,7 +231,7 @@ void SIMAgent::InitValues()
 
 	*********************************************/
 	Kv0 = 5.0; //Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 60.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kp1 = 600.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	KArrival = 0.1; //Behavior settings
 	KDeparture = 0.0;
@@ -346,23 +346,18 @@ void SIMAgent::UpdateState()
 vec2 SIMAgent::Seek()
 {
 	/*********************************************
-	// TODO: Add code here
+	Based on April 4th class and 'Seek and Flee' webcourses page
 	*********************************************/
+	
 	vec2 tmp; //call the variable
-	double desiredv;
-	tmp = goal - GPos; //to get desired vector
-	thetad = tmp[1]/tmp[0];
-	desiredv = atan2(tmp[1], tmp[0]);
+	tmp = goal - GPos; //shortest path from current position to the target
+	tmp.Normalize();
+	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 
-	float Vn;
-	Vn = SIMAgent::MaxVelocity;
-	return vec2(cos(desiredv)* Vn, sin(desiredv)* Vn);
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
 
-	//return tmp;
-
-	//double Vsubn;
-	//Vsubn = SIMAgent::MaxVelocity; // cos thetad * maxvelocity, sine thetad * maxvelocity
-	//vec2 Vn = SIMAgent::
+	return tmp;
 
 }
 
@@ -377,26 +372,23 @@ vec2 SIMAgent::Seek()
 vec2 SIMAgent::Flee()
 {
 	/*********************************************
-	// TODO: Add code here
+	Based on April 4th class and 'Seek and Flee' webcourses page
 	*********************************************/
 
 	vec2 tmp; //call the variable
-	//double desiredv;
-	tmp = goal - GPos; //to get desired vector
+	tmp = goal - GPos; //shortest path from current position to the target
 	tmp.Normalize();
-	//thetad = tmp[1] / tmp[0];
-	thetad = atan2(tmp[1], tmp[0]);
-	thetad = thetad + M_PI;
+	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
+	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
 
-	float Vn;
-	Vn = SIMAgent::MaxVelocity;
-	tmp = vec2(cos(thetad)* Vn, sin(thetad)* Vn);
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
 
 	return tmp;
 }
 
 /*
-*	Arrival behavior
+*  Arrival behavior
 *  Global goal position is in goal
 *  Agent's global position is in GPos
 *  Arrival setting is in SIMAgent::KArrival
@@ -410,7 +402,18 @@ vec2 SIMAgent::Arrival()
 	// TODO: Add code here
 	*********************************************/
 	vec2 tmp;
-
+	double dist;
+	double m;
+	tmp = goal - GPos; //shortest path from the current position to the target
+	dist = tmp.Length();
+	thetad = atan2(tmp[1], tmp[0]);
+	
+	vd = SIMAgent::KArrival;
+	vd = ;
+	//SIMAgent::KArrival
+	//compute desired velocity  - store in vd
+	//compute desired orientation - store in theta d
+	//return vec2 representing goal velocity with direction of thetad and and norm is vd
 	return tmp;
 }
 
