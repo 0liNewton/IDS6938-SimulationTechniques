@@ -353,7 +353,6 @@ vec2 SIMAgent::Seek()
 	vec2 tmp; // call the variable
 	
 	tmp = goal - GPos; // shortest path from current position to the target
-	//tmp.Normalize();
 	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
@@ -380,13 +379,12 @@ vec2 SIMAgent::Flee()
 	vec2 tmp; //call the variable
 	
 	tmp = goal - GPos; //shortest path from current position to the target
-	//tmp.Normalize();
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
 	vd = SIMAgent::MaxVelocity;
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian
 
-	return tmp;
+	return tmp; //return coordinates
 }
 
 /*
