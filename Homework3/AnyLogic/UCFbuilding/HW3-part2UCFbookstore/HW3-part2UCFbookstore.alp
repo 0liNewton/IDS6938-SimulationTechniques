@@ -655,6 +655,7 @@
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
+					<Lock>true</Lock>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
@@ -679,7 +680,7 @@
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<ZHeight>10</ZHeight>
+					<ZHeight>1</ZHeight>
 					<LineWidth>1</LineWidth>
 					<LineColor>-10496</LineColor>
 					<LineMaterial>null</LineMaterial>
@@ -702,7 +703,7 @@
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<ZHeight>10</ZHeight>
+					<ZHeight>1</ZHeight>
 					<LineWidth>1</LineWidth>
 					<LineColor>-10496</LineColor>
 					<LineMaterial>null</LineMaterial>
@@ -725,7 +726,7 @@
 					<AsObject>true</AsObject>
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
-					<ZHeight>10</ZHeight>
+					<ZHeight>1</ZHeight>
 					<LineWidth>1</LineWidth>
 					<LineColor>-10496</LineColor>
 					<LineMaterial>null</LineMaterial>
@@ -766,10 +767,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>15</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>22.932</X><Y>-9.957</Y><Z>0</Z></Point>
-						<Point><X>152</X><Y>-66</Y><Z>0</Z></Point>
-						<Point><X>129.068</X><Y>-56.043</Y><Z>0</Z></Point>
-						<Point><X>82</X><Y>4</Y><Z>0</Z></Point>
+						<Point><X>22.655</X><Y>-10.572</Y><Z>0</Z></Point>
+						<Point><X>150</X><Y>-70</Y><Z>0</Z></Point>
+						<Point><X>127.345</X><Y>-59.428</Y><Z>0</Z></Point>
+						<Point><X>80</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -803,14 +804,14 @@
 				<Wall>
 					<Id>1492996040016</Id>
 					<Name><![CDATA[wall3]]></Name>
-					<X>260</X><Y>375</Y>
+					<X>260</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<LineColor>-16777216</LineColor>
+					<LineColor>-983041</LineColor>
 					<LineWidth>2</LineWidth>
 					<LineMaterial>null</LineMaterial>
 					<FillingType>HATCHED_AREA</FillingType>
@@ -853,7 +854,7 @@
 				<Wall>
 					<Id>1492996079627</Id>
 					<Name><![CDATA[wall5]]></Name>
-					<X>320</X><Y>345</Y>
+					<X>320</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -869,10 +870,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-22.059</X><Y>11.765</Y><Z>0</Z></Point>
-						<Point><X>22.059</X><Y>-11.765</Y><Z>0</Z></Point>
-						<Point><X>75</X><Y>-40</Y><Z>0</Z></Point>
-						<Point><X>52.941</X><Y>-28.235</Y><Z>0</Z></Point>
-						<Point><X>70</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>22.704</X><Y>-10.465</Y><Z>0</Z></Point>
+						<Point><X>69.123</X><Y>-31.86</Y><Z>0</Z></Point>
+						<Point><X>46.419</X><Y>-21.395</Y><Z>0</Z></Point>
+						<Point><X>64.123</X><Y>8.14</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -931,7 +932,7 @@
 				<Wall>
 					<Id>1492996662816</Id>
 					<Name><![CDATA[wall9]]></Name>
-					<X>290</X><Y>290</Y>
+					<X>281.041</X><Y>270.231</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -947,10 +948,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>15</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-13.868</X><Y>-20.801</Y><Z>0</Z></Point>
-						<Point><X>-20</X><Y>-30</Y><Z>0</Z></Point>
-						<Point><X>-6.132</X><Y>-9.199</Y><Z>0</Z></Point>
-						<Point><X>95</X><Y>55</Y><Z>0</Z></Point>
+						<Point><X>-14.673</X><Y>-20.241</Y><Z>0</Z></Point>
+						<Point><X>-11.041</X><Y>-15.231</Y><Z>0</Z></Point>
+						<Point><X>3.632</X><Y>5.01</Y><Z>0</Z></Point>
+						<Point><X>103.959</X><Y>69.769</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -1025,7 +1026,7 @@
 				<TargetLine>
 					<Id>1492997048626</Id>
 					<Name><![CDATA[enter1]]></Name>
-					<X>260</X><Y>370</Y>
+					<X>260</X><Y>365</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1041,7 +1042,7 @@
 				<Wall>
 					<Id>1492997057523</Id>
 					<Name><![CDATA[wall12]]></Name>
-					<X>290</X><Y>360</Y>
+					<X>288</X><Y>356</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1058,9 +1059,9 @@
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>15</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-11.18</X><Y>-22.361</Y><Z>0</Z></Point>
-						<Point><X>-20</X><Y>-40</Y><Z>0</Z></Point>
-						<Point><X>-8.82</X><Y>-17.639</Y><Z>0</Z></Point>
-						<Point><X>80</X><Y>20</Y><Z>0</Z></Point>
+						<Point><X>-18</X><Y>-36</Y><Z>0</Z></Point>
+						<Point><X>-6.82</X><Y>-13.639</Y><Z>0</Z></Point>
+						<Point><X>82</X><Y>24</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -1082,10 +1083,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-20.801</X><Y>13.868</Y><Z>0</Z></Point>
-						<Point><X>13.868</X><Y>-20.801</Y><Z>0</Z></Point>
-						<Point><X>20</X><Y>-30</Y><Z>0</Z></Point>
-						<Point><X>20</X><Y>-30</Y><Z>0</Z></Point>
-						<Point><X>10</X><Y>-20</Y><Z>0</Z></Point>
+						<Point><X>5.414</X><Y>-24.407</Y><Z>0</Z></Point>
+						<Point><X>11.207</X><Y>-50.517</Y><Z>0</Z></Point>
+						<Point><X>5.792</X><Y>-26.111</Y><Z>0</Z></Point>
+						<Point><X>1.207</X><Y>-40.517</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -1197,15 +1198,15 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-23.397</X><Y>8.807</Y><Z>0</Z></Point>
-						<Point><X>22.415</X><Y>-11.071</Y><Z>0</Z></Point>
-						<Point><X>16.012</X><Y>-7.909</Y><Z>0</Z></Point>
-						<Point><X>-6.403</X><Y>3.163</Y><Z>0</Z></Point>
-						<Point><X>25.86</X><Y>15.07</Y><Z>0</Z></Point>
-						<Point><X>31.012</X><Y>27.091</Y><Z>0</Z></Point>
-						<Point><X>21.164</X><Y>4.112</Y><Z>0</Z></Point>
-						<Point><X>53.373</X><Y>15.911</Y><Z>0</Z></Point>
+						<Point><X>21.649</X><Y>-12.502</Y><Z>0</Z></Point>
+						<Point><X>31.012</X><Y>-17.909</Y><Z>0</Z></Point>
+						<Point><X>9.362</X><Y>-5.407</Y><Z>0</Z></Point>
+						<Point><X>42.192</X><Y>4.452</Y><Z>0</Z></Point>
+						<Point><X>51.012</X><Y>22.091</Y><Z>0</Z></Point>
+						<Point><X>39.832</X><Y>-0.269</Y><Z>0</Z></Point>
+						<Point><X>73.071</X><Y>10.327</Y><Z>0</Z></Point>
 						<Point><X>201.012</X><Y>-57.909</Y><Z>0</Z></Point>
-						<Point><X>178.651</X><Y>-46.728</Y><Z>0</Z></Point>
+						<Point><X>178.953</X><Y>-46.144</Y><Z>0</Z></Point>
 						<Point><X>185.652</X><Y>-38.184</Y><Z>0</Z></Point>
 						<Point><X>201.012</X><Y>-57.909</Y><Z>0</Z></Point>
 						<Point><X>216.372</X><Y>-77.634</Y><Z>0</Z></Point>
@@ -1215,7 +1216,7 @@
 				<Wall>
 					<Id>1492997507108</Id>
 					<Name><![CDATA[wall18]]></Name>
-					<X>270</X><Y>260</Y>
+					<X>270</X><Y>255</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1231,10 +1232,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-21.947</X><Y>11.971</Y><Z>0</Z></Point>
-						<Point><X>21.947</X><Y>-11.971</Y><Z>0</Z></Point>
-						<Point><X>110</X><Y>-60</Y><Z>0</Z></Point>
-						<Point><X>88.053</X><Y>-48.029</Y><Z>0</Z></Point>
-						<Point><X>70</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>22.165</X><Y>-11.564</Y><Z>0</Z></Point>
+						<Point><X>115</X><Y>-60</Y><Z>0</Z></Point>
+						<Point><X>92.835</X><Y>-48.436</Y><Z>0</Z></Point>
+						<Point><X>75</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -1245,7 +1246,7 @@
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
 					<Z>0</Z>
 					<LineColor>-10496</LineColor>
 					<LineWidth>1</LineWidth>
@@ -1265,7 +1266,7 @@
 				<Wall>
 					<Id>1492997574992</Id>
 					<Name><![CDATA[wall20]]></Name>
-					<X>380</X><Y>200</Y>
+					<X>385</X><Y>195</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1281,19 +1282,19 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-17.678</X><Y>-17.678</Y><Z>0</Z></Point>
-						<Point><X>17.678</X><Y>17.678</Y><Z>0</Z></Point>
-						<Point><X>10</X><Y>10</Y><Z>0</Z></Point>
-						<Point><X>-7.678</X><Y>-7.678</Y><Z>0</Z></Point>
-						<Point><X>-11.924</X><Y>22.013</Y><Z>0</Z></Point>
-						<Point><X>-102.308</X><Y>71.538</Y><Z>0</Z></Point>
-						<Point><X>-80.383</X><Y>59.525</Y><Z>0</Z></Point>
-						<Point><X>-112.361</X><Y>71.18</Y><Z>0</Z></Point>
+						<Point><X>11.18</X><Y>22.361</Y><Z>0</Z></Point>
+						<Point><X>10</X><Y>20</Y><Z>0</Z></Point>
+						<Point><X>-1.18</X><Y>-2.361</Y><Z>0</Z></Point>
+						<Point><X>-12.549</X><Y>30.796</Y><Z>0</Z></Point>
+						<Point><X>-103.793</X><Y>74.483</Y><Z>0</Z></Point>
+						<Point><X>-81.244</X><Y>63.687</Y><Z>0</Z></Point>
+						<Point><X>-113.846</X><Y>74.125</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
 					<Id>1492997619964</Id>
 					<Name><![CDATA[wall21]]></Name>
-					<X>410</X><Y>220</Y>
+					<X>405</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1309,25 +1310,25 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-21.437</X><Y>12.862</Y><Z>0</Z></Point>
-						<Point><X>-100</X><Y>60</Y><Z>0</Z></Point>
-						<Point><X>-78.563</X><Y>47.138</Y><Z>0</Z></Point>
-						<Point><X>-86.132</X><Y>80.801</Y><Z>0</Z></Point>
-						<Point><X>-80</X><Y>90</Y><Z>0</Z></Point>
-						<Point><X>-93.868</X><Y>69.199</Y><Z>0</Z></Point>
-						<Point><X>-57.639</X><Y>78.82</Y><Z>0</Z></Point>
-						<Point><X>20</X><Y>40</Y><Z>0</Z></Point>
-						<Point><X>-2.3610000000000007</X><Y>51.18</Y><Z>0</Z></Point>
-						<Point><X>8.82</X><Y>17.639</Y><Z>0</Z></Point>
+						<Point><X>-22.123</X><Y>11.643999999999998</Y><Z>0</Z></Point>
+						<Point><X>-95</X><Y>50</Y><Z>0</Z></Point>
+						<Point><X>-72.877</X><Y>38.356</Y><Z>0</Z></Point>
+						<Point><X>-81.132</X><Y>70.801</Y><Z>0</Z></Point>
+						<Point><X>-75</X><Y>80</Y><Z>0</Z></Point>
+						<Point><X>-88.868</X><Y>59.199</Y><Z>0</Z></Point>
+						<Point><X>-52.407</X><Y>69.298</Y><Z>0</Z></Point>
+						<Point><X>20</X><Y>35</Y><Z>0</Z></Point>
+						<Point><X>-2.593</X><Y>45.702</Y><Z>0</Z></Point>
+						<Point><X>7.597</X><Y>13.294</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>11.18</X><Y>22.361</Y><Z>0</Z></Point>
+						<Point><X>12.403</X><Y>21.706</Y><Z>0</Z></Point>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
 					<Id>1492997986881</Id>
 					<Name><![CDATA[wall22]]></Name>
-					<X>442</X><Y>19</Y>
+					<X>450</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1343,10 +1344,10 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-11.567</X><Y>-22.163</Y><Z>0</Z></Point>
-						<Point><X>12.717</X><Y>21.524</Y><Z>0</Z></Point>
-						<Point><X>117.615</X><Y>199.077</Y><Z>0</Z></Point>
-						<Point><X>104.899</X><Y>177.553</Y><Z>0</Z></Point>
-						<Point><X>76.55</X><Y>-13.725</Y><Z>0</Z></Point>
+						<Point><X>12.551</X><Y>21.621</Y><Z>0</Z></Point>
+						<Point><X>114.423</X><Y>197.116</Y><Z>0</Z></Point>
+						<Point><X>101.872</X><Y>175.495</Y><Z>0</Z></Point>
+						<Point><X>73.358</X><Y>-15.686</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 				<Wall>
@@ -1360,7 +1361,7 @@
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<LineColor>-4144960</LineColor>
-					<LineWidth>2</LineWidth>
+					<LineWidth>3</LineWidth>
 					<LineMaterial>null</LineMaterial>
 					<FillingType>HATCHED_AREA</FillingType>
 					<ZHeight>20</ZHeight>
@@ -1371,12 +1372,12 @@
 						<Point><X>22.612</X><Y>-10.663</Y><Z>0</Z></Point>
 						<Point><X>80.969</X><Y>-38.183</Y><Z>0</Z></Point>
 						<Point><X>58.357</X><Y>-27.52</Y><Z>0</Z></Point>
-						<Point><X>102.169</X><Y>-51.433</Y><Z>0</Z></Point>
-						<Point><X>160.969</X><Y>-88.183</Y><Z>0</Z></Point>
-						<Point><X>139.769</X><Y>-74.933</Y><Z>0</Z></Point>
-						<Point><X>185.483</X><Y>-93.086</Y><Z>0</Z></Point>
+						<Point><X>102.823</X><Y>-50.324</Y><Z>0</Z></Point>
+						<Point><X>170.969</X><Y>-88.183</Y><Z>0</Z></Point>
+						<Point><X>149.115</X><Y>-76.042</Y><Z>0</Z></Point>
+						<Point><X>195.414</X><Y>-93.422</Y><Z>0</Z></Point>
 						<Point><X>310.969</X><Y>-118.183</Y><Z>0</Z></Point>
-						<Point><X>286.454</X><Y>-113.28</Y><Z>0</Z></Point>
+						<Point><X>286.524</X><Y>-112.945</Y><Z>0</Z></Point>
 						<Point><X>150.969</X><Y>-88.183</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
@@ -1417,15 +1418,15 @@
 						<Point><X>242.361</X><Y>-391.18</Y><Z>0</Z></Point>
 						<Point><X>240</X><Y>-390</Y><Z>0</Z></Point>
 						<Point><X>217.639</X><Y>-378.82</Y><Z>0</Z></Point>
-						<Point><X>262.095</X><Y>-401.697</Y><Z>0</Z></Point>
-						<Point><X>325</X><Y>-435</Y><Z>0</Z></Point>
-						<Point><X>302.905</X><Y>-423.303</Y><Z>0</Z></Point>
-						<Point><X>336.18</X><Y>-412.639</Y><Z>0</Z></Point>
-						<Point><X>335</X><Y>-415</Y><Z>0</Z></Point>
-						<Point><X>323.82</X><Y>-437.361</Y><Z>0</Z></Point>
-						<Point><X>357.361</X><Y>-426.18</Y><Z>0</Z></Point>
+						<Point><X>261.548</X><Y>-402.676</Y><Z>0</Z></Point>
+						<Point><X>325</X><Y>-440</Y><Z>0</Z></Point>
+						<Point><X>303.452</X><Y>-427.324</Y><Z>0</Z></Point>
+						<Point><X>340</X><Y>-420</Y><Z>0</Z></Point>
+						<Point><X>340</X><Y>-420</Y><Z>0</Z></Point>
+						<Point><X>325</X><Y>-440</Y><Z>0</Z></Point>
+						<Point><X>362.845</X><Y>-430.153</Y><Z>0</Z></Point>
 						<Point><X>385</X><Y>-440</Y><Z>0</Z></Point>
-						<Point><X>362.639</X><Y>-428.82</Y><Z>0</Z></Point>
+						<Point><X>362.155</X><Y>-429.847</Y><Z>0</Z></Point>
 						<Point><X>398.868</X><Y>-419.199</Y><Z>0</Z></Point>
 						<Point><X>395</X><Y>-425</Y><Z>0</Z></Point>
 						<Point><X>381.132</X><Y>-445.801</Y><Z>0</Z></Point>
@@ -1447,52 +1448,74 @@
 						<Point><X>546.18</X><Y>-337.639</Y><Z>0</Z></Point>
 						<Point><X>590</X><Y>-250</Y><Z>0</Z></Point>
 						<Point><X>578.82</X><Y>-272.361</Y><Z>0</Z></Point>
-						<Point><X>581.679</X><Y>-226.425</Y><Z>0</Z></Point>
-						<Point><X>530</X><Y>-80</Y><Z>0</Z></Point>
-						<Point><X>538.321</X><Y>-103.575</Y><Z>0</Z></Point>
-						<Point><X>506.788</X><Y>-89.285</Y><Z>0</Z></Point>
-						<Point><X>480</X><Y>-100</Y><Z>0</Z></Point>
-						<Point><X>503.212</X><Y>-90.715</Y><Z>0</Z></Point>
-						<Point><X>472.094</X><Y>-76.283</Y><Z>0</Z></Point>
-						<Point><X>475</X><Y>-85</Y><Z>0</Z></Point>
-						<Point><X>482.906</X><Y>-108.717</Y><Z>0</Z></Point>
-						<Point><X>452.639</X><Y>-73.82</Y><Z>0</Z></Point>
-						<Point><X>425</X><Y>-60</Y><Z>0</Z></Point>
-						<Point><X>447.361</X><Y>-71.18</Y><Z>0</Z></Point>
-						<Point><X>402.639</X><Y>-71.18</Y><Z>0</Z></Point>
-						<Point><X>415</X><Y>-65</Y><Z>0</Z></Point>
-						<Point><X>437.361</X><Y>-53.82</Y><Z>0</Z></Point>
-						<Point><X>415</X><Y>-40</Y><Z>0</Z></Point>
-						<Point><X>415</X><Y>-55</Y><Z>0</Z></Point>
-						<Point><X>415</X><Y>-80</Y><Z>0</Z></Point>
-						<Point><X>392.241</X><Y>-44.655</Y><Z>0</Z></Point>
-						<Point><X>360</X><Y>-30</Y><Z>0</Z></Point>
-						<Point><X>382.759</X><Y>-40.345</Y><Z>0</Z></Point>
-						<Point><X>367.906</X><Y>-6.2829999999999995</Y><Z>0</Z></Point>
-						<Point><X>365</X><Y>-15</Y><Z>0</Z></Point>
-						<Point><X>357.094</X><Y>-38.717</Y><Z>0</Z></Point>
-						<Point><X>342.639</X><Y>-3.8200000000000003</Y><Z>0</Z></Point>
-						<Point><X>345</X><Y>-5</Y><Z>0</Z></Point>
-						<Point><X>367.361</X><Y>-16.18</Y><Z>0</Z></Point>
-						<Point><X>356.18</X><Y>17.361</Y><Z>0</Z></Point>
-						<Point><X>350</X><Y>5</Y><Z>0</Z></Point>
-						<Point><X>338.82</X><Y>-17.361</Y><Z>0</Z></Point>
-						<Point><X>327.639</X><Y>16.18</Y><Z>0</Z></Point>
-						<Point><X>270</X><Y>45</Y><Z>0</Z></Point>
-						<Point><X>292.361</X><Y>33.82</Y><Z>0</Z></Point>
-						<Point><X>258.82</X><Y>22.639</Y><Z>0</Z></Point>
-						<Point><X>265</X><Y>35</Y><Z>0</Z></Point>
-						<Point><X>276.18</X><Y>57.361</Y><Z>0</Z></Point>
-						<Point><X>242.639</X><Y>46.18</Y><Z>0</Z></Point>
-						<Point><X>225</X><Y>55</Y><Z>0</Z></Point>
-						<Point><X>247.361</X><Y>43.82</Y><Z>0</Z></Point>
-						<Point><X>213.82</X><Y>32.638999999999996</Y><Z>0</Z></Point>
-						<Point><X>220</X><Y>45</Y><Z>0</Z></Point>
-						<Point><X>231.18</X><Y>67.36099999999999</Y><Z>0</Z></Point>
-						<Point><X>197.639</X><Y>56.18</Y><Z>0</Z></Point>
-						<Point><X>110</X><Y>100</Y><Z>0</Z></Point>
-						<Point><X>132.361</X><Y>88.82</Y><Z>0</Z></Point>
-						<Point><X>200</X><Y>45</Y><Z>0</Z></Point>
+						<Point><X>595.238</X><Y>-225.555</Y><Z>0</Z></Point>
+						<Point><X>590</X><Y>-250</Y><Z>0</Z></Point>
+						<Point><X>584.762</X><Y>-274.445</Y><Z>0</Z></Point>
+						<Point><X>566.788</X><Y>-259.285</Y><Z>0</Z></Point>
+					</Points>
+				</Wall>
+				<Wall>
+					<Id>1493045493886</Id>
+					<Name><![CDATA[wall23]]></Name>
+					<X>640</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-4144960</LineColor>
+					<LineWidth>3</LineWidth>
+					<LineMaterial>null</LineMaterial>
+					<FillingType>HATCHED_AREA</FillingType>
+					<ZHeight>20</ZHeight>
+					<Closed>false</Closed>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>8.321000000000026</X><Y>-23.575000000000003</Y><Z>0</Z></Point>
+						<Point><X>-23.21199999999999</X><Y>-9.284999999999997</Y><Z>0</Z></Point>
+						<Point><X>-50</X><Y>-20</Y><Z>0</Z></Point>
+						<Point><X>-26.78800000000001</X><Y>-10.715000000000003</Y><Z>0</Z></Point>
+						<Point><X>-57.906000000000006</X><Y>3.7169999999999987</Y><Z>0</Z></Point>
+						<Point><X>-55</X><Y>-5</Y><Z>0</Z></Point>
+						<Point><X>-47.093999999999994</X><Y>-28.717</Y><Z>0</Z></Point>
+						<Point><X>-77.36099999999999</X><Y>6.180000000000007</Y><Z>0</Z></Point>
+						<Point><X>-105</X><Y>20</Y><Z>0</Z></Point>
+						<Point><X>-82.63900000000001</X><Y>8.819999999999993</Y><Z>0</Z></Point>
+						<Point><X>-127.36099999999999</X><Y>8.819999999999993</Y><Z>0</Z></Point>
+						<Point><X>-115</X><Y>15</Y><Z>0</Z></Point>
+						<Point><X>-92.63900000000001</X><Y>26.18</Y><Z>0</Z></Point>
+						<Point><X>-115</X><Y>40</Y><Z>0</Z></Point>
+						<Point><X>-115</X><Y>25</Y><Z>0</Z></Point>
+						<Point><X>-115</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-137.75900000000001</X><Y>35.345</Y><Z>0</Z></Point>
+						<Point><X>-170</X><Y>50</Y><Z>0</Z></Point>
+						<Point><X>-147.24099999999999</X><Y>39.655</Y><Z>0</Z></Point>
+						<Point><X>-162.094</X><Y>73.717</Y><Z>0</Z></Point>
+						<Point><X>-165</X><Y>65</Y><Z>0</Z></Point>
+						<Point><X>-172.906</X><Y>41.283</Y><Z>0</Z></Point>
+						<Point><X>-187.361</X><Y>76.18</Y><Z>0</Z></Point>
+						<Point><X>-185</X><Y>75</Y><Z>0</Z></Point>
+						<Point><X>-162.639</X><Y>63.82</Y><Z>0</Z></Point>
+						<Point><X>-173.82</X><Y>97.361</Y><Z>0</Z></Point>
+						<Point><X>-180</X><Y>85</Y><Z>0</Z></Point>
+						<Point><X>-191.18</X><Y>62.638999999999996</Y><Z>0</Z></Point>
+						<Point><X>-202.361</X><Y>96.18</Y><Z>0</Z></Point>
+						<Point><X>-260</X><Y>125</Y><Z>0</Z></Point>
+						<Point><X>-237.639</X><Y>113.82</Y><Z>0</Z></Point>
+						<Point><X>-271.18</X><Y>102.639</Y><Z>0</Z></Point>
+						<Point><X>-265</X><Y>115</Y><Z>0</Z></Point>
+						<Point><X>-253.82</X><Y>137.361</Y><Z>0</Z></Point>
+						<Point><X>-287.361</X><Y>126.18</Y><Z>0</Z></Point>
+						<Point><X>-305</X><Y>135</Y><Z>0</Z></Point>
+						<Point><X>-282.639</X><Y>123.82</Y><Z>0</Z></Point>
+						<Point><X>-316.18</X><Y>112.639</Y><Z>0</Z></Point>
+						<Point><X>-310</X><Y>125</Y><Z>0</Z></Point>
+						<Point><X>-298.82</X><Y>147.361</Y><Z>0</Z></Point>
+						<Point><X>-332.361</X><Y>136.18</Y><Z>0</Z></Point>
+						<Point><X>-420</X><Y>180</Y><Z>0</Z></Point>
+						<Point><X>-397.639</X><Y>168.82</Y><Z>0</Z></Point>
+						<Point><X>-330</X><Y>125</Y><Z>0</Z></Point>
 					</Points>
 				</Wall>
 			</Shapes>
@@ -1500,26 +1523,6 @@
 					<Z>0</Z>
 				</Ground>
 
-				<Image>
-					<Id>1492996785829</Id>
-					<Name><![CDATA[image1]]></Name>
-					<X>20</X><Y>240</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Width>164</Width>
-					<Height>40</Height>
-					<Rotation>345.0</Rotation>
-					<ImageFiles>
-						<ImageFile><![CDATA[starbucks_hz.png]]></ImageFile>
-					</ImageFiles>
-					<OriginalSize>false</OriginalSize>
-				</Image>
 				<Figure3D>
 					<Id>1492998985693</Id>
 					<Name><![CDATA[officeWorker1]]></Name>
@@ -1908,19 +1911,19 @@
 					<AutoScale>true</AutoScale>
 					<Scale>1.0</Scale>
 					<Rotation>330.0</Rotation>
-					<AxisOrder>ZXY_AXIS_ORDER</AxisOrder>
+					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
 				</Figure3D>
 				<Figure3D>
 					<Id>1492999540588</Id>
 					<Name><![CDATA[cashDesk1]]></Name>
-					<X>350</X><Y>280</Y>
+					<X>350</X><Y>285</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>350</X><Y>280</Y><Z>0</Z>
+					<X>350</X><Y>285</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/cash_desk.x3d]]></FileName>
 					<ColorTable>
@@ -1954,13 +1957,13 @@
 				<Figure3D>
 					<Id>1492999552113</Id>
 					<Name><![CDATA[cashDesk2]]></Name>
-					<X>380</X><Y>260</Y>
+					<X>380</X><Y>270</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>380</X><Y>260</Y><Z>0</Z>
+					<X>380</X><Y>270</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/cash_desk.x3d]]></FileName>
 					<ColorTable>
@@ -2186,13 +2189,13 @@
 				<Figure3D>
 					<Id>1492998991051</Id>
 					<Name><![CDATA[officeWorker2]]></Name>
-					<X>390</X><Y>240</Y>
+					<X>385</X><Y>245</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>390</X><Y>240</Y><Z>0</Z>
+					<X>385</X><Y>245</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/officeworker.x3d]]></FileName>
 					<ColorTable>
@@ -2378,13 +2381,13 @@
 				<Figure3D>
 					<Id>1493000276634</Id>
 					<Name><![CDATA[building_1]]></Name>
-					<X>520</X><Y>510</Y>
+					<X>530</X><Y>520</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>520</X><Y>510</Y><Z>0</Z>
+					<X>530</X><Y>520</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/building_1.x3d]]></FileName>
 					<ColorTable>
@@ -2399,7 +2402,7 @@
 					</ColorTable>
 					<AutoScale>true</AutoScale>
 					<Scale>1.0</Scale>
-					<Rotation>330.0</Rotation>
+					<Rotation>345.0</Rotation>
 					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
 				</Figure3D>

@@ -295,10 +295,10 @@ void SIMAgent::FindDeriv()
 	- then function sets deriv vector to appropriate value
 	*********************************************/
 	
-	deriv[0] = input[0]/Mass;
-	deriv[1] = input[1]/Inertia;
-	deriv[2] = state[2];
-	deriv[3] = state[3];
+	deriv[0] = state[2];
+	deriv[1] = state[3];
+	deriv[2] = input[0] / Mass;
+	deriv[3] = input[1]/Inertia;
 }
 
 /*
