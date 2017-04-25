@@ -33,7 +33,7 @@ void SIMAgent::InitValues()
 	Kv0 = 10; //Velocity control
 	Kp1 = -10; //Heading control
 	Kv1 = 10; //Heading control
-	KArrival = #; //Behavior settings
+	KArrival = 1; //Behavior settings
 	KDeparture = #;
 	KNoise = #;
 	KWander = #;
@@ -134,7 +134,7 @@ vec2 SIMAgent::Arrival()
 }
 ```
 
-* Youtube: [Arrival](https://youtu.be/iQa5eLWF6VU)
+* Youtube: [Arrival](https://youtu.be/hHN46n-yk0k)
 	
 ![](images/arrival.png?raw=true)
 
@@ -143,12 +143,19 @@ vec2 SIMAgent::Arrival()
 ```C++
 vec2 SIMAgent::Departure()
 {
-
+	vec2 tmp;
+	double dist;
+	
+	tmp = goal - GPos;
+	dist = tmp.Length();
+	thetad = atan2(tmp[1], tmp[0]);
+	thetad = thetad + M_PI; 
+	vd = dist * SIMAgent::KDeparture;
 }
 ```
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
+* Youtube: [Arrival](https://youtu.be/hHN46n-yk0k)
+	
+![](images/arrival.png?raw=true)
 
 ###### Wander
 ```C++

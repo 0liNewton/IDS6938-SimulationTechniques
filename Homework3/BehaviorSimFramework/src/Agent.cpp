@@ -423,8 +423,12 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	//thetad = thetad * ?????  // damp down departure so agents don't depart infinitely (per webcourses)
-	vd = dist * SIMAgent::KArrival; // agent's max velocity
+	vd = dist * SIMAgent::KDeparture ; // agent's max velocity - need to add damping down to departure to from departing infinitely
+	
+	// if (y > 0.0) target postion is greater than zero
+	// where x is width, y is length, and z is height?
+	// should use maxspeed (KDeparture?), dist and radius to calculate
+	// vd = vd / radius; 
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
 	return tmp;
@@ -449,13 +453,10 @@ vec2 SIMAgent::Wander()
 	//Seek algorithm
 	vec2 tmp; // call the variable
 
-	tmp = goal - GPos; // shortest path from current position to the target
-	tmp.Normalize();
-	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
+	float randomangle = float(rand() % 360) / 180.0 * M_PI; // pick random angle
+	thetad = randomangle; // set thetad to random angle
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
-	//SIMAgent::KNoise; // random noise
-	//vd = SIMAgent::KWander; // damping term
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
+	tmp = vec2(cos(thetad)* vd* SIMAgent::KNoise, sin(thetad)* vd* SIMAgent::KNoise)* SIMAgent::KWander; // convert to Cartesian coordinaets
 
 	return tmp; // return coordinates
 }
