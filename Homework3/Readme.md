@@ -24,7 +24,8 @@ void SIMAgent::FindDeriv()
 ```
 
 ###### Implement *SIMAGENT::InitValues()*
-* ...
+* These were adjusted concurrently with the construction of functions for the implementation of behaviors in steps **(b)** and **(c)**
+	* Once the function code was
 
 ```C++
 void SIMAgent::InitValues()
@@ -58,10 +59,16 @@ void SIMAgent::InitValues()
 	* Moved onto adjusting initial values per Joey Netterville's comment on original post
 		* Initial values affecting Seek and Flee behaviors: *Kv0, Kp1, Kv1*
 	* The inital values were all set to 10 when the opposite direction behavior is observed
-	* Increasing/decreasing these values did not correct agent behavior
-	* Alternated +/- value of *Kv0* 
+	* Increasing/decreasing these values did not correct agent behavior (range min 2, range max 1000)
+	* Alternated +/- value of *Kv0*
 	 	* Agents glided backwards and disappeared from GUI ** *but* ** at least now the agents moved towards the target!
-	 	* Regardless of this value's size the 
+	 	* Regardless of this value's size, with the negative value added the agent always faced the wrong direction while moving towards the target and then disappeared
+	* Alternated +/- value of *Kp1*
+	 	* Started at -10, agents face and move in the right direction of the target, and move around the target until they eventually form a circle the target - i.e., *seek* behavior
+	* For good measure, alternated +/- value of *Kv1*
+		* Agents spun around in a circle and slowly moved towards target
+	* Across these initial values, negative sign correct agents' direction or movement towards the target but can introduce other errors
+	* Only a negative *Kp1* value achieves desired behavior outcome
 
 
 ```C++
@@ -79,8 +86,8 @@ vec2 SIMAgent::Seek()
 }
 ```
 
-* IMAGES
-* Youtube: [Seek](http://www.youtube.com/)
+* Youtube: [Seek](https://youtu.be/j3pV5f3PvEg)
+![](images/seek.PNG?raw=true)
 
 
 ###### Flee

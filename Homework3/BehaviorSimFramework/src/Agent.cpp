@@ -221,8 +221,8 @@ void SIMAgent::InitValues()
 	/*********************************************
 	Set initial value for control and behavior settings. Find out appropriate values for:
 	*********************************************/
-	Kv0 = -100.0; // from definition Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv0 = 10.0; // from definition Velocity control: f = m * Kv0 * (vd - v)
+	Kp1 = -10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	KArrival = 1.0; //Behavior settings
 	KDeparture = 1.0;
