@@ -393,13 +393,12 @@ vec2 SIMAgent::Arrival()
 	double dist;
 	
 	tmp = goal - GPos; //shortest path from the current position to the target
-	dist = tmp.Length(); //  distance to target
+	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // desired orientation
-	//vd = SIMAgent::MaxVelocity * SIMAgent::KArrival;
 	vd = dist * SIMAgent::KArrival; // desired velocity
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
 
-	return tmp;
+	return tmp; // return coordinates
 }
 
 /*

@@ -55,7 +55,7 @@ void SIMAgent::InitValues()
 * Based on April 4th class and 'Seek and Flee' webcourses page
 * Agents were moving in the opposite of desired directions
 * Checked my code for all the possible errors noted in responses to Piazza post by Rebecca Leis
-	* Pi is the right place (in flee block not seek); goal and position substraction is not backwards
+	* Pi is the right place (in flee block not seek); goal and position subtraction is not backwards
 	* Moved onto adjusting initial values per Joey Netterville's comment on original post
 		* Initial values affecting Seek and Flee behaviors: *Kv0, Kp1, Kv1*
 	* The inital values were all set to 10 when the opposite direction behavior is observed
@@ -116,16 +116,28 @@ vec2 SIMAgent::Flee()
 ![](images/flee.png?raw=true)
 
 ###### Arrival
+* 	Based on April 4th class and 'Arrival and Departure' webcourses page
+
 ```C++
 vec2 SIMAgent::Arrival()
 {
+	vec2 tmp;
+	double dist;
+	
+	tmp = goal - GPos; //shortest path from the current position to the target
+	dist = tmp.Length(); // distance to target
+	thetad = atan2(tmp[1], tmp[0]); // desired orientation
+	vd = dist * SIMAgent::KArrival; // desired velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
 
+	return tmp; // return coordinates
 }
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
+* Youtube: [Arrival](https://youtu.be/iQa5eLWF6VU)
+	
+![](images/arrival.png?raw=true)
+
 
 ###### Departure
 ```C++
