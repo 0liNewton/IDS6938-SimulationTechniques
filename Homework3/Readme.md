@@ -16,7 +16,7 @@ The goal of this assignment is to enable the steering behavioral animation of ag
 ```C++
 void SIMAgent::FindDeriv()
 {
-    deriv[0] = state[2]; //velocity of the agent in local body coordinates
+	deriv[0] = state[2]; //velocity of the agent in local body coordinates
 	deriv[1] = state[3]; //angular velocity of agent in world coordinates
 	deriv[2] = input[0] / Mass; //force in local body coordinates divided by mass
 	deriv[3] = input[1]/Inertia; //torque in local body coordinates divided by inertia
@@ -31,7 +31,7 @@ void SIMAgent::FindDeriv()
 void SIMAgent::InitValues()
 {	
 	Kv0 = 10; //Velocity control
-	Kp1 = 10; //Heading control
+	Kp1 = -10; //Heading control
 	Kv1 = 10; //Heading control
 	KArrival = #; //Behavior settings
 	KDeparture = #;
