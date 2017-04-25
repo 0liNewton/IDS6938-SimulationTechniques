@@ -30,11 +30,11 @@ void SIMAgent::FindDeriv()
 ```C++
 void SIMAgent::InitValues()
 {	
-	Kv0 = 10; //Velocity control
-	Kp1 = -10; //Heading control
+	Kv0 = 10.0; //Velocity control
+	Kp1 = -10.0; //Heading control
 	Kv1 = 10; //Heading control
-	KArrival = 1; //Behavior settings
-	KDeparture = #;
+	KArrival = 1.0; //Behavior settings
+	KDeparture = 8000;
 	KNoise = #;
 	KWander = #;
 	KAvoid = #;

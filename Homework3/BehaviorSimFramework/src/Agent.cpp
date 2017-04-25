@@ -225,9 +225,9 @@ void SIMAgent::InitValues()
 	Kp1 = -10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	KArrival = 1.0; //Behavior settings
-	KDeparture = 1.0;
+	KDeparture = 8000.0;
 	KNoise = 0.0;
-	KWander = 1.0;
+	KWander = 10.0;
 	KAvoid = 0.0;
 	TAvoid = 0.0;
 	RNeighborhood = 0.0;
@@ -423,7 +423,7 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	vd = dist * SIMAgent::KDeparture ; // agent's max velocity - need to add damping down to departure to from departing infinitely
+	vd = (1.0/dist) * SIMAgent::KDeparture ; // agent's max velocity - need to add damping down to departure to from departing infinitely
 	
 	// if (y > 0.0) target postion is greater than zero
 	// where x is width, y is length, and z is height?
@@ -447,13 +447,11 @@ vec2 SIMAgent::Wander()
 {
 	/*********************************************
 	'Wander and Avoid' webcourses
-		- "seek algorithm can be used to steer agent" 
 	*********************************************/
-	
-	//Seek algorithm
+
 	vec2 tmp; // call the variable
 
-	float randomangle = float(rand() % 360) / 180.0 * M_PI; // pick random angle
+	float randomangle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
 	thetad = randomangle; // set thetad to random angle
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
 	tmp = vec2(cos(thetad)* vd* SIMAgent::KNoise, sin(thetad)* vd* SIMAgent::KNoise)* SIMAgent::KWander; // convert to Cartesian coordinaets
