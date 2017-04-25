@@ -222,12 +222,16 @@ void SIMAgent::InitValues()
 	Set initial value for control and behavior settings. Find out appropriate values for:
 	*********************************************/
 	Kv0 = 10.0; // from definition Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = -10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 1.0; //Behavior settings
+
+	// From "Translating Steering Behavior Pursuit Sample" (StackExchange: Game Development)
+		// Heading refers to a vector pointing in the direction the entity is heading
+
+	Kp1 = -10.0; // Heading control - changed to negative to get agents moving in desired direction (opposite of what was being observed when this value was positive)
+	Kv1 = 10.0; // Heading control
+	KArrival = 1.0; // Behavior settings
 	KDeparture = 7000.0;
-	KNoise = 0.0;
-	KWander = 10.0;
+	KNoise = 0.5;
+	KWander = 500.0;
 	KAvoid = 0.0;
 	TAvoid = 0.0;
 	RNeighborhood = 0.0;
@@ -367,7 +371,6 @@ vec2 SIMAgent::Flee()
 	tmp = goal - GPos; //shortest path from current position to the target
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
-	//agents moving in wrong direction, commented out above line and added it to the Seek block
 	vd = SIMAgent::MaxVelocity;
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian
 
@@ -396,7 +399,17 @@ vec2 SIMAgent::Arrival()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // desired orientation
 	vd = dist * SIMAgent::KArrival; // desired velocity
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
+/*
+	Added if statement based on lecture and "Steering Behaviors in C# and C++" by Simon Coenen (simoncoenen.com/downloads/ai_paper.pdf)
+	*Should steer agent towards the target and slow down as it comes closer
+*/
+	if (dist < 30) { //agent's bounding radius is set at 20?
+		
+		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
+	}
+
+	else
+		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
 
 	return tmp; // return coordinates
 }
@@ -423,7 +436,7 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping down to stop agents from departing infinitely
+	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping, stop agents from departing infinitely
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
 	return tmp;
@@ -443,14 +456,16 @@ vec2 SIMAgent::Wander()
 	/*********************************************
 	'Wander and Avoid' webcourses
 	*********************************************/
-
 	vec2 tmp; // call the variable
 
-	float randomangle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
-	thetad = randomangle; // set thetad to random angle
+	tmp = v0 - vWander; // ?? nominal minus wander (peeked definition)
+	float randomangle;
+	randomangle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
+	thetad = atan2(tmp[1], tmp[0]) * SIMAgent::KNoise;
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
-	tmp = vec2(cos(thetad)* vd* SIMAgent::KNoise, sin(thetad)* vd* SIMAgent::KNoise)* SIMAgent::KWander; // convert to Cartesian coordinaets
-
+	thetad = randomangle; // set thetad to random angle
+	tmp = vec2(cos(thetad) * vd, sin(thetad) * vd) * SIMAgent::KWander; // convert to Cartesian coordinaets
+	
 	return tmp; // return coordinates
 }
 
