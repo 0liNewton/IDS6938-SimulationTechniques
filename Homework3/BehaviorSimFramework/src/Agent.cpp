@@ -25,7 +25,7 @@ float SIMAgent::MaxAngVel = 10.0; //Maximum angular velocity
 float SIMAgent::Kv0 = 1.0; //Velocity control: f = m * Kv0 * (vd - v)
 float SIMAgent::Kp1 = 1.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 float SIMAgent::Kv1 = 1.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-float SIMAgent::KArrival = 1.0; // Behavior settings. See comments in cpp file for details
+float SIMAgent::KArrival = 600.0; // Behavior settings. See comments in cpp file for details
 float SIMAgent::KDeparture = 1.0;
 float SIMAgent::KNoise = 1.0;
 float SIMAgent::KWander = 1.0;
@@ -228,7 +228,7 @@ void SIMAgent::InitValues()
 
 	Kp1 = -10.0; // Heading control - changed to negative to get agents moving in desired direction (opposite of what was being observed when this value was positive)
 	Kv1 = 10.0; // Heading control
-	KArrival = 1.0; // Behavior settings
+	KArrival = 100.0; // Behavior settings
 	KDeparture = 7000.0;
 	KNoise = 0.5;
 	KWander = 500.0;
@@ -397,20 +397,18 @@ vec2 SIMAgent::Arrival()
 	
 	tmp = goal - GPos; //shortest path from the current position to the target
 	dist = tmp.Length(); // distance to target
+	vd = dist - SIMAgent::KArrival; //desired velocity 
 	thetad = atan2(tmp[1], tmp[0]); // desired orientation
-	vd = dist * SIMAgent::KArrival; // desired velocity
 /*
 	Added if statement based on lecture and "Steering Behaviors in C# and C++" by Simon Coenen (simoncoenen.com/downloads/ai_paper.pdf)
 	*Should steer agent towards the target and slow down as it comes closer
 */
-	if (dist < 30) { //agent's bounding radius is set at 20?
-		
+	if (dist > 2) { 
 		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
 	}
-
-	else
-		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
-
+	else {
+		tmp = vec2(cos(thetad), sin(thetad));
+	}
 	return tmp; // return coordinates
 }
 

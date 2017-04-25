@@ -69,7 +69,7 @@ void SIMAgent::InitValues()
 		* Agents spun around in a circle and slowly moved towards target
 	* Across these initial values, negative sign correct agents' direction or movement towards the target but can introduce other errors
 	* Only a negative *Kp1* value achieves desired behavior outcome
-
+* As time passes, the agents begin to form clusters
 
 ```C++
 vec2 SIMAgent::Seek()
@@ -116,26 +116,39 @@ vec2 SIMAgent::Flee()
 ![](images/flee.png?raw=true)
 
 ###### Arrival
-* 	Based on April 4th class and 'Arrival and Departure' webcourses page
+* Based on April 4th class and 'Arrival and Departure' webcourses page
+* If statement based on lecture and "Steering Behaviors in C# and C++" by Simon Coenen (simoncoenen.com/downloads/ai_paper.pdf)
+	* Should steer agent towards the target and slow down as it comes closer
 
 ```C++
 vec2 SIMAgent::Arrival()
 {
 	vec2 tmp;
 	double dist;
+	double m;
+	double arrived;
 	
 	tmp = goal - GPos; //shortest path from the current position to the target
 	dist = tmp.Length(); // distance to target
+	vd = dist - SIMAgent::KArrival; //desired velocity 
+	//vd = dist * SIMAgent::KArrival;
 	thetad = atan2(tmp[1], tmp[0]); // desired orientation
-	vd = dist * SIMAgent::KArrival; // desired velocity
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
 
-	return tmp; // return coordinates
+	if (dist > 2) { 
+		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
+	}
+	else {
+		tmp = vec2(cos(thetad), sin(thetad));
+	}
 }
 ```
 
-* Youtube: [Arrival](https://youtu.be/hHN46n-yk0k)
-	
+* Youtube: [Arrival - Basic](https://youtu.be/h-8T3fzy9D4)
+	* As you can see in the video, I did execute this behavior perfectly - the first time the agents approach the target they do not slow down and come to a stop only once they've reached the target
+	* As the agents repeat this behavior, they begin to slow down and stop before reaching the target
+* Youtube: [Arrival - Moving the Target](https://youtu.be/opaS4oHdhT8)
+	* This video shows how the agents arrival behavior changes when the target is moved
+	* Again, the agents reach the target, stop, and then back up - they repeat this behavior infinitely
 ![](images/arrival.png?raw=true)
 
 
@@ -150,7 +163,7 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping down to stop agents from departing infinitely
+	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping, stop agents from departing infinitely
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
 	return tmp;
@@ -158,6 +171,7 @@ vec2 SIMAgent::Departure()
 ```
 * Youtube: [Departure](https://youtu.be/8oYlwopYqmc)
 	* Video shows differences between Seek, Flee, and Departure behaviors
+	
 ![](images/depart.png?raw=true)
 
 ###### Wander
