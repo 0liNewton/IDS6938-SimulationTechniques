@@ -87,7 +87,8 @@ vec2 SIMAgent::Seek()
 ```
 
 * Youtube: [Seek](https://youtu.be/j3pV5f3PvEg)
-![](images/seek.PNG?raw=true)
+
+![](images/seek.png?raw=true)
 
 
 ###### Flee
