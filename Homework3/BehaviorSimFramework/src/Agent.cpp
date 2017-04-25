@@ -225,7 +225,7 @@ void SIMAgent::InitValues()
 	Kp1 = -10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
 	KArrival = 1.0; //Behavior settings
-	KDeparture = 8000.0;
+	KDeparture = 7000.0;
 	KNoise = 0.0;
 	KWander = 10.0;
 	KAvoid = 0.0;
@@ -423,12 +423,7 @@ vec2 SIMAgent::Departure()
 	dist = tmp.Length(); // distance to target
 	thetad = atan2(tmp[1], tmp[0]); // derive target angle
 	thetad = thetad + M_PI; //opposite direction
-	vd = (1.0/dist) * SIMAgent::KDeparture ; // agent's max velocity - need to add damping down to departure to from departing infinitely
-	
-	// if (y > 0.0) target postion is greater than zero
-	// where x is width, y is length, and z is height?
-	// should use maxspeed (KDeparture?), dist and radius to calculate
-	// vd = vd / radius; 
+	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping down to stop agents from departing infinitely
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
 
 	return tmp;

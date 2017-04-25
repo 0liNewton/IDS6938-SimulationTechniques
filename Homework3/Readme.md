@@ -34,7 +34,7 @@ void SIMAgent::InitValues()
 	Kp1 = -10.0; //Heading control
 	Kv1 = 10; //Heading control
 	KArrival = 1.0; //Behavior settings
-	KDeparture = 8000;
+	KDeparture = 7000;
 	KNoise = #;
 	KWander = #;
 	KAvoid = #;
@@ -146,16 +146,19 @@ vec2 SIMAgent::Departure()
 	vec2 tmp;
 	double dist;
 	
-	tmp = goal - GPos;
-	dist = tmp.Length();
-	thetad = atan2(tmp[1], tmp[0]);
-	thetad = thetad + M_PI; 
-	vd = dist * SIMAgent::KDeparture;
+	tmp = goal - GPos; // shortest path from the current position to the target
+	dist = tmp.Length(); // distance to target
+	thetad = atan2(tmp[1], tmp[0]); // derive target angle
+	thetad = thetad + M_PI; //opposite direction
+	vd = (1.0/dist) * SIMAgent::KDeparture ; // max velocity with damping down to stop agents from departing infinitely
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
+
+	return tmp;
 }
 ```
-* Youtube: [Arrival](https://youtu.be/hHN46n-yk0k)
+* Youtube: [Departure](https://youtu.be/8oYlwopYqmc)
 	
-![](images/arrival.png?raw=true)
+![](images/depart.png?raw=true)
 
 ###### Wander
 ```C++
