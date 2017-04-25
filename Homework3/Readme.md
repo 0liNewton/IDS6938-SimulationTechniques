@@ -8,7 +8,7 @@
 
 The goal of this assignment is to enable the steering behavioral animation of agents. We represent an agent as a two-dimensional disk with mass (**m**) and moment-of-inertia (**I**) that is capable of generating a force **F** along body x-axis with a torque about the z-axis. For this assignment assume that the agent only translates in the world x-y plane and rotates about the body z-axis.
 
-#### (a) Compute derivative vector and implment initial values - 10 points** 
+#### (a) Compute Derivative Vector and Implement Initial Values - 10 points** 
 
 ###### Compute derivative vector given input and state vectors
 * Calling the function and setting derivative vector to the appropriate values
@@ -86,7 +86,7 @@ vec2 SIMAgent::Seek()
 }
 ```
 
-* Youtube: [Seek](https://youtu.be/j3pV5f3PvEg)
+* Youtube: [Seek](https://youtu.be/iib-sMjH-mg)
 
 ![](images/seek.png?raw=true)
 
@@ -110,9 +110,10 @@ vec2 SIMAgent::Flee()
 
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
+* Youtube: [Flee](https://youtu.be/iQa5eLWF6VU)
+	* Includes Seek behavior to show differences between both behaviors
+	
+![](images/flee.png?raw=true)
 
 ###### Arrival
 ```C++
@@ -126,7 +127,7 @@ vec2 SIMAgent::Arrival()
 * Add youtube videos of GUI, and 
 * Add description
 
-######Departure
+###### Departure
 ```C++
 vec2 SIMAgent::Departure()
 {
