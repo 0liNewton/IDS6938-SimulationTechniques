@@ -219,20 +219,12 @@ Sets the intial Values
 void SIMAgent::InitValues()
 {
 	/*********************************************
-	// TODO: Add code here
-	
-	Set initial value for control and behavior settings
-
-	You need to find out appropriate values for:
-	SIMAgent::Kv0, SIMAgent::Kp1, SIMAgent::Kv1, SIMAgent::KArrival, SIMAgent::KDeparture,
-	SIMAgent::KNoise, SIMAgent::KWander, SIMAgent::KAvoid, SIMAgent::TAvoid, SIMAgent::RNeighborhood,
-	SIMAgent::KSeparate, SIMAgent::KAlign, SIMAgent::KCohesion.
-
+	Set initial value for control and behavior settings. Find out appropriate values for:
 	*********************************************/
-	Kv0 = 100.0; //Velocity control: f = m * Kv0 * (vd - v)
-	Kp1 = 1000.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	Kv1 = 100.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
-	KArrival = 1; //Behavior settings
+	Kv0 = -100.0; // from definition Velocity control: f = m * Kv0 * (vd - v)
+	Kp1 = 10.0; // from definition: Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	Kv1 = 10.0; //Heading control: tau = I * ( -Kv1 * thetaDot - Kp1 * theta + Kp1 * thetad)
+	KArrival = 1.0; //Behavior settings
 	KDeparture = 1.0;
 	KNoise = 0.0;
 	KWander = 1.0;
@@ -245,15 +237,13 @@ void SIMAgent::InitValues()
 }
 
 /*
-*	You should apply the control rules given desired velocity vd and desired orientation thetad.
+*	Apply the control rules given desired velocity vd and desired orientation thetad.
 */
 void SIMAgent::Control()
 {
 	//*********************************************
-	// TODO: Add code here - from Piazza
+	// TODO: Add code here - Based on Readme and several Piazza posts 
 	// This function sets input[0] and input[1] after being called
-
-
 	//State vector dimension: 4
 	/*
 	*	State Vector: 4 dimensions
@@ -262,11 +252,10 @@ void SIMAgent::Control()
 	*  2 : velocity in local coordinates.
 	*  3 : angular velocity in global coordinates.
 	*/
-
-
 	Truncate(vd, -SIMAgent::MaxVelocity, SIMAgent::MaxVelocity);
 	
-	//set input[0] -> f = m * Kv0 * (vd - v) -> input[0] = mass of agent * velocity force * (desired velocity - velocity of agent)
+	//set vector input[0] 
+	//f = m * Kv0 * (vd - v) -> input[0] = mass of agent * velocity force * (desired velocity - velocity of agent)
 
 	input[0] = SIMAgent::Mass * SIMAgent::Kv0 * (vd - state[2]); // force in local body coordinates
 	Truncate(input[0], -SIMAgent::MaxForce, SIMAgent::MaxForce); 
@@ -274,9 +263,9 @@ void SIMAgent::Control()
 	double dangle = AngleDiff(state[1], thetad);
 	
 	//set input[1] -> tau = I * ( -Kv1 * thetaDot - (Kp1 * theta + Kp1 * thetad)) -> 
-	//input[1] = inertia of agent * dot product of orientation angle vector and desired orientation vector - heading control * angular velocity in global coordinates
-	
-	input[1] = SIMAgent::Inertia * (Kp1 * dangle - Kv1 * state[3]); // torque in local body coordinates -- should 
+	//input[1] = inertia of agent *   - heading control equation * angular velocity in global coordinates
+	//input[1] = SIMAgent::Inertia * [..whatever thetaDot] is?
+	input[1] = SIMAgent::Inertia * (SIMAgent::Kp1 * dangle - SIMAgent::Kv1 * state[3]); // torque in local body coordinates -- should 
 	Truncate(input[1], -SIMAgent::MaxTorque, SIMAgent::MaxTorque);
 	
 	//*********************************************
@@ -294,10 +283,10 @@ void SIMAgent::FindDeriv()
 	- then function sets deriv vector to appropriate value
 	*********************************************/
 	
-	deriv[0] = state[2];
-	deriv[1] = state[3];
-	deriv[2] = input[0] / Mass;
-	deriv[3] = input[1]/Inertia;
+	deriv[0] = state[2]; //velocity of the agent in local body coordinates
+	deriv[1] = state[3]; //angular velocity of agent in world coordinates
+	deriv[2] = input[0] / Mass; //force in local body coordinates divided by mass
+	deriv[3] = input[1] / Inertia; //torque in local body coordinates divided by inertia
 }
 
 /*
@@ -308,8 +297,7 @@ void SIMAgent::FindDeriv()
 
 void SIMAgent::UpdateState()
 {
-	//*********************************************
-	// TODO: Add code here - taken from Piazza post
+	// Copied from Dr. Kider's Piazza post
 	
 	for (int i = 0; i < dimState; i++){
 	state[i] += deriv[i] * deltaT;
@@ -329,8 +317,6 @@ void SIMAgent::UpdateState()
 	Truncate(GPos[1], -1.0 * env->groundSize, env->groundSize);
 
 	Truncate(state[3], -SIMAgent::MaxAngVel, SIMAgent::MaxAngVel);
-
-		//*********************************************
 
 }
 
@@ -353,15 +339,16 @@ vec2 SIMAgent::Seek()
 	
 	tmp = goal - GPos; // shortest path from current position to the target
 	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
+	//thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
-
+	
 	return tmp; // return coordinates
 
 }
 
 /*
-*	Flee behavior
+*  Flee behavior
 *  Global goal position is in goal
 *  Agent's global position is in GPos
 *  You need to compute the desired velocity and desired orientation
@@ -380,6 +367,7 @@ vec2 SIMAgent::Flee()
 	tmp = goal - GPos; //shortest path from current position to the target
 	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
 	thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
+	//agents moving in wrong direction, commented out above line and added it to the Seek block
 	vd = SIMAgent::MaxVelocity;
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian
 
@@ -405,13 +393,10 @@ vec2 SIMAgent::Arrival()
 	double dist;
 	
 	tmp = goal - GPos; //shortest path from the current position to the target
-	dist = tmp.Length(); //distance to target
-	thetad = atan2(tmp[1], tmp[0]);
-	//compute desired velocity  - store in vd
-	//compute desired orientation - store in theta d
-	//return vec2 representing goal velocity with direction of thetad and and norm is vd
+	dist = tmp.Length(); //  distance to target
+	thetad = atan2(tmp[1], tmp[0]); // desired orientation
 	//vd = SIMAgent::MaxVelocity * SIMAgent::KArrival;
-	vd = dist * SIMAgent::KArrival;
+	vd = dist * SIMAgent::KArrival; // desired velocity
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd);
 
 	return tmp;

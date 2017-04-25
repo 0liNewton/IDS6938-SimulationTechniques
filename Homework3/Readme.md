@@ -15,23 +15,23 @@ The goal of this assignment is to enable the steering behavioral animation of ag
 
 ```C++
 void SIMAgent::FindDeriv()
-{	
-	deriv[0] = input[0]/Mass; //force in local body coordinates divided by mass
-	deriv[1] = input[1]/Inertia; //torque in local body coordinates divided by inertia
-	deriv[2] = state[2]; //velocity of the agent in local body coordinates
-	deriv[3] = state[3]; //angular velocity of agent in world coordinates
+{
+    deriv[0] = state[2]; //velocity of the agent in local body coordinates
+	deriv[1] = state[3]; //angular velocity of agent in world coordinates
+	deriv[2] = input[0] / Mass; //force in local body coordinates divided by mass
+	deriv[3] = input[1]/Inertia; //torque in local body coordinates divided by inertia
     }
 ```
 
 ###### Implement *SIMAGENT::InitValues()*
-* ...played around with some values...
+* ...
 
 ```C++
 void SIMAgent::InitValues()
 {	
-	Kv0 = #; //Velocity control
-	Kp1 = #; //Heading control
-	Kv1 = #; //Heading control
+	Kv0 = 10; //Velocity control
+	Kp1 = 10; //Heading control
+	Kv1 = 10; //Heading control
 	KArrival = #; //Behavior settings
 	KDeparture = #;
 	KNoise = #;
@@ -52,25 +52,36 @@ void SIMAgent::InitValues()
 
 ###### Seek
 * Based on April 4th class and 'Seek and Flee' webcourses page
+* Agents were moving in the opposite of desired directions
+* Checked my code for all the possible errors noted in responses to Piazza post by Rebecca Leis
+	* Pi is the right place (in flee block not seek); goal and position substraction is not backwards
+	* Moved onto adjusting initial values per Joey Netterville's comment on original post
+		* Initial values affecting Seek and Flee behaviors: *Kv0, Kp1, Kv1*
+	* The inital values were all set to 10 when the opposite direction behavior is observed
+	* Increasing/decreasing these values did not correct agent behavior
+	* Alternated +/- value of *Kv0* 
+	 	* Agents glided backwards and disappeared from GUI ** *but* ** at least now the agents moved towards the target!
+	 	* Regardless of this value's size the 
+
 
 ```C++
 vec2 SIMAgent::Seek()
 {	
 	vec2 tmp; //call the variable
 
-	tmp = goal - GPos; //shortest path from current position to the target
-	thetad = atan2(tmp[1], tmp[0]); //derive new angle agent should target
-	vd = SIMAgent::MaxVelocity; //agent's max velocity
-	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); //convert to Cartesian coordinates
+	tmp = goal - GPos; // desired velocity - shortest path from current position to the target
+	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
+	vd = SIMAgent::MaxVelocity; // agent's max velocity
+	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinates
 
 	return tmp; //return coordinates
 
 }
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
+* IMAGES
+* Youtube: [Seek](http://www.youtube.com/)
+
 
 ###### Flee
 * Based on April 4th class and 'Seek and Flee' webcourses page
