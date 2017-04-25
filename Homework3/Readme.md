@@ -25,7 +25,7 @@ void SIMAgent::FindDeriv()
 
 ###### Implement *SIMAGENT::InitValues()*
 * These were adjusted concurrently with the construction of functions for the implementation of behaviors in steps **(b)** and **(c)**
-	* Once the function code was
+	* Once was added for a behavior function, the corresponding initial values were adjusted
 
 ```C++
 void SIMAgent::InitValues()
@@ -157,7 +157,7 @@ vec2 SIMAgent::Departure()
 }
 ```
 * Youtube: [Departure](https://youtu.be/8oYlwopYqmc)
-	
+	* Video shows differences between Seek, Flee, and Departure behaviors
 ![](images/depart.png?raw=true)
 
 ###### Wander
