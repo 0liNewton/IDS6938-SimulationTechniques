@@ -35,8 +35,8 @@ void SIMAgent::InitValues()
 	Kv1 = 10; //Heading control
 	KArrival = 600; //Behavior settings
 	KDeparture = 7000;
-	KNoise = #;
-	KWander = #;
+	KNoise = 200;
+	KWander = 200;
 	KAvoid = #;
 	TAvoid = #;
 	RNeighborhood = #;
@@ -245,9 +245,7 @@ vec2 SIMAgent::Wander()
 ![](images/maze2d.PNG?raw=true)
 ![](images/logicandcharts.PNG?raw=true)
 
-**(c) UCF Building - Bookstore within the John T Washington Center - 30 points**
-
-model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
+#### (c) UCF Building - Bookstore within the John T Washington Center - 30 points**
 
 * I chose to model and analyze the Barnes & Noble Bookstore in the John T Washington Center on UCF's Main Campus.
 
@@ -272,15 +270,24 @@ model and design your own experiment to determine if the building design suits t
 | ![](images/bookstore2.png?raw=true) |
 
 
-* Setting: at the end of each semester, textbook rental returns are due back the last day of the final exam period. As the deadline draws near and the semester comes to a close, more and more students make their way to this central bookstore to return or sell back textbooks. During this time, the bookstore staff constructs a temporary queue circling around the store's many merchandise displays. 
+* At the end of each semester, textbook rental returns are due back the last day of the final exam period. As the deadline draws near and the semester comes to a close, more and more students make their way to this central bookstore to return or sell back textbooks. During this time, the bookstore staff constructs a temporary queue circling around the store's many merchandise displays and extending across a large portion of the store's floorspace. This queue somewhat blocks access to other areas of the store - the coffee shop and the side entrance/exit. As the main entrance becomes a starting point for the textbook services queue, the side door serves as an entry point for zombies, I mean students, seeking a caffiene boost. Of course, professors and other faculty may drop in to pick up some coffee as well. And without a doubt there will be students enter through the side door only to realize how long the textbook services queue is...some will leave, but others might see a friend in line and jump in - the rule breakers.
 
-* On a relatively busy day during the final exam period (e.g., second to last day), one can expect to find a queue starting at the bookstore's main entrance and looping around merchandise  6 registers are open for textbook services
+* On a moderately busy day during the final exam period, one can expect to find a relatively long queue
+* The bookstore relies on two rows of registers to provide the desired services
 	* Youtube: [Busy Day](https://youtu.be/6iRDJAnWLpk)
 
 ![](images/sbusy6.png?raw=true)
 ![](images/somewhatbusy6.png?raw=true)
 
-The building does generally suit the needs of its users. However, much of the merchandise sold in the store takes up [lots of floor space] and could be better used to address the shifting textbook market (from buying and selling to renting and ebooks). This need would be more obvious if the true layout (without walls could not get agents to remain in line/not take a shortcut to desired location) was used, and examining agent density on the 2D model. Specifically, we would expect to see that these areas would serve mainly as shortcuts to reach other locations (e.g., agent who goes to line from side door cuts through merchandise in the back)
+* To a certain extent, the building does meet the needs of its users. However, much of the merchandise sold in the store takes up a lot of floorspace.
+	* It's not certain this would increase efficieny (and decrease wait time)
+* UCF's bookstore could be updated to better address the shifting needs of students.
+	* E-books and textbook rentals are very popular - they're convenient and cheaper than traditional textbook purchase
+	* Online shopping is also very popular - who goes to the bookstore to buy the overpriced school merch?!
+		* The bookstore could consider downsizing it's apparel and accessories merchandise - afterall, it is a *book* store
+		* Without knowing their profits from said merchandise, it's impossible to say this would truly benefit the bookstore - it may however benefit the users (i.e., students)
+* The model used was not entirely realistic.
+	* Some individuals coming in through the main entrance might just want some coffee
+	* BUT the individuals who want coffee and see the queue at the main entrance would likely take the detour to the side door
+* Alternatively, merchandise displays could be updated with lightweight, collapsable materials to meet temporary need for floorspace during final exam period. 
 
-
-* I considered adding actual queues and services 
