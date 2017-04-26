@@ -219,19 +219,21 @@ Sets the intial Values
 void SIMAgent::InitValues()
 {
 	/*********************************************
-	Set initial value for control and behavior settings. Find out appropriate values for:
+	Set initial value for control and behavior settings. 
+	
+	Find out appropriate values for:
 	*********************************************/
-	Kv0 = 10.0; // from definition Velocity control: f = m * Kv0 * (vd - v)
+	Kv0 = 10.0; // Velocity control:
 
 	// From "Translating Steering Behavior Pursuit Sample" (StackExchange: Game Development)
 		// Heading refers to a vector pointing in the direction the entity is heading
 
-	Kp1 = -10.0; // Heading control - changed to negative to get agents moving in desired direction (opposite of what was being observed when this value was positive)
-	Kv1 = 10.0; // Heading control
-	KArrival = 100.0; // Behavior settings
+	Kp1 = -10.0; // Heading control
+	Kv1 = 50.0; // Heading control
+	KArrival = 600.0; // Behavior settings
 	KDeparture = 7000.0;
-	KNoise = 0.5;
-	KWander = 500.0;
+	KNoise = 200;
+	KWander = 200;
 	KAvoid = 0.0;
 	TAvoid = 0.0;
 	RNeighborhood = 0.0;
@@ -343,7 +345,6 @@ vec2 SIMAgent::Seek()
 	
 	tmp = goal - GPos; // shortest path from current position to the target
 	thetad = atan2(tmp[1], tmp[0]); // derive new angle agent should target
-	//thetad = thetad + M_PI; //add 180 degree to Seek desired velocity angle thetad
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
 	tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // convert to Cartesian coordinaets
 	
@@ -403,7 +404,7 @@ vec2 SIMAgent::Arrival()
 	Added if statement based on lecture and "Steering Behaviors in C# and C++" by Simon Coenen (simoncoenen.com/downloads/ai_paper.pdf)
 	*Should steer agent towards the target and slow down as it comes closer
 */
-	if (dist > 2) { 
+	if (dist > 2) { // need to find correct value for this
 		tmp = vec2(cos(thetad)* vd, sin(thetad)* vd); // Cartesian coordinates
 	}
 	else {
@@ -455,20 +456,24 @@ vec2 SIMAgent::Wander()
 	'Wander and Avoid' webcourses
 	*********************************************/
 	vec2 tmp; // call the variable
-	vec2 vWander;
-	vec2 v0;
+	//vec2 vW;
+	//vec2 v0;
 	float angle;
 
-	vWander.Normalize();
-	vd = SIMAgent::MaxVelocity; // define agent's velocity
+	//vWander.Normalize();
+	//vd = SIMAgent::MaxVelocity/2; // define agent's velocity
+	//thetad = atan2(vWander[1], vWander[0]);
+
 	angle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
 	thetad = angle;
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad) * vd * SIMAgent::KNoise, sin(thetad) * vd * SIMAgent::KNoise) * SIMAgent::KWander;
+	
 	//vWander[0] = cos(angle) * SIMAgent::KWander; //large
 	//vWander[1] = sin(angle) * SIMAgent::KWander; //large displacement? - Wander velocity
 	//v0[0] = cos(angle) * vd / 2.0; //small
 	//v0[1] = sin(angle) * vd / 2.0; //small displacement?- nominal velocity
-	tmp = vec2(cos(thetad) * vd, sin(thetad) * vd) / 2.0 ; // convert to Cartesian coordinaets
-	//tmp = vWander;
+
 	return tmp; // return coordinates
 }
 
@@ -508,7 +513,20 @@ vec2 SIMAgent::Separation()
 	// TODO: Add code here
 	*********************************************/
 	vec2 tmp;
+	vec2 start = vec2(0.0, 0.0);
+	float X = 0.0;
+	float Y = 0.0;
 
+
+	/*for (int i = 0; i < agents.size(); i++){
+		X = ;
+		Y = ;
+
+		if (X and Y and distance is less than SIMAgent::KNeighborhood) {
+		}
+	}
+	tmp = return vec2(cos(thetad)*vd, sin(thetad)*vd);
+	*/
 	return tmp;
 }
 
@@ -526,7 +544,18 @@ vec2 SIMAgent::Alignment()
 	// TODO: Add code here
 	*********************************************/
 	vec2 tmp;
+	//vec2 start = vec2(0.0, 0.0);
+	float X = 0.0;
+	float Y = 0.0;
 
+	/*
+	 for (int i = 0; i < agents.size(); i++) {
+		X = ;
+		Y = ;
+		if ( x and y and dist is less than neighborhood
+		}
+	tmp = return vec2(cos(thetad)*vd, sin(thetad)*vd);
+	*/
 	return tmp;
 }
 
@@ -544,8 +573,10 @@ vec2 SIMAgent::Cohesion()
 	// TODO: Add code here
 	*********************************************/
 	vec2 tmp;
-
-
+	/*for (int i = 0; i < agents.size(); i++){
+	if ()
+	}
+	tmp = return vec2(cos(thetad)*vd, sin(thetad)*vd);*/
 	return tmp;
 }
 
@@ -563,6 +594,11 @@ vec2 SIMAgent::Flocking()
 	*********************************************/
 	vec2 tmp;
 
+
+	//integrate seperation, cohesion and alignment to produce flocking behavior
+	//thetad = ();
+	tmp = vec2((cos(thetad)* vd), (sin(thetad) * vd));
+	
 	return tmp;
 }
 

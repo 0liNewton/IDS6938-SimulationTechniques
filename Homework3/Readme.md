@@ -147,7 +147,7 @@ vec2 SIMAgent::Arrival()
 	* As you can see in the video, I did not execute this behavior perfectly - the first time the agents approach the target they do not slow down and come to a stop only once they've reached the target
 	* As the agents repeat this behavior, they begin to slow down and stop before reaching the target
 * Youtube: [Arrival - Moving the Target](https://youtu.be/opaS4oHdhT8)
-	* This video shows how the agents arrival behavior changes when the target is moved
+	* This video shows how the agents arrival behavior adjusts with the changing location of the target
 	* Again, the agents reach the target, stop, and then back up - they repeat this behavior infinitely
 
 ![](images/arrival.png?raw=true)
@@ -179,23 +179,23 @@ vec2 SIMAgent::Departure()
 ```C++
 vec2 SIMAgent::Wander()
 {
+	vec2 tmp; 
 
+	angle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
+	thetad = angle;
+	vd = SIMAgent::MaxVelocity;
+	tmp = vec2(cos(thetad) * vd * SIMAgent::KNoise, sin(thetad) * vd * SIMAgent::KNoise) * SIMAgent::KWander;
+    
+    return tmp;
 }
 ```
-
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
+* I was not successful in my attempt to simulate Wander behavior
+	* Observed behavior was similiar to that of flee
 
 ###### Obstacle Avoidance
 ```C++
 ...
 ```
-
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
-
 
 #### (c) Implement Group Behaviors for Agents - 20 points**
 
@@ -205,28 +205,17 @@ vec2 SIMAgent::Wander()
 ...
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
-
 ###### Cohesion
 
 ```C++
 ...
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
 
 ###### Alignment
 ```C++
 ...
 ```
-
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
 
 ###### Flocking
 
@@ -234,19 +223,11 @@ vec2 SIMAgent::Wander()
 ...
 ```
 
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
-
 ###### Leader Following
 
 ```C++
 ...
 ```
-
-* Add images of GUI
-* Add youtube videos of GUI, and 
-* Add description
 
 
 # Part 2 - Simulating a simple pedestrian flow
