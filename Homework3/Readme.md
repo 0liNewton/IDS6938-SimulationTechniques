@@ -251,23 +251,34 @@ model and design your own experiment to determine if the building design suits t
 
 * I chose to model and analyze the Barnes & Noble Bookstore in the John T Washington Center on UCF's Main Campus.
 
-![](images/jtwashington.jpg?raw=true)
-![](images/bookstore.png?raw=true)
-![](images/bookstore1.png?raw=true)
-![](images/coffee.png?raw=true)
-![](images/bookstore2.png?raw=true)
+| John T Washington Center  |
+| ------------- |
+| ![](images/jtwashington.jpg?raw=true) |
 
-* Setting: either beginning or end of the semester), when students are buying/renting/selling/returning textbooks
-* Number of students coming to the bookstore as rental deadlines approach
+| View of Main Entrance from the Breezeway |
+| ------------- |
+| ![](images/bookstore.png?raw=true) |
 
-* Moderately busy, 4 registers are open for service
-	* Youtube: Busy, 6 Registers
+| Crowds Gather Near the Breezeway|
+| ------------- |
+| ![](images/bookstore1.png?raw=true) |
 
-* On a relatively busy day during the final exam period (e.g., second to last day) - 6 registers are open for textbook services
+| View from the bookstore's Starbuck's Coffee Shop in the Bookstore |
+| ------------- |
+| ![](images/coffee.png?raw=true) |
+
+| View from Starbuck's Coffee Shop in the Bookstore |
+| ------------- |
+| ![](images/bookstore2.png?raw=true) |
+
+
+* Setting: at the end of each semester, textbook rental returns are due back the last day of the final exam period. As the deadline draws near and the semester comes to a close, more and more students make their way to this central bookstore to return or sell back textbooks. During this time, the bookstore staff constructs a temporary queue circling around the store's many merchandise displays. 
+
+* On a relatively busy day during the final exam period (e.g., second to last day), one can expect to find a queue starting at the bookstore's main entrance and looping around merchandise  6 registers are open for textbook services
 	* Youtube: [Busy Day](https://youtu.be/6iRDJAnWLpk)
 
-![](images/sbusy6.PNG?raw=true)
-![](images/somewhatbusy6.PNG?raw=true)
+![](images/sbusy6.png?raw=true)
+![](images/somewhatbusy6.png?raw=true)
 
 The building does generally suit the needs of its users. However, much of the merchandise sold in the store takes up [lots of floor space] and could be better used to address the shifting textbook market (from buying and selling to renting and ebooks). This need would be more obvious if the true layout (without walls could not get agents to remain in line/not take a shortcut to desired location) was used, and examining agent density on the 2D model. Specifically, we would expect to see that these areas would serve mainly as shortcuts to reach other locations (e.g., agent who goes to line from side door cuts through merchandise in the back)
 
