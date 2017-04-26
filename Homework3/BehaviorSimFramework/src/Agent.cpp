@@ -455,15 +455,20 @@ vec2 SIMAgent::Wander()
 	'Wander and Avoid' webcourses
 	*********************************************/
 	vec2 tmp; // call the variable
+	vec2 vWander;
+	vec2 v0;
+	float angle;
 
-	tmp = v0 - vWander; // ?? nominal minus wander (peeked definition)
-	float randomangle;
-	randomangle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
-	thetad = atan2(tmp[1], tmp[0]) * SIMAgent::KNoise;
+	vWander.Normalize();
 	vd = SIMAgent::MaxVelocity; // define agent's velocity
-	thetad = randomangle; // set thetad to random angle
-	tmp = vec2(cos(thetad) * vd, sin(thetad) * vd) * SIMAgent::KWander; // convert to Cartesian coordinaets
-	
+	angle = float(rand() % 360) / 180.0 * M_PI; // pick a random angle
+	thetad = angle;
+	//vWander[0] = cos(angle) * SIMAgent::KWander; //large
+	//vWander[1] = sin(angle) * SIMAgent::KWander; //large displacement? - Wander velocity
+	//v0[0] = cos(angle) * vd / 2.0; //small
+	//v0[1] = sin(angle) * vd / 2.0; //small displacement?- nominal velocity
+	tmp = vec2(cos(thetad) * vd, sin(thetad) * vd) / 2.0 ; // convert to Cartesian coordinaets
+	//tmp = vWander;
 	return tmp; // return coordinates
 }
 

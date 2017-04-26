@@ -33,7 +33,7 @@ void SIMAgent::InitValues()
 	Kv0 = 10.0; //Velocity control
 	Kp1 = -10.0; //Heading control
 	Kv1 = 10; //Heading control
-	KArrival = 1.0; //Behavior settings
+	KArrival = 600; //Behavior settings
 	KDeparture = 7000;
 	KNoise = #;
 	KWander = #;
@@ -149,6 +149,7 @@ vec2 SIMAgent::Arrival()
 * Youtube: [Arrival - Moving the Target](https://youtu.be/opaS4oHdhT8)
 	* This video shows how the agents arrival behavior changes when the target is moved
 	* Again, the agents reach the target, stop, and then back up - they repeat this behavior infinitely
+
 ![](images/arrival.png?raw=true)
 
 
@@ -269,11 +270,23 @@ The goal of this part of the assigment is to simulate the pedestrain flow for va
 
 * https://youtu.be/mYlZyxZ6FYE
 
-**(c) UCF Building - Bookstore within the John T Washington Center - 30 points**: Model and analyze a building (or floor/outdoor space/stadium) on campus. (There is help on piazza how to find rough building plans - we expect something plausible). Create a senario: evacuation, daily office routine, special event, normal egress.... etc., and model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
+**(c) UCF Building - Bookstore within the John T Washington Center - 30 points**
 
-* John T Washington Center (aka the breezeway) - UCF Bookstore
+model and design your own experiment to determine if the building design suits the needs of its users. Start with photographs of your site, describe your site, describe your senario and hypothesis. Then use an agent-based pedistrian simulation to visualize your experiment's results.
+
+* I chose to model and analyze the Barnes & Noble Bookstore in the John T Washington Center on UCF's Main Campus.
+
+![](images/jtwashington.jpg?raw=true)
+![](images/bookstore.png?raw=true)
+![](images/coffee.png?raw=true)
+
 * Setting: either beginning or end of the semester), when students are buying/renting/selling/returning textbooks
 * Number of students coming to the bookstore as rental deadlines approach
+
+* Pretty busy, 6 registers are open for service
+	*Youtube: Busy, 6 Registers
+![](images/sbusy6.PNG?raw=true)
+![](images/somewhatbusy6.PNG?raw=true)
 
 
 
