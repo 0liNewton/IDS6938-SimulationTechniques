@@ -232,24 +232,20 @@ vec2 SIMAgent::Wander()
 
 # Part 2 - Simulating a simple pedestrian flow
 
-The goal of this part of the assigment is to simulate the pedestrain flow for various configurations. Pedestrian traffic simulation is an important, sometimes required, stage for certain construction projects such as shopping centers, airports, railway stations, or stadiums. hese analyses can be used by architects in the design stage, by facilities owners contemplating changes, by city planners to evaluate rush hours, or even by civil authorities to simulate evacuations or other emergencies. 
-
-![](images/flow.png?raw=true)
-
-**(a) Subway Entrance Model
+#### (a) Subway Model
+* YouTube: [Subway Hall](https://youtu.be/dKimwcThuOg) 
 
 ![](images/anylogic_subwayhall.PNG?raw=true)
 
-* Done - add description of what was done and what was observed
 
-**(b) Maze Model - 20 points**: Create a maze. Generate the pdm, stats, and animations like before. Vary [parameters in your agents](https://help.anylogic.com/index.jsp?topic=/com.xj.anylogic.help/html/_PL/reference/Attributes.html) to give them different behaviors and show the pedistrians change how they navigate the maze.
+#### (b) Maze Model - 20 points**: 
 
-* Done - add screen shot image and description
+* Youtube: []()
 
 ![](images/anylogic_maze.PNG?raw=true)
 
 
-* https://youtu.be/mYlZyxZ6FYE
+* Youtube: []()
 
 **(c) UCF Building - Bookstore within the John T Washington Center - 30 points**
 
