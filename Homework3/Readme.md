@@ -240,12 +240,10 @@ vec2 SIMAgent::Wander()
 
 #### (b) Maze Model - 20 points**: 
 
-* Youtube: []()
+* Youtube: [Maze](https://youtu.be/rq88RDzNj14)
 
-![](images/anylogic_maze.PNG?raw=true)
-
-
-* Youtube: []()
+![](images/maze2d.PNG?raw=true)
+![](images/logicandcharts.PNG?raw=true)
 
 **(c) UCF Building - Bookstore within the John T Washington Center - 30 points**
 
